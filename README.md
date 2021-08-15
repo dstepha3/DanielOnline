@@ -1,4 +1,4 @@
-# daniel-online
+# Daniel Online
 
 ## Project setup
 ```
