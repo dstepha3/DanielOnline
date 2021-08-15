@@ -42,3 +42,10 @@ p, ul{
 .align-center{
     text-align: center;
 }
+
+.red-dark {
+    color: var(--theme-primary-dark);
+}
+.red-light {
+    color: var(--theme-primary-light);
+}
