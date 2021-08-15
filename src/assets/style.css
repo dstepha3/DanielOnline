@@ -66,6 +66,17 @@
     width: 50%;
   }
 
+  .sticky {
+    position: relative;
+    position: sticky;
+    top: 0;
+  }
+
+
+  #about-body sidebar {
+    background: red;
+  }
+
   @media only screen and (max-width:  500px) {
     .soundcloud-player {
       width: 90%;

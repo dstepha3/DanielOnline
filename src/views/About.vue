@@ -1,7 +1,11 @@
 <template lang="html">
-    <div id="body">
-        <h1>This is the About Page</h1>
-        <span class="coming-soon">content coming soon</span>
+    <div id="about-body">
+        <div class="sidebar">
+            
+        </div>
+        <div class="content">
+
+        </div>
     </div>
 </template>
 
