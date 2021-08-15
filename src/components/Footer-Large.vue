@@ -45,7 +45,7 @@
                 <h6>Resources</h6>
                 <router-link class="nav-link" to="/about">About</router-link>
                 <router-link class="nav-link disabled" to="/blog">Blog</router-link>
-                <router-link class="nav-link disabled" to="/contact">Contact</router-link>
+                <router-link class="nav-link" to="/contact">Contact</router-link>
                 <router-link class="nav-link disabled" to="/faqs">FAQs</router-link>
                 <router-link class="nav-link disabled" to="/help">Help</router-link>
             </div>
