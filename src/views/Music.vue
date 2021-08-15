@@ -1,12 +1,20 @@
 <template lang="html">
-    <h1>This is the Music Page</h1>
-    <span class="coming-soon">content coming soon</span>
+    <div id="music-body">
+        <h1 style="margin-bottom: 80px; padding: 0 40px 15px; border-bottom: 1px solid var(--theme-primary-dark);">Hear the Latest</h1>
+        <div style="width: 50%">
+            <sc_player1></sc_player1>
+        </div>
+    </div>
 </template>
 
 <script lang="js">
+import sc_player1 from "@/components/Soundcloud-Player.vue";
 
 export default {
-    name: 'music'
+    name: 'music',
+    components: {
+        sc_player1
+    }
 }
 
 </script>
