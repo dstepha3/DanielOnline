@@ -16,8 +16,9 @@ npm run lint
 ```
 
 ### Live Site
+```
 Pushes to this repository are automatically built live using the Cloudflare content delivery service.
 ```
-Live Site: [Here.](https://danielonline.pages.dev/)
-```
+> - Live Site: [Here.](https://danielonline.pages.dev/)
+
 
