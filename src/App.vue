@@ -1,6 +1,9 @@
 <template>
     <div id="app">
       <NavBar></NavBar>
+      <div class="coming-soon">
+        <h1>CONTENT <br/>COMING SOON</h1>
+      </div>
     </div>
 </template>
 

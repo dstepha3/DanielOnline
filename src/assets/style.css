@@ -29,6 +29,15 @@
 
   #app {
     background-color: #0d0d0d;
-    height: 100vw;
+    height: 50vw;
     width: 100vw;
+  }
+
+  .coming-soon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      height: 70%;
+      text-align: center;
   }
