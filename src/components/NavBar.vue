@@ -17,7 +17,7 @@
                 <router-link class="nav-link" to="/music">Music</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link disabled" to="/about">About</router-link>
+                <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li class="nav-item">
                 <router-link class="nav-link disabled" to="/contact">Contact</router-link>

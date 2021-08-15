@@ -72,9 +72,71 @@
     top: 0;
   }
 
+  #about-body .sidebar {
+    border-left: 3px solid var(--theme-primary-dark);
+    border-bottom: 3px solid var(--theme-primary-dark);
+    border-right: 3px solid var(--theme-primary-dark);
+    height: 38vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
 
-  #about-body sidebar {
-    background: red;
+  #about-body .content {
+    padding: 60px;
+  }
+
+  #about-body .content h1 {
+    font-size: 80px !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--theme-black );
+    color: var(--theme-lightest-gray);
+    margin-bottom: 20px;
+  }
+
+  #about-body .content p {
+    color: var(--theme-dark-gray);
+  }
+
+  #about-body .content .red {
+    color: var(--theme-primary-light);
+  }
+
+  #about-body .content p > span.red:first-child {
+    padding-right: 15px;
+  }
+
+  #about-body .content p > span.red:last-child {
+    padding-left: 15px;
+  }
+
+  #about-body .sidebar img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--theme-primary-dark);
+    margin-bottom: 20px;
+  }
+
+  #about-body .sidebar h3{
+    color: var(--theme-lightest-gray);
+    margin-bottom: 0;
+  }
+
+  #about-body .job-title {
+    color: var(--theme-primary-light);
+    opacity: .8;
+  }
+
+  #about-body .personal-details {
+    margin: 20px 0;
+  }
+
+  #about-body .content .section {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--theme-black );
+    margin-bottom: 40px;
   }
 
   @media only screen and (max-width:  500px) {
