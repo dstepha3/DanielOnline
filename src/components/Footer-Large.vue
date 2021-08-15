@@ -26,8 +26,8 @@
                         <i class="fab fa-linkedin"></i></a>         <!--    linkedin    -->
                 </div>
                 <div class="social-media flex">
-                    <a class="disabled" 
-                       href="#">
+                    <a  
+                       href="https://www.snapchat.com/add/dantchulealbert?share_id=NDU4NTUy&local=en_US">
                         <i class="fab fa-snapchat-square"></i></a>         <!--    snapchat    -->
                     <a href="https://www.soundcloud.com/neonstarbuzz">
                         <i class="fab fa-soundcloud"></i></a>       <!--    soundcloud  -->
