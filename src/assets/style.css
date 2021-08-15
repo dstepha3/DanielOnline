@@ -29,7 +29,7 @@
 
   #app {
     background-color: #0d0d0d;
-    height: 50vw;
+    height: 100%;
     width: 100vw;
   }
 
@@ -42,7 +42,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-items: center;
-    height: 30vw;
+    height: 100%;
+    background-color: #0d0d0d;
+    color: var(--theme-primary-dark);
+  }
+
+  #music-body {
+    margin-top: 80px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background-color: #0d0d0d;
     color: var(--theme-primary-dark);
   }
