@@ -29,7 +29,7 @@
 
   #app {
     background-color: #0d0d0d;
-    height: 100%;
+    min-height: 50vw;
     width: 100vw;
   }
 
@@ -42,9 +42,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 30vw;
     background-color: #0d0d0d;
     color: var(--theme-primary-dark);
+  }
+
+  html {
+    background-color: #0d0d0d;
   }
 
   #music-body {
