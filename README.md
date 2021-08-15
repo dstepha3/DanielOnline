@@ -10,15 +10,14 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
 ### Lints and fixes files
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Live Site
+Pushes to this repository are automatically built live using the Cloudflare content delivery service.
+```
+https://danielonline.pages.dev/
+```
+
