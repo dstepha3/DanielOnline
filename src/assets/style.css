@@ -61,3 +61,14 @@
     background-color: #0d0d0d;
     color: var(--theme-primary-dark);
   }
+
+  .soundcloud-player {
+    width: 50%;
+  }
+
+  @media only screen and (max-width:  500px) {
+    .soundcloud-player {
+      width: 90%;
+    }
+}
+
