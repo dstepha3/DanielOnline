@@ -14,13 +14,13 @@
                     <a 
                        href="https://discordapp.com/users/Dantchule.Albert#8446/">
                         <i class="fab fa-discord"></i></a>          <!--    discord     -->
-                    <a class="disabled" 
-                       href="#">
+                    <a  
+                       href="https://www.facebook.com/iDanny330">
                         <i class="fab fa-facebook-square"></i></a>         <!--    facebook    -->
                     <a href="https://github.com/dstepha3">
                         <i class="fab fa-github-square"></i></a>    <!--    github      -->
-                    <a class="disabled" 
-                       href="#">
+                    <a  
+                       href="https://www.instagram.com/dantchulealbert/">
                         <i class="fab fa-instagram"></i></a>               <!--    instagram   -->
                     <a href="https://www.linkedin.com/in/dstephan316/">
                         <i class="fab fa-linkedin"></i></a>         <!--    linkedin    -->
@@ -31,8 +31,8 @@
                         <i class="fab fa-snapchat-square"></i></a>         <!--    snapchat    -->
                     <a href="https://www.soundcloud.com/neonstarbuzz">
                         <i class="fab fa-soundcloud"></i></a>       <!--    soundcloud  -->
-                    <a class="disabled" 
-                       href="#">
+                    <a 
+                       href="https://twitter.com/dantchulealbert">
                         <i class="fab fa-twitter-square"></i></a>          <!--    twitter     -->
                     <a href="https://www.youtube.com/channel/UCNmg26mkinOe079BFzhbR_g">
                         <i class="fab fa-youtube"></i></a>          <!--    youtube     -->
