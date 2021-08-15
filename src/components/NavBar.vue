@@ -2,30 +2,36 @@
 <div id="navbar">
 
     <div class="top-banner">
-        <img src="@/assets/images/star-logo.png" width="105">
+        <router-link to="/"><img src="@/assets/images/star-logo.png" width="105"></router-link>
     </div>
 
     <nav>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <router-link class="nav-link disabled" to="/code">Code</router-link>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <router-link class="nav-link disabled" to="/plants">Plants</router-link>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item">
+                <router-link class="nav-link" to="/music">Music</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link disabled" to="/about">About</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link disabled" to="/contact">Contact</router-link>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown link
                 </a>
                 <ul class="dropdown-menu center" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><router-link class="nav-link" to="/">Action</router-link></li>
+                    <li><router-link class="nav-link" to="/">Another Action</router-link></li>
+                    <li><router-link class="nav-link" to="/">Something else here</router-link></li>
                 </ul>
-                </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+            </li> -->
         </ul>
     </nav>
 

@@ -34,10 +34,15 @@
   }
 
   .coming-soon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-items: center;
-      height: 70%;
-      text-align: center;
+    color: var(--theme-black);
+  }
+
+  #body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 30vw;
+    color: var(--theme-primary-dark);
   }
