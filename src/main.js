@@ -1,5 +1,6 @@
 // IMPORT STYLESHEETS
 import "./assets/navigation.css";
+import "./assets/font.css";
 import "./assets/style.css";
 
 import { createApp } from 'vue'
