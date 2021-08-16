@@ -14,7 +14,7 @@
             <div class="mb-5">
                 <textarea class="form-control" name="users-message" placeholder="message" rows="5"></textarea>
             </div>
-            <input type="submit" value="Send" class="btn" style="color: #000000; background: var(--theme-primary-dark)"/>
+            <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: #000000; background: var(--theme-primary-dark)"/>
             </form>
         </div>
     </div>
@@ -42,10 +42,10 @@ export default {
       emailjs.sendForm('dstephan316', 'template_contact_donline', e.target, 'user_vsho8JdW4BokewL2D4klp')
         .then((result) => {
             console.log('SUCCESS!', result.status, result.text);
-            
-                router.push({name: "ContactThankYou"});
-            
+            document.body.style.cursor='default';
+            router.push({name: "ContactThankYou"});
         }, (error) => {
+            document.body.style.cursor='default';
             console.log('FAILED...', error);
         });
     }

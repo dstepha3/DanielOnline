@@ -7,7 +7,13 @@
                     <img src="@/assets/images/About/headshot-aug21.jpg">
                     <h3>Daniel A. Stephan II</h3>
                     <p class="job-title">Frontend Web Developer Intern</p>
+                    <nav class="jump-section">
+                        <p @click="scrollToElement($refs.skills)">Skills</p>
+                        <p @click="scrollToElement($refs.education)">Education</p>
+                        <p><span @click="downloadResume">Download Resume</span></p>
+                    </nav>
                 </div>
+                
                 <div class="content col-8">
                     <div class="row about">
                         <h1>About Me</h1>
@@ -15,6 +21,7 @@
                         <div class="section">
                             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales velit in ipsum ultrices fringilla. Morbi non sollicitudin enim. Curabitur rhoncus luctus urna, lacinia suscipit massa tempus ut. Vivamus non justo elit. Nulla quis imperdiet ligula, non commodo dolor. Nullam elementum ac enim congue aliquam. Donec ipsum mi, convallis non nibh eget, imperdiet ultricies lectus. Etiam placerat arcu sapien, eu placerat nibh posuere ut. Donec orci neque, tristique eu nunc sit amet, aliquet lacinia ante. Sed tempus enim sit amet lectus sagittis ornare. Vestibulum quis lectus imperdiet felis sodales bibendum. Morbi nec sem urna. Phasellus a lectus et lectus egestas sagittis. Cras egestas facilisis nisi ac porttitor. Etiam iaculis bibendum lacus quis euismod.</p> 
                         </div> 
+                        <a ref="skills"></a> <!-- ref placed her so renders properly -->
                     </div>
                     <div class="row skills">
                         <div class="heading">
@@ -48,6 +55,7 @@
                                 <p>mySQL</p>
                             </div>
                         </div>
+                        <a ref="education"></a> <!-- ref placed her so renders properly -->
                     </div>
                     <div class="row education">
                         <div class="heading education">
@@ -118,11 +126,9 @@
                                 
                                 <div class="align-center" style="flex-basis: 40%; margin-left: 10px">
                                     <h6 style="margin-top: -15px">GPA</h6>
-                                    <p class="GPA">-</p>
-                                </div>
-                                
+                                    <p class="GPA">3.600</p>
+                                </div> 
                             </div>
-                        
                     </div>
                 </div>
             </div>
@@ -140,6 +146,14 @@ export default {
     components: {
         NavBar,
         FooterLarge
+    },
+    methods: {
+        scrollToElement(elementRef) {
+            elementRef.scrollIntoView({ behavior: "smooth", block: "start" });
+        },
+        downloadResume: () => {
+            window.open('https://drive.google.com/file/d/1hvYlA2TQjh-5ExP_3pLJYxC9USZZfMGT/view?usp=sharing');
+        }
     }
 }
 

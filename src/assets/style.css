@@ -37,6 +37,13 @@
     color: var(--theme-black);
   }
 
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
   #body {
     display: flex;
     flex-direction: column;
@@ -122,7 +129,7 @@
   }
 
   #about-body .sidebar img {
-    width: 100%;
+    width: 90%;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--theme-primary-dark);
@@ -141,6 +148,25 @@
     margin-bottom: 40px;
     border-bottom: 1px solid var(--theme-black);
     display: inline-block;
+  }
+
+  #about-body .jump-section {
+    margin-top: 10px;
+  }
+
+  #about-body .jump-section p,
+  #about-body .jump-section a {
+    margin-bottom: 5px;
+    padding: 0;
+    color: var(--theme-warning-dark);
+    font-family: var(--text);
+  }
+
+  #about-body .jump-section p:hover,
+  #about-body .jump-section a:hover {
+    cursor: pointer;
+    color: var(--theme-primary-light);
+    font-weight: 500;
   }
 
   #about-body .job-title {

@@ -1,7 +1,7 @@
 <template lang="html">
 <div id="navbar">
 
-    <div class="top-banner" v-if="display">
+    <div class="top-banner">
         <router-link to="/"><img src="@/assets/images/star-logo.png" width="105"></router-link>
     </div>
 
@@ -41,13 +41,7 @@
 <script>
 
 export default {
-    name: "nav-bar",
-    props : {
-        display: {
-            type: Boolean,
-            default: true
-        }
-    }
+    name: "nav-bar"
 }
 
 </script>
