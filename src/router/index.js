@@ -6,6 +6,7 @@ import Contact from "@/views/Contact.vue";
 import Code from "@/views/Code.vue";
 import Plants from "@/views/Plants.vue";
 import Music from "@/views/Music.vue";
+import ContactThankYou from "@/views/ContactThankYou.vue";
 
 const routes = [
     {
@@ -54,6 +55,14 @@ const routes = [
         component: Music,
         meta: {
             title: 'Music - Daniel Online!'
+        }
+    },
+    {
+        path: "/contact/thank-you",
+        name: "ContactThankYou",
+        component: ContactThankYou,
+        meta: {
+            title: 'Thanks - Daniel Online!'
         }
     }
 ];

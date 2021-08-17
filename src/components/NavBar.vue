@@ -17,10 +17,10 @@
                 <router-link class="nav-link" to="/music">Music</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link disabled" to="/about">About</router-link>
+                <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link disabled" to="/contact">Contact</router-link>
+                <router-link class="nav-link" to="/contact">Contact</router-link>
             </li>
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
