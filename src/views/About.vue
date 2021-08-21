@@ -3,7 +3,7 @@
     <div id="about-body">
         <div class="container">
             <div class="row">
-                <div class="sidebar sticky col-4">
+                <div class="sidebar sticky col-sm-4">
                     <img src="@/assets/images/About/headshot-aug21.jpg">
                     <h3>Daniel A. Stephan II</h3>
                     <p class="job-title">Frontend Web Developer Intern</p>
@@ -14,7 +14,7 @@
                     </nav>
                 </div>
                 
-                <div class="content col-8">
+                <div class="content col-sm-8">
                     <div class="row about">
                         <h1>About Me</h1>
                         <p class="personal-details"><span class="red">26 years</span> | <span class="red">Massillon, Ohio</span></p>
