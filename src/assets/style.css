@@ -79,6 +79,15 @@
     top: 0;
   }
 
+  @media screen and (max-width: 500px) {
+    .sticky {
+      position: relative;
+    }
+    #about-body .flex {
+      display: block !important;
+    }
+  }
+
   #about-body .flex {
     display: flex;
   }
