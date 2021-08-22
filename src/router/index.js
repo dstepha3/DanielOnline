@@ -7,6 +7,7 @@ import Code from "@/views/Code.vue";
 import Plants from "@/views/Plants.vue";
 import Music from "@/views/Music.vue";
 import ContactThankYou from "@/views/ContactThankYou.vue";
+import unreleased from "@/views/Unreleased.vue";
 
 const routes = [
     {
@@ -63,6 +64,14 @@ const routes = [
         component: ContactThankYou,
         meta: {
             title: 'Thanks - Daniel Online!'
+        }
+    },
+    {
+        path: "/music/unreleased",
+        name: "Unreleased",
+        component: unreleased,
+        meta: {
+            title: 'Unreleased Music - Daniel Online!'
         }
     }
 ];
