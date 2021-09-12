@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Contact from "@/views/Contact.vue";
 import Code from "@/views/Code.vue";
+import myPlants from "@/views/myPlants.vue";
 import Plants from "@/views/Plants.vue";
 import Music from "@/views/Music.vue";
 import ContactThankYou from "@/views/ContactThankYou.vue";
@@ -48,6 +49,14 @@ const routes = [
         component: Plants,
         meta: {
             title: 'Plants - Daniel Online!'
+        }
+    },
+    {
+        path: "/plants/my-plants",
+        name: "myPlants",
+        component: myPlants,
+        meta: {
+            title: 'My Plants - Daniel Online!'
         }
     },
     {
