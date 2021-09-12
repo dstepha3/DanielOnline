@@ -70,15 +70,15 @@
                                         <p class="location">Class of 2021 &bull; <span class="kent">Kent State University</span> &bull; Kent, Ohio</p>
                                     </div>
                                 </div>
-                                <div class="flex align-center">
-                                    <div style="flex-basis: 50%; margin-right: 30px">
+                                <div class="gpa-and-awards flex align-center">
+                                    <div class="left">
                                         <h6>GPA</h6>
                                         <p class="GPA">3.178</p>
                                         <p class="GPA-Detail">cumulative</p>
                                         <p class="GPA">3.667</p>
                                         <p class="GPA-Detail">major</p>
                                     </div>
-                                    <div style="flex-basis: 50%; margin-left: 30px">
+                                    <div class="right">
                                         <div>
                                             <h6>Awards &amp; Honors</h6>
                                         </div>
@@ -89,12 +89,12 @@
                                 </div>
                                 <div class="align-center">
                                     <h6>Relevant Course Work</h6>
-                                    <div class="flex">
-                                        <div style="flex-basis: 50%; margin-right: 30px">
+                                    <div class="coursework flex">
+                                        <div class="left">
                                             <p>Software Engineering</p>
                                             <p>Digital Forensics</p>
                                         </div>
-                                        <div style="flex-basis: 50%; margin-left: 30px">
+                                        <div class ="right">
                                             <p>Web Programming</p>
                                             <p>Intro to Database Systems</p>
                                         </div>
@@ -158,3 +158,311 @@ export default {
 }
 
 </script>
+
+<style scoped>
+ #about-body .flex {
+    display: flex;
+  }
+
+#about-body .content .flex {
+    justify-content: space-around;
+    margin: 0 0 20px;
+  }
+
+  #about-body .sidebar {
+    border-left: 3px solid var(--theme-primary-dark);
+    border-bottom: 3px solid var(--theme-primary-dark);
+    border-right: 3px solid var(--theme-primary-dark);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+  }
+
+  #about-body .content {
+    padding: 60px;
+  }
+
+  #about-body .content h1 {
+    font-size: 80px !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--theme-black );
+    color: var(--theme-lightest-gray);
+    margin-bottom: 20px;
+  }
+
+  #about-body .content p {
+    color: var(--theme-dark-gray);
+  }
+
+  #about-body .content .red {
+    color: var(--theme-primary-light);
+  }
+
+  #about-body .content p > span.red:first-child {
+    padding-right: 15px;
+  }
+
+  #about-body .content p > span.red:last-child {
+    padding-left: 15px;
+  }
+
+  #about-body .sidebar img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--theme-primary-dark);
+    margin-bottom: 20px;
+  }
+
+  #about-body .sidebar h3{
+    color: var(--theme-lightest-gray);
+    margin-bottom: 0;
+  }
+
+  #about-body .row h2 {
+    color: var(--theme-lightest-gray);
+    padding: 0;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--theme-black);
+    display: inline-block;
+  }
+
+  #about-body .jump-section {
+    margin-top: 10px;
+  }
+
+  #about-body .jump-section p,
+  #about-body .jump-section a {
+    margin-bottom: 5px;
+    padding: 0;
+    color: var(--theme-warning-dark);
+    font-family: var(--text);
+  }
+
+  #about-body .jump-section p:hover,
+  #about-body .jump-section a:hover {
+    cursor: pointer;
+    color: var(--theme-primary-light);
+    font-weight: 500;
+  }
+
+  #about-body .job-title {
+    color: var(--theme-primary-light);
+    opacity: .8;
+  }
+
+  #about-body .personal-details {
+    margin: 20px 0;
+  }
+
+  #about-body .content .row {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--theme-black );
+    margin-bottom: 40px;
+  }
+
+  #about-body .content > .row:last-child {
+    border: none;
+  }
+
+  #about-body .content .contained {
+    border: 1px solid var(--theme-primary-dark);
+    padding: 30px 20px;
+    flex-basis: 33%;
+    max-height: 97%;
+    text-align: center;
+  }
+
+  #about-body .content h6 {
+    color: var(--theme-primary-dark);
+    margin: 20px 0 20px;
+    border-bottom: 1px solid var(--theme-black);
+  }
+
+  #about-body .content .contained p {
+    font-size: 14px !important;
+  }
+
+  #about-body .content i {
+    color: var(--theme-primary-light);
+    font-size: 32px;
+  }
+
+  #about-body .content .heading {
+    text-align: center;
+  }
+
+  #about-body .content .heading i {
+    color: var(--theme-primary-dark);
+    margin-bottom: 10px;
+    font-size: 48px;
+    display: block;
+  }
+
+  #about-body .content .row .flex > .contained:nth-child(2){
+    margin: 0 30px;
+  }
+
+  #about-body .education h3 {
+    color: var(--theme-primary-dark);
+    margin-bottom: 0;
+    font-size: 50px !important;
+    line-height: .7;
+  }
+
+  #about-body .education .degree-info {
+     color: var(--theme-white);
+     line-height: .5;
+     margin: 10px 0;
+     display: inline-block;
+  }
+
+  #about-body .education .concentration{
+     color: var(--theme-white);
+     margin-bottom: 20px;
+     font-size: 20px !important;
+  } 
+
+  #about-body .education .year {
+    color: var(--theme-darkest-gray);
+    margin-bottom: 20px;
+  }
+
+  #about-body .education .GPA,
+  #about-body .education .Awards {
+    color: var(--theme-white);
+    font-size: 28px !important;
+    line-height: .9;
+    margin-bottom: 0;
+  }
+
+  #about-body .education .GPA-Detail,
+  #about-body .education .Awards-Detail {
+    color: var(--theme-warning-dark);
+    font-size: 18px !important;
+    line-height: .9;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  #about-body .education .Awards-Detail {
+    margin: 10px 0 !important;
+  }
+
+  #about-body .education .all-course-work {
+    color: var(--theme-warning-dark);
+    line-height: .5;
+  }
+
+  #about-body .education hr {
+    margin: 60px auto;
+    color: var(--theme-darkest-gray);
+    width: 85%;
+  }
+
+  #about-body .education .location {
+    line-height: .1;
+    font-size: 14px !important;
+    margin-bottom: 30px;
+  }
+
+  #about-body .kent,
+  #about-body .fairless {
+    color: var(--theme-warning-dark);
+  }
+
+  @media screen and (max-width: 768px){
+    #about-body .flex {
+        display: block;
+    }
+
+    #about-body .sidebar h3{
+        font-size: 45px !important;
+    }
+
+    #about-body .content {
+        padding: 60px 20px;
+    }
+
+
+    #about-body .content .row .flex > .contained:nth-child(2){
+        margin: 30px 0;
+    }
+
+    #about-body .education h3 {
+        line-height: .8;
+    }
+
+    #about-body .education .degree-info {
+        line-height: 1.2;
+    }
+
+    #about-body .education .concentration{
+        color: var(--theme-white);
+        margin-bottom: 20px;
+        font-size: 20px !important;
+    } 
+
+    #about-body .education .year {
+        color: var(--theme-darkest-gray);
+        margin-bottom: 20px;
+    }
+
+    #about-body .education .GPA,
+    #about-body .education .Awards {
+        color: var(--theme-white);
+        font-size: 28px !important;
+        line-height: .9;
+        margin-bottom: 0;
+    }
+
+    #about-body .education .GPA-Detail,
+    #about-body .education .Awards-Detail {
+        color: var(--theme-warning-dark);
+        font-size: 18px !important;
+        line-height: .9;
+        margin-top: 5px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+
+    #about-body .education .all-course-work {
+        line-height: 1;
+    }
+
+    #about-body .course-work .left {
+        margin-right: 0;
+    }
+
+    #about-body .course-work .right {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    #about-body .gpa-and-awards .left{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    #about-body .gpa-and-awards .right{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 0;
+    }
+
+    #about-body .education .location {
+        line-height: 1.2;
+        font-size: 14px !important;
+        margin-bottom: 30px;
+    }
+
+
+
+
+}
+</style>

@@ -1,6 +1,6 @@
 <template lang="html">
     <div id="body">
-        <h1>This is the Plants Page</h1>
+        <h1>This is the Unreleased Music Page</h1>
         <span class="coming-soon">content coming soon</span>
     </div>
 </template>

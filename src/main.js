@@ -1,6 +1,4 @@
 // IMPORT STYLESHEETS
-import "./assets/navigation.css";
-import "./assets/footer.css";
 import "./assets/font.css";
 import "./assets/style.css";
 

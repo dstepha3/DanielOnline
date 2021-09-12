@@ -53,3 +53,40 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+  #contact-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    min-height: 100%;
+    background-color: #0d0d0d;
+    color: var(--theme-primary-dark);
+    margin: 80px 30%;
+  }
+
+  #contact-body h1 {
+    margin-bottom: 40px;
+  }
+
+  #contact-body p {
+    color: var(--theme-lightest-gray);
+  }
+
+  #contact-body .form-container {
+    min-width: 100%;
+  }
+
+  #contact-body form .input.form-control {
+    background-color: var(--theme-warning-dark);
+  }
+
+  @media screen and (max-width: 786px){
+      #contact-body {
+          margin: 80px 10%;
+      }
+  }
+</style>

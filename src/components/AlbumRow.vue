@@ -128,6 +128,10 @@ export default {
     width: 100%;
 }
 
+.carousel-item{
+  max-height: 705px;
+}
+
 .ds-btn {
     background: none;
     padding: 10px 100px;
@@ -168,6 +172,45 @@ export default {
 }
 .ds-btn.white:hover {
     color: var(--theme-whitest);
+}
+
+@media screen and (max-width: 768px){
+  .d-none{
+    display: block !important;
+  }
+  .ds-btn {
+    padding: 10px 57px;
+    min-width: 100%;
+  }
+  .carousel-item .carousel-caption{
+    bottom: 20%;
+  }
+  .carousel-item img{
+    opacity: 0.10;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 0;
+  }
+  .ds-btn.red {
+    color: var(--theme-primary-light);
+    border: 2px solid var(--theme-primary-light);
+  }
+  .ds-btn.blue {
+      color: var(--theme-confirm);
+      border: 2px solid var(--theme-confirm);
+  }
+  .ds-btn.pink {
+      color: #ff4dff;
+      border: 2px solid #ff4dff;
+  }
+  .ds-btn.purple{
+      color: purple;
+      border: 2px solid purple;
+  }
+  .carousel-item{
+    max-height: 180px;
+  }
 }
 
 </style>

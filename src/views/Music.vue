@@ -6,6 +6,7 @@
         <div class="soundcloud-player">
             <sc_player1></sc_player1>
         </div>
+        <MusicPromo></MusicPromo>
     </div>
     <FooterLarge></FooterLarge>
 </template>
@@ -15,6 +16,7 @@ import sc_player1 from "@/components/Soundcloud-Player.vue";
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import album_row from "@/components/AlbumRow.vue";
+import MusicPromo from "@/components/Music-Promo.vue";
 
 export default {
     name: 'music',
@@ -22,7 +24,8 @@ export default {
         sc_player1,
         album_row,
         NavBar,
-        FooterLarge
+        FooterLarge,
+        MusicPromo
     }
 }
 

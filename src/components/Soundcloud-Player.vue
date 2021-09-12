@@ -14,12 +14,6 @@
     <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1044983704&color=%238a0f0d&inverse=true&auto_play=false&show_user=false"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/neonstarbuzz" title="Neøn Starbuzz" target="_blank" style="color: #cccccc; text-decoration: none;">Neøn Starbuzz</a> · <a href="https://soundcloud.com/neonstarbuzz/a-better-sound-prod-by-alessio-la-placa" title="A Better Sound (prod. by Alessio La Placa)" target="_blank" style="color: #cccccc; text-decoration: none;">A Better Sound (prod. by Alessio La Placa)</a></div>
 </div>
 
-<div style="margin-top: 80px; padding-top: 100px; border-top: 1px solid var(--theme-primary-dark);">
-    <div class="align-center">
-        <img class="promo" src="@/assets/images/music-image1.jpg">
-    </div>
-</div>
-
 </template>
 
 <script>
