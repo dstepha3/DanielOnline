@@ -98,7 +98,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#rhaphModal"><div class="plant card disabled">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">rhaphidophora</h5>
@@ -106,7 +106,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#aglaModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">aglaonema</h5>
@@ -114,7 +114,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#ficusModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">ficus</h5>
@@ -125,7 +125,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#marantaModal"><div class="plant card disabled">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Maranta</h5>
@@ -133,7 +133,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#calatheaModal"><div class="plant card disabled">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Calathea</h5>
@@ -141,12 +141,12 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                        <!-- <a class="nav-link disabled" href="#"><div class="plant card disabled">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Untitled</h5>
                             </div>
-                        </div></a>
+                        </div></a> -->
                     </div>
                 </div>  
 
@@ -193,6 +193,11 @@
     <myGardenModal></myGardenModal>
     <scindapsusModal></scindapsusModal>
     <dracaenaModal></dracaenaModal>
+    <rhaphModal></rhaphModal>
+    <aglaModal></aglaModal>
+    <ficusModal></ficusModal>
+    <marantaModal></marantaModal>
+    <calatheaModal></calatheaModal>
 </template>
 
 <script lang="js">
@@ -207,6 +212,11 @@ import zzModal from "@/components/Modals/Plants/ZZ-modal.vue";
 import myGardenModal from "@/components/Modals/Plants/myGarden-modal.vue";
 import scindapsusModal from "@/components/Modals/Plants/Scindapsus-modal.vue";
 import dracaenaModal from "@/components/Modals/Plants/Dracaena-modal.vue";
+import rhaphModal from "@/components/Modals/Plants/Rhaph-modal.vue";
+import aglaModal from "@/components/Modals/Plants/Aglaonema-modal.vue";
+import ficusModal from "@/components/Modals/Plants/Ficus-modal.vue";
+import marantaModal from "@/components/Modals/Plants/Maranta-modal.vue";
+import calatheaModal from "@/components/Modals/Plants/Calathea-modal.vue";
 
 export default {
     name: 'myPlants',
@@ -221,7 +231,12 @@ export default {
         zzModal,
         myGardenModal,
         scindapsusModal,
-        dracaenaModal
+        dracaenaModal,
+        rhaphModal,
+        aglaModal,
+        ficusModal,
+        marantaModal,
+        calatheaModal
     },
     methods: {
         myFunction() {
