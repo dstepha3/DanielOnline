@@ -6,30 +6,29 @@
         <div class="plant-search-container">
             <div class="form-group">
                 <i class="fas fa-search fa-lg"></i>
-                <input class="form-control" id="plantSearch" type="text" placeholder="Looking for Something Specific?">
+                <input class="form-control" id="plantSearch" @keyup="myFunction()" type="text" placeholder="Looking for Something Specific?">
             </div>
             <div class="category row">
                 <a class="btn btn-danger">Indoor</a>
                 <a class="btn btn-danger">Outdoor</a>
-                <a class="btn btn-danger">Garden</a>
             </div>
-
-            
-            <div class="plant-container">
-                <div class="row mt-5 mb-5">
+     
+            <div id="plant-container">
+                <div class="row">
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#epipremnumModal"><div class="plant card">
                             <img src="@/assets/images/plants/pothos1.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">epipremnum</h5>
+                                <h5 class="card-title">epipremnum</h5>
+                                <p class="card-text">pothos</p>
                             </div>
                         </div></a>
                     </div>
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/palm2.jpg" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/IMG_3917.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">Palms</h5>
+                                <h5 class="card-title">Palms</h5>
                             </div>
                         </div></a>
                     </div>
@@ -37,82 +36,209 @@
                         <a href="#"><div class="plant card">
                             <img src="@/assets/images/plants/sansevieria.jpg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">Sanseveria</h5>
+                                <h5 class="card-title">Sanseveria</h5>
                             </div>
                         </div></a>
                     </div>
                 </div>
 
-                <div class="row mt-5 mb-5">
+                <div class="row">
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/succulents-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">Succulents</h5>
+                                <h5 class="card-title">Succulents</h5>
                             </div>
                         </div></a>
                     </div>
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">PHILODENDERON</h5>
+                                <h5 class="card-title">PHILODENDERON</h5>
                             </div>
                         </div></a>
                     </div>
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/zz-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">ZZ</h5>
+                                <h5 class="card-title">ZZ</h5>
                             </div>
                         </div></a>
                     </div>
                 </div>
 
-                <div class="row mt-5 mb-5">
+                <div class="row">
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/garden1.jpeg" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/garden-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">garden</h5>
+                                <h5 class="card-title">garden</h5>
                             </div>
                         </div></a>
                     </div>
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">untitled</h5>
+                                <h5 class="card-title">scindapsus</h5>
                             </div>
                         </div></a>
                     </div>
                     <div class="col">
                         <a href="#"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-text">untitled</h5>
+                                <h5 class="card-title">Dracaena</h5>
                             </div>
                         </div></a>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">rhaphidophora</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">aglaonema</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">ficus</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>  
+
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Maranta</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Calathea</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Untitled</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>  
+
+            <!-- ROW TEMPLATE 
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Untitled</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Untitled</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Untitled</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>  
+            -->
+
             </div>
-
         </div>
     </div>
     <FooterLarge></FooterLarge>
+
+    <epipremnumModal></epipremnumModal>
 </template>
 
 <script lang="js">
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
+import epipremnumModal from "@/components/Modals/Plants/Epipremnum-modal.vue";
 
 export default {
     name: 'myPlants',
     components: {
         NavBar,
         FooterLarge,
+        epipremnumModal
+    },
+    methods: {
+        myFunction() {
+            console.log("start.");
+            var input, filter, cards, cardContainer, title, i, rows, j ;
+            input = document.getElementById("plantSearch");
+            filter = input.value.toUpperCase();
+            cardContainer = document.getElementById("plant-container");
+            cards = cardContainer.getElementsByClassName("card");
+            rows = cardContainer.getElementsByClassName("row");
+            for (i = 0; i < cards.length; i++) {
+                title = cards[i].querySelector(".card-body h5.card-title");
+                if (title.innerText.toUpperCase().indexOf(filter) > -1){
+                    title.style.marginLeft = "30px";
+                    cardContainer.style.marginTop = "3rem";
+                    cards[i].style.display = "block ruby";
+                    cards[i].style.margin = "0 0 4rem 0";
+                    for (j = 0; j < rows.length; j++) {
+                        rows[j].style.flexDirection = "column";
+                        rows[j].style.margin = "0 50% 0 0";
+                    }
+                } else {
+                    cards[i].style.display = "none";  
+                }
 
+                if (input.value == ""){
+                    console.log("its empty")
+                    cardContainer.style.marginTop = "3rem";
+                    cards[i].style.display = "flex";
+                    cards[i].style.margin = "0";
+                    title.style.marginLeft = "0";
+                
+                    for (j = 0; j < rows.length; j++) {
+                        rows[j].style.flexDirection = "row";
+                        rows[j].style.margin = "3rem 0";
+                    }
+                }
+                
+            }
+
+        }
     }
 }
 
@@ -148,26 +274,48 @@ export default {
 }
 
 
-.plant-container a{
+#plant-container a{
     color: var(--theme-primary-dark);
     text-decoration: none;
 }
 
+#plant-container .row{
+    margin: 3rem 0;
+}
+
 .plant.card:hover{
         box-shadow: 0px 0px 15px 5px var(--theme-primary-light);
+        opacity: 1;
+}
 
+#plant-container .nav-link.disabled{
+    padding: 0 !important;
+}
+.plant.card.disabled{
+        opacity: 0.4;
+}
+
+.plant.card .card-img-top{
+    max-height: 175px;
 }
 
 .plant.card{
     background: #000000;
     border: 1px solid var(--theme-primary-dark);
+    cursor: pointer;
+    opacity: 0.6;
 }
 .card-img-top{
     max-height: 200px;
     object-fit: cover;
     border-bottom: 1px solid var(--theme-primary-dark);
 }
+.card-title{
+    text-transform: uppercase;
+}
+
 .card-text{
+    display: none;
     text-transform: uppercase;
 }
 
@@ -177,7 +325,7 @@ export default {
 }
 
 .category .btn {
-    flex-basis: 25%;
+    flex-basis: 30%;
 }
 
 .btn-danger{

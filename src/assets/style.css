@@ -238,3 +238,121 @@ button.btn-close{
   text-align: center;
   padding-top: 12px;
 }
+
+.modal-title{
+  color: var(--theme-primary-dark);
+  line-height: 1.5 !important;
+}
+.plant .modal-title{
+  text-transform: uppercase;
+}
+.plant .modal-footer {
+  justify-content: space-between !important;
+  padding: 20px 40px;
+}
+.plant .modal-footer #care-tab{
+  margin-right: 20px;
+}
+#care-tab{
+  background-color: var(--theme-blackest) !important;
+}
+#care-tab:hover{
+  background-color: var(--theme-primary-light) !important;
+}
+.plant .modal-footer .nav-link{
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.75;
+}
+.plant .modal-footer .nav-link:hover{
+  opacity: 0.9;
+  background-color: var(--theme-primary-light) !important;
+}
+.modal-footer #PlantTabs {
+  margin-top: 0;
+}
+
+.modal-footer .fas {
+  vertical-align: bottom;
+  margin-left: 10px;
+  font-weight: 900;
+  background: var(--theme-primary-dark);
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: .25em .25em;
+  color: #000;
+  border: 0;
+  border-radius: .25rem;
+  opacity: 0.9;
+}
+.modal-footer .fas:hover {
+  background: var(--theme-primary-light);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.plant-modal-body{
+  color: var(--theme-white);
+  background: var(--theme-blackest);
+  padding: 20px 40px 0;
+  min-height: 540px;
+  height:540px;
+  max-height: 540px;
+}
+.plant-modal-body #PlantTabs{
+  justify-content: center;
+  border-bottom: 1px solid var(--theme-primary-dark);
+  opacity: 0.80;
+  padding-bottom: 5px;
+}
+
+.plant-modal-body .tab-content {
+  height: 340px;
+  padding-top: 10px;
+  overflow-x: scroll;
+}
+
+.plant-modal-body .tab-content .image-container{
+ text-align: center;
+}
+
+.plant-modal-body .tab-content img{
+  width: 60%;
+  border: 1px solid var(--theme-dark-gray);
+  padding: 10px;
+}
+
+.plant-modal-body .content {
+  min-height: 100px;
+  height: 40px;
+  max-height: 40px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.plant-modal-body .content p {
+  font-size: 16px !important;
+}
+
+.plant-modal-body .content > p:last-child{
+  margin-bottom: 0;
+}
+
+
+#PlantTabs .nav-tabs{
+  border-bottom: 1px solid var(--theme-primary-dark);
+}
+#PlantTabs .nav-link{
+  color: var(--theme-primary-light);
+  font-size: 14px;
+}
+#PlantTabs .nav-link:hover{
+  font-weight: 900;
+}
+#PlantTabs .nav-link.active{
+  color: var(--theme-whitest);
+  background: var(--theme-primary-dark);
+  border: 1px solid var(--theme-primary-dark);
+}

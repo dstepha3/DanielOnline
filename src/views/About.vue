@@ -10,6 +10,7 @@
                     <nav class="jump-section">
                         <p @click="scrollToElement($refs.skills)">Skills</p>
                         <p @click="scrollToElement($refs.education)">Education</p>
+                        <p @click="scrollToElement($refs.experience)">Experience</p>
                         <p><span @click="downloadResume">Download Resume</span></p>
                     </nav>
                 </div>
@@ -129,7 +130,37 @@
                                     <p class="GPA">3.600</p>
                                 </div> 
                             </div>
+                        <a ref="experience"></a> <!-- ref placed her so renders properly -->
                     </div>
+                    <div class="row experience">
+                        <div class="heading">
+                            <i style="margin-bottom: 20px" class="fa fa-certificate"></i>
+                            <h2>Experience</h2>
+                        </div>
+                        <div class="jobs-container">
+                            <div class="job">
+                                <h5>OuterBox Solutions</h5>
+                                <p>WORK</p>
+                            </div>
+                            <div class="job">
+                                <h5>MEOC</h5>
+                                <p>WORK</p>
+                            </div>
+                            <div class="job">
+                                <h5>Amherst Meadows</h5>
+                                <p>WORK</p>
+                            </div>
+                            <div class="job">
+                                <h5>Brewster Parke</h5>
+                                <p>WORK</p>
+                            </div>
+                            <div class="job">
+                                <h5>Hospitality House</h5>
+                                <p>WORK</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -275,6 +306,10 @@ export default {
     flex-basis: 33%;
     max-height: 97%;
     text-align: center;
+  }
+
+  #about-body .content h5 {
+    color: var(--theme-primary-dark);
   }
 
   #about-body .content h6 {

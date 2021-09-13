@@ -89,14 +89,14 @@
 </template>
 
 <script>
-import bitchboy_modal from "@/components/Modals/BitchBoy-modal.vue";
-import paradise_modal from "@/components/Modals/Paradise-modal.vue";
-import highway_of_love_modal from "@/components/Modals/HighwayOfLove-modal.vue";
-import book_of_daniel_modal from "@/components/Modals/BookOfDaniel-modal.vue";
-import book_of_life_modal from "@/components/Modals/BookOfLife-modal.vue";
-import love_me_all_night_modal from "@/components/Modals/LoveMeAllNight-modal.vue";
-import twentyfour_modal from "@/components/Modals/twentyfour-modal.vue";
-import no_love_left_modal from "@/components/Modals/NoLoveLeft-modal.vue";
+import bitchboy_modal from "@/components/Modals/Music/BitchBoy-modal.vue";
+import paradise_modal from "@/components/Modals/Music/Paradise-modal.vue";
+import highway_of_love_modal from "@/components/Modals/Music/HighwayOfLove-modal.vue";
+import book_of_daniel_modal from "@/components/Modals/Music/BookOfDaniel-modal.vue";
+import book_of_life_modal from "@/components/Modals/Music/BookOfLife-modal.vue";
+import love_me_all_night_modal from "@/components/Modals/Music/LoveMeAllNight-modal.vue";
+import twentyfour_modal from "@/components/Modals/Music/twentyfour-modal.vue";
+import no_love_left_modal from "@/components/Modals/Music/NoLoveLeft-modal.vue";
 
 export default {
     name: "album_row",
