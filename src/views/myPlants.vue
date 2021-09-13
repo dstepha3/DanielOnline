@@ -144,12 +144,12 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <!-- <a class="nav-link disabled" href="#"><div class="plant card disabled">
+                        <a data-bs-toggle="modal" data-bs-target="#miscModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-title">Untitled</h5>
+                                <h5 class="card-title">Miscellaneous</h5>
                             </div>
-                        </div></a> -->
+                        </div></a>
                     </div>
                 </div>  
 
@@ -181,6 +181,11 @@
                     </div>
                 </div>  
             -->
+            <div class="row cta">
+                <h3>Call Out Section</h3>
+                <p>Did you know... blah blah blah..</p>
+                <a href="#" class="cta-btn">Click Me</a>
+            </div>
 
             </div>
         </div>
@@ -201,6 +206,7 @@
     <ficusModal></ficusModal>
     <marantaModal></marantaModal>
     <calatheaModal></calatheaModal>
+    <miscModal></miscModal>
 </template>
 
 <script lang="js">
@@ -220,6 +226,7 @@ import aglaModal from "@/components/Modals/Plants/Aglaonema-modal.vue";
 import ficusModal from "@/components/Modals/Plants/Ficus-modal.vue";
 import marantaModal from "@/components/Modals/Plants/Maranta-modal.vue";
 import calatheaModal from "@/components/Modals/Plants/Calathea-modal.vue";
+import miscModal from "@/components/Modals/Plants/Misc-modal.vue";
 
 export default {
     name: 'myPlants',
@@ -239,7 +246,8 @@ export default {
         aglaModal,
         ficusModal,
         marantaModal,
-        calatheaModal
+        calatheaModal,
+        miscModal
     },
     methods: {
         myFunction() {
@@ -395,6 +403,39 @@ export default {
     opacity: 0.75;
 }
 
+.row.cta{
+    background: rgba(175, 0, 0, 0.15);
+    margin: 0 10% !important;
+    color: var(--theme-white);
+    justify-content: center;
+    padding: 40px;
+    border: 1px solid var(--theme-primary-dark);
+    flex-direction: unset !important;
+}
+
+.row.cta > p:last-child{
+    margin-bottom: 0;
+}
+
+.cta .cta-btn {
+    margin-top: 20px;
+    margin-bottom: 0;
+    background: var(--theme-blackest);
+    color: var(--theme-white) !important;
+    border: 1px solid var(--theme-primary-dark);
+    padding: 10px 30px;
+    max-width: 200px !important;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-weight: bolder;
+    transition: 0.2s;
+}
+.cta .cta-btn:hover {
+    background: #000000;
+    color: var(--theme-whitest) !important;
+    border: 1px solid var(--theme-primary-light);
+    opacity: 1;
+}
 
 
 

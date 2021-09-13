@@ -22,6 +22,9 @@
                 <button class="nav-link" id="blackberry-tab" data-bs-toggle="tab" data-bs-target="#blackberry" type="button" role="tab" aria-controls="blackberry" aria-selected="true">Blackberry</button>
             </li>
             <li class="nav-item" role="presentation">
+                <button class="nav-link" id="green-pepper-tab" data-bs-toggle="tab" data-bs-target="#green-pepper" type="button" role="tab" aria-controls="green-pepper" aria-selected="true">Green Pepper</button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="mango-tab" data-bs-toggle="tab" data-bs-target="#mango" type="button" role="tab" aria-controls="mango" aria-selected="true">Mango</button>
             </li>
             <li class="nav-item" role="presentation">
@@ -33,7 +36,7 @@
         </ul>
         <div class="tab-content" id="TabContent">
             <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
-                <div class="image-container" style="margin-top: 5px">
+                <div class="image-container" style="margin-top: -5px">
                     <img height="287" src="@/assets/images/plants/garden-cropped.jpeg">
                 </div>
             </div>
@@ -55,6 +58,9 @@
             <div class="tab-pane fade" id="mango" role="tabpanel" aria-labelledby="mango-tab">
                 Mango
             </div>
+            <div class="tab-pane fade" id="green-pepper" role="tabpanel" aria-labelledby="green-pepper-tab">
+                Green Pepper
+            </div>
         </div>
 
       </div>
@@ -70,11 +76,11 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
             </li>
-            <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
-                <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
+            <li v-if="produceAvailable" class="nav-item" role="presentation">
+                <button class="nav-link active" @click="goToRequest()" id="produce-tab" type="button" role="tab" aria-controls="produce" aria-selected="false">REQUEST PRODUCE</button>
             </li>
             <li v-else class="nav-item" role="presentation">
-                <button class="nav-link disabled" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">CUTTINGS NOT AVAILABLE</button>
+                <button class="nav-link disabled" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="produce" aria-selected="false">PRODUCE NOT AVAILABLE</button>
             </li>
         </ul>
       </div>
@@ -90,7 +96,7 @@ export default {
     name: "palm-modal",
     data: function () {
         return {
-        cuttingsAvailable: false
+        produceAvailable: false
         }
     },
     methods: {
