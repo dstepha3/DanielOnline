@@ -264,6 +264,10 @@ button.btn-close{
   font-weight: bold;
   opacity: 0.75;
 }
+.plant .modal-footer .nav-item .nav-link.disabled{
+  color: var(--theme-dark-gray) !important;
+  border: 1px solid var(--theme-black) !important;
+}
 .plant .modal-footer .nav-link:hover{
   opacity: 0.9;
   background-color: var(--theme-primary-light) !important;

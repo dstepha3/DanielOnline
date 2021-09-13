@@ -25,7 +25,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#palmsModal"><div class="plant card">
                             <img src="@/assets/images/plants/IMG_3917.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Palms</h5>
@@ -33,7 +33,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#snakeModal"><div class="plant card">
                             <img src="@/assets/images/plants/sansevieria.jpg" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Sanseveria</h5>
@@ -44,7 +44,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#succulentsModal"><div class="plant card">
                             <img src="@/assets/images/plants/succulents-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">Succulents</h5>
@@ -52,7 +52,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#philoModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">PHILODENDERON</h5>
@@ -60,7 +60,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#zzModal"><div class="plant card">
                             <img src="@/assets/images/plants/zz-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">ZZ</h5>
@@ -71,7 +71,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#gardenModal"><div class="plant card">
                             <img src="@/assets/images/plants/garden-cropped.jpeg" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">garden</h5>
@@ -79,7 +79,7 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#scindapsusModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
                                 <h5 class="card-title">scindapsus</h5>
@@ -87,10 +87,10 @@
                         </div></a>
                     </div>
                     <div class="col">
-                        <a href="#"><div class="plant card">
+                        <a data-bs-toggle="modal" data-bs-target="#dracaenaModal"><div class="plant card">
                             <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
                             <div class="card-body">
-                                <h5 class="card-title">Dracaena</h5>
+                                <h5 class="card-title">dracaena</h5>
                             </div>
                         </div></a>
                     </div>
@@ -185,19 +185,43 @@
     <FooterLarge></FooterLarge>
 
     <epipremnumModal></epipremnumModal>
+    <palmsModal></palmsModal>
+    <snakeModal></snakeModal>
+    <succModal></succModal>
+    <philoModal></philoModal>
+    <zzModal></zzModal>
+    <myGardenModal></myGardenModal>
+    <scindapsusModal></scindapsusModal>
+    <dracaenaModal></dracaenaModal>
 </template>
 
 <script lang="js">
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import epipremnumModal from "@/components/Modals/Plants/Epipremnum-modal.vue";
+import palmsModal from "@/components/Modals/Plants/Palms-modal.vue";
+import snakeModal from "@/components/Modals/Plants/Sanseveria-modal.vue";
+import succModal from "@/components/Modals/Plants/Succulents-modal.vue";
+import philoModal from "@/components/Modals/Plants/Philo-modal.vue";
+import zzModal from "@/components/Modals/Plants/ZZ-modal.vue";
+import myGardenModal from "@/components/Modals/Plants/myGarden-modal.vue";
+import scindapsusModal from "@/components/Modals/Plants/Scindapsus-modal.vue";
+import dracaenaModal from "@/components/Modals/Plants/Dracaena-modal.vue";
 
 export default {
     name: 'myPlants',
     components: {
         NavBar,
         FooterLarge,
-        epipremnumModal
+        epipremnumModal,
+        palmsModal,
+        snakeModal,
+        succModal,
+        philoModal,
+        zzModal,
+        myGardenModal,
+        scindapsusModal,
+        dracaenaModal
     },
     methods: {
         myFunction() {
