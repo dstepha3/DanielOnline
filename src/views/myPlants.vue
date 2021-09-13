@@ -14,6 +14,9 @@
             </div>
      
             <div id="plant-container">
+                <div class="row" id="no-results-found">
+                    <h5>No Results Found</h5>
+                </div>
                 <div class="row">
                     <div class="col">
                         <a data-bs-toggle="modal" data-bs-target="#epipremnumModal"><div class="plant card">
@@ -241,12 +244,15 @@ export default {
     methods: {
         myFunction() {
             console.log("start.");
-            var input, filter, cards, cardContainer, title, i, rows, j ;
+            var input, filter, cards, cardContainer, title, i, rows, j;
+            var no_results_message, counter;
+            counter = 0;
             input = document.getElementById("plantSearch");
             filter = input.value.toUpperCase();
             cardContainer = document.getElementById("plant-container");
             cards = cardContainer.getElementsByClassName("card");
             rows = cardContainer.getElementsByClassName("row");
+            no_results_message = document.getElementById("no-results-found");
             for (i = 0; i < cards.length; i++) {
                 title = cards[i].querySelector(".card-body h5.card-title");
                 if (title.innerText.toUpperCase().indexOf(filter) > -1){
@@ -254,16 +260,23 @@ export default {
                     cardContainer.style.marginTop = "3rem";
                     cards[i].style.display = "block ruby";
                     cards[i].style.margin = "0 0 4rem 0";
+                    counter++;
                     for (j = 0; j < rows.length; j++) {
                         rows[j].style.flexDirection = "column";
                         rows[j].style.margin = "0 50% 0 0";
                     }
                 } else {
                     cards[i].style.display = "none";  
+                    console.log(i);
+
+                    if ( counter == 0){
+                        no_results_message.style.display = "block";
+                    } else {
+                        no_results_message.style.display = "none";
+                    }
                 }
 
                 if (input.value == ""){
-                    console.log("its empty")
                     cardContainer.style.marginTop = "3rem";
                     cards[i].style.display = "flex";
                     cards[i].style.margin = "0";
@@ -303,6 +316,7 @@ export default {
 
 .form-group {
     display: flex;
+    margin: 0 15%;
 }
 .fa-search{
     position: relative;
@@ -310,6 +324,12 @@ export default {
     margin-left: 30px;
     padding-right: 30px;
 
+}
+
+#no-results-found{
+    display: none;
+    width: 100% !important;
+    margin: 100px auto 0 !important;
 }
 
 
