@@ -21,12 +21,12 @@
                 </ul>
             </div>
      
-            <div id="plant-container">
+            <div id="plant-container" v-if=" !loadingPlants ">
                 <div class="row">
-                    <div class="col-sm-6 col-md-4 my-4" v-for="plant in 18" :key="plant">
+                    <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
                         <a data-bs-toggle="modal" data-bs-target="#">
                             <div class="plant card">
-                                <img src=" {{ plant.src }} " class="card-img-top" alt="img">
+                                <img :src="plant.img_src" class="card-img-top" alt="img">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ plant.name }}</h5>
                                 </div>
@@ -117,6 +117,7 @@ export default {
     data() {
         return {
             plants: [],
+            isLoadingPlants: false,
         };
     },
     components: {
@@ -192,14 +193,16 @@ export default {
             axios.get(path)
                 .then((res) => {
                     this.plants = res.data;
-                    console.log(this.plants);
+                    this.isLoadingPlants = false;
                 })
                 .catch((error) => {
                     console.error(error);
+                    this.isLoadingPlants = true;
                 })
         }
     },
     created() {
+        this.isLoadingPlants = true;
         this.getMyPlants();
     },
 }

@@ -1,26 +1,28 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+#img_src's must be direct links for some reason,
+#chose imgur as image host
 Plants = [
     {
         'name': 'Pothos',
-        'img_src': '@/assets/images/plants/pothos1.jpeg',
-    },
+        'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
+    },  
     {
         'name': 'Sanseveria',
-        'img_src': '@/assets/images/plants/sansevieria.jpg',
+        'img_src': 'https://i.imgur.com/OcyBTM4.jpg', 
     },
     {
         'name': 'Pothos',
-        'img_src': '@/assets/images/plants/pothos1.jpeg',
-    },
+        'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
+    },  
     {
         'name': 'Sanseveria',
-        'img_src': '@/assets/images/plants/sansevieria.jpg',
+        'img_src': 'https://i.imgur.com/OcyBTM4.jpg', 
     },
     {
         'name': 'Pothos',
-        'img_src': '@/assets/images/plants/pothos1.jpeg',
+        'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
     }
 ]
 
