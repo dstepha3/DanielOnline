@@ -70,12 +70,7 @@
             </div>
 
             <div id="container" v-if=" !isLoadingPlants && loadingError">
-                <div id="render-spiner-container">
-                    <div class="spinner-border" id="render-spinner" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p id="loadingtext">Gathering my Plants</p>
-                </div>
+                    <p>Unable to Load Plants</p>
             </div>
 
         </div>
