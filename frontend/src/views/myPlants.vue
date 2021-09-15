@@ -60,7 +60,16 @@
                 </div>
             </transition>
 
-            <div id="container" v-if=" isLoadingPlants ">
+            <div id="container" v-if=" isLoadingPlants && !loadingError">
+                <div id="render-spiner-container">
+                    <div class="spinner-border" id="render-spinner" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p id="loadingtext">Gathering my Plants</p>
+                </div>
+            </div>
+
+            <div id="container" v-if=" !isLoadingPlants && loadingError">
                 <div id="render-spiner-container">
                     <div class="spinner-border" id="render-spinner" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -129,6 +138,7 @@ export default {
         return {
             plants: [],
             isLoadingPlants: false,
+            loadingError: false,
         };
     },
     components: {
@@ -208,7 +218,8 @@ export default {
                 })
                 .catch((error) => {
                     console.error(error);
-                    this.isLoadingPlants = true;
+                    this.isLoadingPlants = false;
+                    this.loadingErorr = true;
                 })
         }
     },
