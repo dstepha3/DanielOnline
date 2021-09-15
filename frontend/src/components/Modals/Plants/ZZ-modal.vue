@@ -25,7 +25,7 @@
         <div class="tab-content" id="TabContent">
             <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
                 <div class="image-container" style="margin-top: 5px">
-                    <img height="287" src="@/assets/images/plants/zz-cropped.jpeg">
+                    <img height="250" src="@/assets/images/plants/zz-cropped.jpeg">
                 </div>
             </div>
             <div class="tab-pane fade" id="gem" role="tabpanel" aria-labelledby="gem-tab">

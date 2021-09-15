@@ -37,7 +37,7 @@
         <div class="tab-content" id="TabContent">
             <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
                 <div class="image-container" style="margin-top: -5px">
-                    <img height="287" src="@/assets/images/plants/garden-cropped.jpeg">
+                    <img height="250" src="@/assets/images/plants/garden-cropped.jpeg">
                 </div>
             </div>
             <div class="tab-pane fade" id="banana-pepper" role="tabpanel" aria-labelledby="banana-pepper-tab">
