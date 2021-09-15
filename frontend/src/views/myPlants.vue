@@ -1,79 +1,81 @@
 <template lang="html">
+
     <NavBar></NavBar>
+
     <div id="my-plants-body">
+
+        <!-- Top Content -->
         <h1>My Plants</h1>
         <p class="top-content">During the pandemic...</p>
+
         <div class="plant-search-container">
-            <div class="form-group">
-                <i class="fas fa-search fa-lg"></i>
-                <input class="form-control" id="plantSearch" @keyup="myFunction()" type="text" placeholder="Looking for Something Specific?">
-            </div>
-            <div class="category row">
-                <ul class="nav nav-pills" id="IndoorTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                            <router-link class="nav-link active" to="/">INDOOR</router-link>
-                    </li>
-                </ul>
-                <ul class="nav nav-pills" id="OutdoorTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                            <router-link class="nav-link active" to="/">OUTDOOR</router-link>
-                    </li>
-                </ul>
-            </div>
-     
-            <div id="plant-container" v-if=" !loadingPlants ">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
-                        <a data-bs-toggle="modal" :data-bs-target="plant.modal_id">
-                            <div class="plant card">
-                                <img :src="plant.img_src" class="card-img-top" alt="img">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ plant.name }}</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+
+            <div v-if=" !isLoadingPlants">
+                <!-- Search Bar -->
+                <div class="form-group">
+                    <i class="fas fa-search fa-lg"></i>
+                    <input class="form-control" id="plantSearch" @keyup="myFunction()" type="text" placeholder="Looking for Something Specific?">
                 </div>
 
-            <!-- ROW TEMPLATE 
-                <div class="row">
-                    <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Untitled</h5>
-                            </div>
-                        </div></a>
+            
+                <!-- Category Selectors -->
+                <div class="category row">
+                    <ul class="nav nav-pills" id="IndoorTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                                <router-link class="nav-link active" to="/">INDOOR</router-link>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-pills" id="OutdoorTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                                <router-link class="nav-link active" to="/">OUTDOOR</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+     
+            <!-- Plant Cards -->
+            <transition name="fade">
+                <div id="plant-container" v-if=" !isLoadingPlants ">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
+                            <a data-bs-toggle="modal" :data-bs-target="plant.modal_id">
+                                <div class="plant card">
+                                    <img :src="plant.img_src" class="card-img-top" alt="img">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ plant.name }}</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Untitled</h5>
-                            </div>
-                        </div></a>
+                </div>
+            </transition>
+
+            <div id="container" v-if=" isLoadingPlants ">
+                <div id="render-spiner-container">
+                    <div class="spinner-border" id="render-spinner" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
-                    <div class="col">
-                        <a class="nav-link disabled" href="#"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Untitled</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>  
-            -->
-            <div class="row cta">
-                <h3>Call Out Section</h3>
-                <p>Did you know... blah blah blah..</p>
-                <a href="#" class="cta-btn">Click Me</a>
+                    <p id="loadingtext">Gathering my Plants</p>
+                </div>
             </div>
 
-            </div>
         </div>
+
+        <!-- CTA -->
+        <div class="row cta">
+            <h3>Call Out Section</h3>
+            <p>Did you know... blah blah blah..</p>
+            <a href="#" class="cta-btn">Click Me</a>
+        </div>
+
+        
     </div>
+
     <FooterLarge></FooterLarge>
 
+    <!-------------- Modals --------------->
     <epipremnumModal></epipremnumModal>
     <palmsModal></palmsModal>
     <snakeModal></snakeModal>
@@ -89,6 +91,7 @@
     <marantaModal></marantaModal>
     <calatheaModal></calatheaModal>
     <miscModal></miscModal>
+    <!-------------------------------------->
 </template>
 
 <script lang="js">
@@ -193,7 +196,7 @@ export default {
             axios.get(path)
                 .then((res) => {
                     this.plants = res.data;
-                    this.isLoadingPlants = false;
+                    this.isLoadingPlants = true;
                 })
                 .catch((error) => {
                     console.error(error);
@@ -356,6 +359,53 @@ export default {
     flex-basis: 35%;
     display: inline;
 }
+
+#render-spiner-container{
+    height: 100%;
+    width: 100%;
+    background: none;
+    position: relative;
+}
+#render-spinner{
+    opacity: 0.4;
+}
+
+#loadingtext{
+    color: var(--theme-whitest);
+    margin-top: 20px;
+    font-size: 10px !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation-duration: 2s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: -11px;
+}
+#loadingtext:hover{
+    cursor: default;
+}
+
+@keyframes grow {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  
+    50%{
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100%{
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  }
+
+
+
 
 
 </style>

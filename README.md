@@ -17,7 +17,7 @@ npm run serve
 ## Project Set Up - Backend
 ```
 cd backend
-source env/bin/activate
+source flask/bin/activate
 python app.py
 ```
 > To stop App 'CTRL-C'
