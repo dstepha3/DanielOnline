@@ -10,6 +10,8 @@ import requestCuttings from "@/views/RequestCuttings.vue";
 import Music from "@/views/Music.vue";
 import ContactThankYou from "@/views/ContactThankYou.vue";
 import unreleased from "@/views/Unreleased.vue";
+import NotFound from "@/views/errors/NotFound-404.vue";
+
 
 import ping from '@/views/ping.vue';
 
@@ -100,6 +102,14 @@ const routes = [
         component: ping,
         meta: {
             title: 'Ping!'
+        }
+    },
+    { 
+        path: '/:pathMatch(.*)*', 
+        name: 'not-found', 
+        component: NotFound,
+        meta: {
+            title: '404 | PAGE NOT FOUND - Daniel Online!'
         }
     }
 ];
