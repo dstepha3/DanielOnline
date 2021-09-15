@@ -1,19 +1,35 @@
+
 # Daniel Online
 
-## Project setup
-```
-npm install
-```
+> Using a Split Terminal
 
-### Compiles and *Hot-Reloads* for Development
+&nbsp;
+
+## Project Set Up - Frontend
 ```
+cd frontend
 npm run serve
 ```
+> To end NPM 'CTRL+C'
 
-### Live Site
+&nbsp;
+
+## Project Set Up - Backend
+```
+cd backend
+source env/bin/activate
+python app.py
+```
+> To stop App 'CTRL-C'
+> To end ENV 'deactivate'
+
+&nbsp;
+
+## Live Site
 ```
 Pushes to this repository are automatically built live using the Cloudflare content delivery service.
 ```
 >  Live Site can be seen [Here.](https://danielonline.pages.dev/)
 
 
+&nbsp;
