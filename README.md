@@ -5,7 +5,7 @@
 
 &nbsp;
 
-## Frontend: Project Set Up
+## Project Set Up - Frontend
 ```
 cd frontend
 npm run serve
@@ -14,7 +14,7 @@ npm run serve
 
 &nbsp;
 
-## Backend: Project Set Up
+## Project Set Up - Backend
 ```
 cd backend
 source bin/env/activate
