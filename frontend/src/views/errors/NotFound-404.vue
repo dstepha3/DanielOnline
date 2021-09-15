@@ -2,7 +2,7 @@
     <div id="body">
         <img class="logo" src="@/assets/images/star-logo.png" width="105">
         <h1>404 PAGE NOT FOUND</h1>
-        <p>SORRY, WE CAN'T FIND THAT PAGE BUT THERE'S OTHER ONES TO LOOK AT</p>
+        <p>SORRY, WE CAN'T FIND THAT PAGE BUT THERE ARE OTHERS TO LOOK AT</p>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
             
 
