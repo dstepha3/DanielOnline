@@ -7,22 +7,27 @@ Plants = [
     {
         'name': 'Pothos',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
+        'modal_id': '#epipremnumModal',
     },  
     {
         'name': 'Sanseveria',
         'img_src': 'https://i.imgur.com/OcyBTM4.jpg', 
+        'modal_id': '#snakeModal',
     },
     {
         'name': 'Pothos',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
+        'modal_id': '#epipremnumModal',
     },  
     {
         'name': 'Sanseveria',
         'img_src': 'https://i.imgur.com/OcyBTM4.jpg', 
+        'modal_id': '#snakeModal',
     },
     {
         'name': 'Pothos',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
+        'modal_id': '#snakeModal',
     }
 ]
 

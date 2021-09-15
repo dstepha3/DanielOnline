@@ -24,7 +24,7 @@
             <div id="plant-container" v-if=" !loadingPlants ">
                 <div class="row">
                     <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
-                        <a data-bs-toggle="modal" data-bs-target="#">
+                        <a data-bs-toggle="modal" :data-bs-target="plant.modal_id">
                             <div class="plant card">
                                 <img :src="plant.img_src" class="card-img-top" alt="img">
                                 <div class="card-body">
