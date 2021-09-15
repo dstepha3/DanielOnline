@@ -9,8 +9,16 @@
                 <input class="form-control" id="plantSearch" @keyup="myFunction()" type="text" placeholder="Looking for Something Specific?">
             </div>
             <div class="category row">
-                <a class="btn btn-danger">Indoor</a>
-                <a class="btn btn-danger">Outdoor</a>
+                <ul class="nav nav-pills" id="IndoorTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                            <router-link class="nav-link active" to="/">INDOOR</router-link>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills" id="OutdoorTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                            <router-link class="nav-link active" to="/">OUTDOOR</router-link>
+                    </li>
+                </ul>
             </div>
      
             <div id="plant-container">
@@ -371,6 +379,7 @@ export default {
     border: 1px solid var(--theme-primary-dark);
     cursor: pointer;
     opacity: 0.6;
+    transition: 0.3s;
 }
 .card-img-top{
     max-height: 200px;
@@ -387,20 +396,8 @@ export default {
 }
 
 .category{
-    margin-top: 40px;
+    margin-top: 60px;
     justify-content: space-evenly;
-}
-
-.category .btn {
-    flex-basis: 30%;
-}
-
-.btn-danger{
-    background-color: var(--theme-primary-dark);
-}
-
-.btn-danger:hover{
-    opacity: 0.75;
 }
 
 .row.cta{
@@ -437,6 +434,31 @@ export default {
     opacity: 1;
 }
 
+.nav-link{
+  font-size: 20px !important;
+  font-weight: bold;
+  opacity: 0.75;
+  padding-right: 60px;
+  padding-left: 60px;
+  background: #0d0d0d !important;
+  border: 1px solid var(--theme-primary-dark);
+  opacity: 0.5 !important;
+  transition: 0.5s;
+}
+.nav-link:hover{
+    background: var(--theme-primary-dark) !important;
+    opacity: 1 !important;
+}
+
+#IndoorTab{
+    flex-basis: 35%;
+    display: inline;
+}
+
+#OutdoorTab{
+    flex-basis: 35%;
+    display: inline;
+}
 
 
 </style>
