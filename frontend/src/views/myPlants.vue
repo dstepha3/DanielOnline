@@ -22,144 +22,18 @@
             </div>
      
             <div id="plant-container">
-                <div class="row" id="no-results-found">
-                    <h5>No Results Found</h5>
-                </div>
                 <div class="row">
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#epipremnumModal"><div class="plant card">
-                            <img src="@/assets/images/plants/pothos1.jpeg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">epipremnum</h5>
-                                <p class="card-text">pothos</p>
+                    <div class="col-sm-6 col-md-4 my-4" v-for="plant in 18" :key="plant">
+                        <a data-bs-toggle="modal" data-bs-target="#">
+                            <div class="plant card">
+                                <img src=" {{ plant.src }} " class="card-img-top" alt="img">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ plant.name }}</h5>
+                                </div>
                             </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#palmsModal"><div class="plant card">
-                            <img src="@/assets/images/plants/IMG_3917.jpeg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Palms</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#snakeModal"><div class="plant card">
-                            <img src="@/assets/images/plants/sansevieria.jpg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Sanseveria</h5>
-                            </div>
-                        </div></a>
+                        </a>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#succulentsModal"><div class="plant card">
-                            <img src="@/assets/images/plants/succulents-cropped.jpeg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Succulents</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#philoModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">PHILODENDERON</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#zzModal"><div class="plant card">
-                            <img src="@/assets/images/plants/zz-cropped.jpeg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">ZZ</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#gardenModal"><div class="plant card">
-                            <img src="@/assets/images/plants/garden-cropped.jpeg" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">garden</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#scindapsusModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">scindapsus</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#dracaenaModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">dracaena</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#rhaphModal"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">rhaphidophora</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#aglaModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">aglaonema</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#ficusModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">ficus</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>  
-
-                <div class="row">
-                    <div class="col">
-                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#marantaModal"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Maranta</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#calatheaModal"><div class="plant card disabled">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Calathea</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                    <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#miscModal"><div class="plant card">
-                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
-                            <div class="card-body">
-                                <h5 class="card-title">Miscellaneous</h5>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>  
 
             <!-- ROW TEMPLATE 
                 <div class="row">
@@ -236,8 +110,15 @@ import marantaModal from "@/components/Modals/Plants/Maranta-modal.vue";
 import calatheaModal from "@/components/Modals/Plants/Calathea-modal.vue";
 import miscModal from "@/components/Modals/Plants/Misc-modal.vue";
 
+import axios from 'axios';
+
 export default {
     name: 'myPlants',
+    data() {
+        return {
+            plants: [],
+        };
+    },
     components: {
         NavBar,
         FooterLarge,
@@ -305,9 +186,22 @@ export default {
                 }
                 
             }
-
+        },
+        getMyPlants() {
+            const path = 'http://localhost:5000/api/plants';
+            axios.get(path)
+                .then((res) => {
+                    this.plants = res.data;
+                    console.log(this.plants);
+                })
+                .catch((error) => {
+                    console.error(error);
+                })
         }
-    }
+    },
+    created() {
+        this.getMyPlants();
+    },
 }
 
 </script>
@@ -462,3 +356,146 @@ export default {
 
 
 </style>
+
+<!--  OLD to be removed later when data is extracted
+
+<div class="row" id="no-results-found">
+                    <h5>No Results Found</h5>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#epipremnumModal"><div class="plant card">
+                            <img src="@/assets/images/plants/pothos1.jpeg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">epipremnum</h5>
+                                <p class="card-text">pothos</p>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#palmsModal"><div class="plant card">
+                            <img src="@/assets/images/plants/IMG_3917.jpeg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Palms</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#snakeModal"><div class="plant card">
+                            <img src="@/assets/images/plants/sansevieria.jpg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Sanseveria</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#succulentsModal"><div class="plant card">
+                            <img src="@/assets/images/plants/succulents-cropped.jpeg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Succulents</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#philoModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">PHILODENDERON</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#zzModal"><div class="plant card">
+                            <img src="@/assets/images/plants/zz-cropped.jpeg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">ZZ</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#gardenModal"><div class="plant card">
+                            <img src="@/assets/images/plants/garden-cropped.jpeg" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">garden</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#scindapsusModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">scindapsus</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#dracaenaModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">dracaena</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#rhaphModal"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">rhaphidophora</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#aglaModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">aglaonema</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#ficusModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">ficus</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>  
+
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#marantaModal"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Maranta</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#calatheaModal"><div class="plant card disabled">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Calathea</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col">
+                        <a data-bs-toggle="modal" data-bs-target="#miscModal"><div class="plant card">
+                            <img src="@/assets/images/plants/plant-placeholder2.png" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title">Miscellaneous</h5>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>  
+
+                -->
