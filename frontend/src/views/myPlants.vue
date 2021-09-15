@@ -36,7 +36,7 @@
      
             <!-- Plant Cards -->
             <transition name="fade">
-                <div id="plant-container" v-if=" !isLoadingPlants ">
+                <div id="plant-container" v-if=" !isLoadingPlants && !loadingError ">
                     <div class="row">
                         <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
                             <a v-if="plant.active" data-bs-toggle="modal" :data-bs-target="plant.modal_id">
@@ -181,8 +181,7 @@ export default {
                     }
                 } else {
                     cards[i].style.display = "none";  
-                    console.log(i);
-
+                    
                     if ( counter == 0){
                         no_results_message.style.display = "block";
                     } else {
@@ -312,40 +311,6 @@ export default {
 .category{
     margin-top: 60px;
     justify-content: space-evenly;
-}
-
-.row.cta{
-    background: rgba(175, 0, 0, 0.15);
-    margin: 0 10% !important;
-    color: var(--theme-white);
-    justify-content: center;
-    padding: 40px;
-    border: 1px solid var(--theme-primary-dark);
-    flex-direction: unset !important;
-}
-
-.row.cta > p:last-child{
-    margin-bottom: 0;
-}
-
-.cta .cta-btn {
-    margin-top: 20px;
-    margin-bottom: 0;
-    background: var(--theme-blackest);
-    color: var(--theme-white) !important;
-    border: 1px solid var(--theme-primary-dark);
-    padding: 10px 30px;
-    max-width: 200px !important;
-    text-transform: uppercase;
-    opacity: 0.7;
-    font-weight: bolder;
-    transition: 0.2s;
-}
-.cta .cta-btn:hover {
-    background: #000000;
-    color: var(--theme-whitest) !important;
-    border: 1px solid var(--theme-primary-light);
-    opacity: 1;
 }
 
 .nav-link{

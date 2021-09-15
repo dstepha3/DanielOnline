@@ -5,7 +5,7 @@
                 <h6>Site</h6>
                 <router-link class="nav-link disabled" to="/code">Code</router-link>
                 <router-link class="nav-link" to="/music">Music</router-link>
-                <router-link class="nav-link disabled" to="/plants">Plants</router-link>
+                <router-link class="nav-link" to="/plants">Plants</router-link>
                 <router-link class="nav-link" to="">&nbsp;</router-link>
             </div>
             <div class="col">

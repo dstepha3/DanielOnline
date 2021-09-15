@@ -11,7 +11,7 @@
                 <router-link class="nav-link disabled" to="/code">Code</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link disabled" to="/plants">Plants</router-link>
+                <router-link class="nav-link" to="/plants">Plants</router-link>
             </li>
             <li class="nav-item">
                 <router-link class="nav-link" to="/music">Music</router-link>
@@ -115,14 +115,16 @@ justify-content: center;
 
 #navbar .top-banner img {
     position: relative;
-    top: 20px;
+    top: 10px;
 }
 
-#navbar .top-banner a.router-link-exact-active {
+#navbar .top-banner a.router-link-exact-active,
+#navbar .top-banner a.router-link-active {
     border: none;
 }
 
-.dropdown-menu a.router-link-exact-active {
+.dropdown-menu a.router-link-exact-active,
+.dropdown-menu a.router-link-active  {
     background-color: #000000;
     border: none !important;
 }
