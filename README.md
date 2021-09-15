@@ -2,12 +2,16 @@
 
 > Using a Split Terminal
 
+
+
 ## Frontend: Project Set Up
 ```
 cd frontend
 npm run serve
 ```
 > To end NPM 'CTRL+C'
+
+
 
 ## Backend: Project Set Up
 ```
@@ -17,6 +21,8 @@ python app.py
 ```
 > To stop App 'CTRL-C'
 > To end ENV 'deactivate'
+
+
 
 ## Live Site
 ```
