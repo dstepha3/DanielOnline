@@ -2,7 +2,7 @@
     
     <NavBar></NavBar>
 
-    <div id="body">
+    <div id="body" class="fade-in">
         <!-- CTA -->
         <div class="row cta" style="margin-top: 4% !important; margin-bottom: 4% !important">
             <h3>Welcome to the main Plant Landing</h3>

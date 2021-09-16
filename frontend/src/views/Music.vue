@@ -1,6 +1,6 @@
 <template lang="html">
     <NavBar></NavBar>
-    <div id="music-body">
+    <div id="music-body" class="fade-in">
         <album_row></album_row>
         <h1 style="margin-bottom: 80px; padding: 0 40px 10px; border-bottom: 1px solid var(--theme-primary-dark);">Hear the Latest</h1>
         <div class="soundcloud-player">

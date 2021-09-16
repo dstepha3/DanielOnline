@@ -1,6 +1,11 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div id="app" v-if="show">
+      <router-view  v-slot="{ Component }">
+        <transition name="fade" appear>
+          <component :is="Component" />
+        </transition>
+      </router-view>
+
     </div>
 </template>
 
@@ -10,11 +15,35 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      show: false
+    }
+  },
+  mounted() {
+    this.show = true; // might need this.$nextTick
+  }
 }
 </script>
 
-<style scoped>
 
+<style scoped>
+#app {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 </style>
 

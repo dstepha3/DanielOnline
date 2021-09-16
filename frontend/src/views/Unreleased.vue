@@ -1,5 +1,5 @@
 <template lang="html">
-    <div id="body">
+    <div id="body" class="fade-in">
         <h1>This is the Unreleased Music Page</h1>
         <span class="coming-soon">content coming soon</span>
     </div>

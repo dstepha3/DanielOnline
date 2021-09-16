@@ -1,5 +1,5 @@
 <template lang="html">
-    <div id="body">
+    <div id="body" class="fade-in">
         <img class="logo" src="@/assets/images/star-logo.png" width="105">
         <h1>404 PAGE NOT FOUND</h1>
         <p>SORRY, WE CAN'T FIND THAT PAGE BUT THERE ARE OTHERS TO LOOK AT</p>

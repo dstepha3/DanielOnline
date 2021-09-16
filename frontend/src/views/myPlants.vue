@@ -2,11 +2,15 @@
 
     <NavBar></NavBar>
 
-    <div id="my-plants-body">
+    <div id="my-plants-body" class="fade-in">
 
         <!-- Top Content -->
-        <h1>My Plants</h1>
-        <p class="top-content">During the pandemic...</p>
+        <div id="top-content-container">
+            <h1>My Plants</h1>
+            <p class="top-content">During the Coronavirus Pandemic, I decided to jump on the indoor plant bandwagon with the rest of the world. I never really had much experience with plants before and I had no idea if I even had a green thumb. My friend Shannon gave me my first plant - a Golden Pothos (<em>Epipremnum aureum</em>) and I began watching videos by <a href="https://planterina.com/">Amanda from Planterina</a> on <a href="https://www.youtube.com/c/Planterina">Youtube</a> to extend my knowledge into indoor gardening. Over the years I've grown my collection into the vast little jungle it is today. You can explore my collection below, learn how to care for plants and even request cuttings grown by me.<br/><br/>Check it out!</p>
+        </div>
+
+        <img class="banner-image" src="https://i.imgur.com/FXKK85o.jpg">
 
         <div class="plant-search-container">
 
@@ -77,9 +81,10 @@
 
         <!-- CTA -->
         <div class="row cta">
-            <h3>Call Out Section</h3>
-            <p>Did you know... blah blah blah..</p>
-            <a href="#" class="cta-btn">Click Me</a>
+            <h3>Did You Know?</h3>
+            <p>You can keep up with me and learn more about my plants?</p>
+            <p>Learn more and read up on everything me!</p>
+            <router-link to="/blog" class="cta-btn">Go To Blog</router-link>
         </div>
 
         
@@ -235,6 +240,23 @@ export default {
 .top-content {
     margin-top: 30px;
     color: var(--theme-white);
+    text-align: justify;
+}
+
+.top-content a {
+    color: var(--theme-primary-dark);
+    text-decoration: none;
+}
+.top-content a:hover {
+    text-decoration: underline;
+}
+
+.banner-image{
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 80px;
+    box-shadow: 0px 0px 80px 1px var(--theme-primary-dark);
+    border: 1px solid var(--theme-blackest);
 }
 
 .plant-search-container{
@@ -272,7 +294,8 @@ export default {
 }
 
 .plant.card:hover{
-        box-shadow: 0px 0px 15px 5px var(--theme-primary-light);
+        box-shadow: 0px 0px 20px 1px var(--theme-primary-light);
+        border: 1px solid var(--theme-blackest);
         opacity: 1;
 }
 
@@ -285,6 +308,7 @@ export default {
 
 .plant.card .card-img-top{
     max-height: 175px;
+    border-radius: 20px 20px 0 0;
 }
 
 .plant.card{
@@ -293,11 +317,13 @@ export default {
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
+    border-radius: 20px;
 }
 .card-img-top{
     max-height: 200px;
     object-fit: cover;
     border-bottom: 1px solid var(--theme-primary-dark);
+    border-radius: 20px 20px 0 0;
 }
 .card-title{
     text-transform: uppercase;
@@ -321,6 +347,7 @@ export default {
   padding-left: 60px;
   background: #0d0d0d !important;
   border: 1px solid var(--theme-primary-dark);
+  border-radius: 20px;
   opacity: 0.5 !important;
   transition: 0.5s;
 }

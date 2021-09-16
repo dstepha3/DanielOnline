@@ -1,6 +1,6 @@
 <template lang="html">
     <NavBar></NavBar>
-    <div id="about-body">
+    <div id="about-body" class="fade-in">
         <div class="container">
             <div class="row">
                 <div class="sidebar sticky col-sm-4">

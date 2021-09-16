@@ -1,6 +1,6 @@
 <template lang="html">
     <NavBar></NavBar>
-    <div id="contact-body">
+    <div id="contact-body" class="fade-in">
         <h1 class="mb-3">Contact Me</h1>
         <p class="mb-5">Fill out the form below and I will be in touch as soon as I can.</p>
             <div class="form-container align-center">
