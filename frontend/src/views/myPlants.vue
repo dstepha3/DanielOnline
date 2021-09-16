@@ -10,7 +10,7 @@
             <p class="top-content">During the Coronavirus Pandemic, I decided to jump on the indoor plant bandwagon with the rest of the world. I never really had much experience with plants before and I had no idea if I even had a green thumb. My friend Shannon gave me my first plant - a Golden Pothos (<em>Epipremnum aureum</em>) and I began watching videos by <a href="https://planterina.com/">Amanda from Planterina</a> on <a href="https://www.youtube.com/c/Planterina">Youtube</a> to extend my knowledge into indoor gardening. Over the years I've grown my collection into the vast little jungle it is today. You can explore my collection below, learn how to care for plants and even request cuttings grown by me.<br/><br/>Check it out!</p>
         </div>
 
-        <img class="banner-image" src="https://i.imgur.com/FXKK85o.jpg">
+        <div class="banner-image parallax"></div>
 
         <div class="plant-search-container">
 
@@ -254,10 +254,16 @@ export default {
 .banner-image{
     width: 100%;
     margin-top: 120px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
     box-shadow: 0px 0px 80px 1px var(--theme-primary-dark);
     border: 1px solid var(--theme-blackest);
+
+    /* Parallax */
+    background-image: url("https://i.imgur.com/FXKK85o.jpg");
+    min-height: 330px;
 }
+
+
 
 .plant-search-container{
     border-top: 1px solid var(--theme-primary-light);
