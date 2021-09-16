@@ -5,6 +5,7 @@ backend/venv/
 backend/*.exe
 backend/*.pyd
 backend/.env
+backend/flask
 
 # frontend files
 frontend/.DS_Store
