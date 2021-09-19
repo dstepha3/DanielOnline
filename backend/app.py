@@ -17,20 +17,20 @@ Plants = [
     {
         'name': 'Algaonema',
         'img_src': 'https://i.imgur.com/VYlR2xC.jpg', 
-        'modal_id': '#algaonemaModal',
+        'modal_id': '#aglaModal',
         'active': False,
     },
     {
-        'name': 'Dracena',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
-        'modal_id': '#dracenaModal',
+        'name': 'Dracaena',
+        'img_src': 'https://i.imgur.com/BAAcnBa.jpg', 
+        'modal_id': '#dracaenaModal',
         'active': False,
     },
     {
         'name': 'Epipremnum',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
         'modal_id': '#epipremnumModal',
-        'active': True,
+        'active': False,
     },  
     {
         'name': 'Ficus',
@@ -72,7 +72,7 @@ Plants = [
         'name': 'Sanseveria',
         'img_src': 'https://i.imgur.com/mFNFLKQ.jpg', 
         'modal_id': '#snakeModal',
-        'active': True,
+        'active': False,
     },
     {
         'name': 'Scindapsus',
@@ -89,14 +89,14 @@ Plants = [
     {
         'name': 'Syngonium',
         'img_src': 'https://i.imgur.com/3EIGCWD.jpg', 
-        'modal_id': '#',
+        'modal_id': '#syngoniumModal',
         'active': False,
     },
     {
         'name': 'ZZ',
         'img_src': 'https://i.imgur.com/Z1j8zPC.jpg', 
         'modal_id': '#zzModal',
-        'active': True,
+        'active': False,
     }
     
 ]

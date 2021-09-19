@@ -2,16 +2,16 @@
 
 <!-- Modal -->
 <div class="plant modal fade" id="philoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">Philodenderon</h3>
       </div>
       <div class="plant-modal-body">
-          <div class="content">
-            <p>Philodenderon's are neat</p>
-          </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultPhilo" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="birkin-tab" data-bs-toggle="tab" data-bs-target="#birkin" type="button" role="tab" aria-controls="birkin" aria-selected="false">Birkin</button>
             </li>
@@ -19,16 +19,25 @@
                 <button class="nav-link" id="brasil-tab" data-bs-toggle="tab" data-bs-target="#brasil" type="button" role="tab" aria-controls="brasil" aria-selected="true">Brasil</button>
             </li>
             <li class="nav-item" role="presentation">
+                <button class="nav-link" id="golden-goddess-tab" data-bs-toggle="tab" data-bs-target="#golden-goddess" type="button" role="tab" aria-controls="golden-goddess" aria-selected="true">Golden Goddess</button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="monstera-tab" data-bs-toggle="tab" data-bs-target="#monstera" type="button" role="tab" aria-controls="monstera" aria-selected="true">Monstera Deliciosa</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="moonlight-tab" data-bs-toggle="tab" data-bs-target="#moonlight" type="button" role="tab" aria-controls="moonlight" aria-selected="true">Moonlight</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="scandens-tab" data-bs-toggle="tab" data-bs-target="#scandens" type="button" role="tab" aria-controls="scandens" aria-selected="true">Scandens</button>
             </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
+            <div class="tab-pane fade show active" id="defaultPhilo" role="tabpanel" aria-labelledby="default-tab">
                 <div class="image-container" style="margin-top: 5px">
-                    <img height="287" src="@/assets/images/plants/plant-placeholder2.png">
+                    <img style="width: 35%" src="https://i.imgur.com/npnmyuM.jpg">
+                </div>
+                <div class="content">
+                  <p>Philodenderon's are neat</p>
                 </div>
             </div>
             <div class="tab-pane fade" id="birkin" role="tabpanel" aria-labelledby="birkin-tab">
@@ -43,6 +52,12 @@
             <div class="tab-pane fade" id="scandens" role="tabpanel" aria-labelledby="scandens-tab">
                 Scandens
             </div>
+            <div class="tab-pane fade" id="golden-goddess" role="tabpanel" aria-labelledby="golden-goddess-tab">
+                Golden Goddess
+            </div>
+            <div class="tab-pane fade" id="moonlight" role="tabpanel" aria-labelledby="moonlight-tab">
+                Moonlight
+            </div>
         </div>
 
       </div>
@@ -55,9 +70,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>

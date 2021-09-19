@@ -37,9 +37,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>

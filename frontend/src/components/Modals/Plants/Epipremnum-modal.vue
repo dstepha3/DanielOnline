@@ -2,16 +2,16 @@
 
 <!-- Modal -->
 <div class="plant modal fade" id="epipremnumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">Epipremnum</h3>
       </div>
       <div class="plant-modal-body">
-          <div class="content">
-            <p>The epipremnum is one of the greatest plants alive. They thrive not being cared for at all - in fact, the plant will more than quadrouple in size! Don't feed it, water it.. DON'T EVEN LOOK AT IT! You won't regret it, and the plant will definiately thank you! The plant is green, likes sun, but can live in the dark - Even surviving from basic overhead lighting!</p>
-          </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultPothos" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="cebublue-tab" data-bs-toggle="tab" data-bs-target="#cebu-blue" type="button" role="tab" aria-controls="cebu-blue" aria-selected="false">Cebu Blue</button>
             </li>
@@ -35,9 +35,12 @@
             </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
+            <div class="tab-pane fade show active" id="defaultPothos" role="tabpanel" aria-labelledby="default-tab">
                 <div class="image-container" style="margin-top: 12px">
-                    <img src="@/assets/images/plants/pothos1-cropped.jpeg">
+                    <img style="width: 35%" src="@/assets/images/plants/pothos1-cropped.jpeg">
+                </div>
+                <div class="content">
+                    <p>The epipremnum is one of the greatest plants alive. They thrive not being cared for at all - in fact, the plant will more than quadrouple in size! Don't feed it, water it.. DON'T EVEN LOOK AT IT! You won't regret it, and the plant will definiately thank you! The plant is green, likes sun, but can live in the dark - Even surviving from basic overhead lighting!</p>
                 </div>
             </div>
             <div class="tab-pane fade" id="golden" role="tabpanel" aria-labelledby="golden-tab">
@@ -73,9 +76,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>
@@ -96,15 +96,15 @@ export default {
     name: "epipremnum-modal",
     data: function () {
         return {
-        cuttingsAvailable: false
+            cuttingsAvailable: false
         }
     },
     methods: {
-    goToRequest() {
-      let route = this.$router.resolve({ path: "/plants/request" });
-      window.open(route.href);
-    },
-  }
+        goToRequest() {
+            let route = this.$router.resolve({ path: "/plants/request" });
+            window.open(route.href);
+        },
+    }
 }
 
 </script>

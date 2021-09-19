@@ -12,14 +12,14 @@
             <p>text goes here</p>
           </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
-            <!-- <li class="nav-item" role="presentation">
-                <button class="nav-link" id="majesty-tab" data-bs-toggle="tab" data-bs-target="#majesty" type="button" role="tab" aria-controls="majesty" aria-selected="false">Majesty</button>
-            </li> -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultCalathea" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
+            <div class="tab-pane fade show active" id="efaultCalathea" role="tabpanel" aria-labelledby="default-tab">
                 <div class="image-container" style="margin-top: 5px">
-                    <img src="@/assets/images/plants/plant-placeholder2.png">
+                    <img style="width: 35%" src="@/assets/images/plants/plant-placeholder2.png">
                 </div>
             </div>
             <!-- <div class="tab-pane fade" id="majesty" role="tabpanel" aria-labelledby="majesty-tab">
@@ -37,9 +37,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>

@@ -2,16 +2,16 @@
 
 <!-- Modal -->
 <div class="plant modal fade" id="snakeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">Sanseveria</h3>
       </div>
       <div class="plant-modal-body">
-          <div class="content">
-            <p>TSHSHSHSHSHHHFHHHSHHS.. imma snakeee.</p>
-          </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultSnake" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="birdsnest-tab" data-bs-toggle="tab" data-bs-target="#birdsnest" type="button" role="tab" aria-controls="birdsnest" aria-selected="false">Bird's Nest</button>
             </li>
@@ -23,6 +23,9 @@
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="moonshine-tab" data-bs-toggle="tab" data-bs-target="#moonshine" role="button" aria-expanded="false">Moonshine</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="night-owl-tab" data-bs-toggle="tab" data-bs-target="#night-owl" role="button" aria-expanded="false">Night Owl</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="silver-flame-tab" data-bs-toggle="tab" data-bs-target="#silver-flame" role="button" aria-expanded="false">Silver Flame</button>
@@ -38,9 +41,12 @@
             </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
-                <div class="image-container" style="margin-top: -5px">
-                    <img height="250" src="@/assets/images/plants/sansevieria.jpg">
+            <div class="tab-pane fade show active" id="defaultSnake" role="tabpanel" aria-labelledby="default-tab">
+                <div class="image-container">
+                    <img style="width: 30%" src="@/assets/images/plants/sansevieria.jpg">
+                </div>
+                <div class="content">
+                    <p>TSHSHSHSHSHHHFHHHSHHS.. imma snakeee.</p>
                 </div>
             </div>
             <div class="tab-pane fade" id="birdsnest" role="tabpanel" aria-labelledby="birdnest-tab">
@@ -67,6 +73,9 @@
             <div class="tab-pane fade" id="zeylanica" role="tabpanel" aria-labelledby="zeylanica-tab">
                 Zeylanica
             </div>
+            <div class="tab-pane fade" id="night-owl" role="tabpanel" aria-labelledby="night-owl-tab">
+                Night Owl
+            </div>
         </div>
 
       </div>
@@ -79,9 +88,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>

@@ -2,29 +2,32 @@
 
 <!-- Modal -->
 <div class="plant modal fade" id="rhaphModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">Rhaphidaphora</h3>
       </div>
       <div class="plant-modal-body">
-          <div class="content">
-            <p>Rhaphidds</p>
-          </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
-            <!-- <li class="nav-item" role="presentation">
-                <button class="nav-link" id="majesty-tab" data-bs-toggle="tab" data-bs-target="#majesty" type="button" role="tab" aria-controls="majesty" aria-selected="false">Majesty</button>
-            </li> -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultRhaph" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="hayi-tab" data-bs-toggle="tab" data-bs-target="#hayi" type="button" role="tab" aria-controls="hayi" aria-selected="false">Hayi</button>
+            </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
-                <div class="image-container" style="margin-top: 5px">
-                    <img src="@/assets/images/plants/plant-placeholder2.png">
+            <div class="tab-pane fade show active" id="defaultRhaph" role="tabpanel" aria-labelledby="default-tab">
+                <div class="image-container">
+                    <img style="width: 35%;" src="@/assets/images/plants/plant-placeholder2.png">
+                </div>
+                <div class="content">
+                  <p>Rhaphidds</p>
                 </div>
             </div>
-            <!-- <div class="tab-pane fade" id="majesty" role="tabpanel" aria-labelledby="majesty-tab">
-                Majesty
-            </div> -->
+            <div class="tab-pane fade" id="hayi" role="tabpanel" aria-labelledby="hayi-tab">
+                Hayi
+            </div>
         </div>
 
       </div>
@@ -37,9 +40,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="cuttingsAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="cuttings-tab" type="button" role="tab" aria-controls="cuttings" aria-selected="false">REQUEST CUTTINGS</button>
             </li>

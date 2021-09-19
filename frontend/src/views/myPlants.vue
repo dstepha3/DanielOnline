@@ -91,6 +91,11 @@
         
     </div>
 
+    <div class="img-container">
+        <img class="image" src="https://i.imgur.com/aCRP3jj.jpg">
+        <div class="overlay"></div>
+    </div>
+
     <FooterLarge></FooterLarge>
 
     <!-------------- Modals --------------->
@@ -109,6 +114,7 @@
     <marantaModal></marantaModal>
     <calatheaModal></calatheaModal>
     <miscModal></miscModal>
+    <syngModal></syngModal>
     <!-------------------------------------->
 </template>
 
@@ -130,6 +136,8 @@ import ficusModal from "@/components/Modals/Plants/Ficus-modal.vue";
 import marantaModal from "@/components/Modals/Plants/Maranta-modal.vue";
 import calatheaModal from "@/components/Modals/Plants/Calathea-modal.vue";
 import miscModal from "@/components/Modals/Plants/Misc-modal.vue";
+import syngModal from "@/components/Modals/Plants/Syngonium-modal.vue";
+
 
 import axios from 'axios';
 
@@ -140,6 +148,7 @@ export default {
             plants: [],
             isLoadingPlants: false,
             loadingError: false,
+            isLoadingThumbs: true,
         };
     },
     components: {
@@ -159,55 +168,12 @@ export default {
         ficusModal,
         marantaModal,
         calatheaModal,
-        miscModal
+        miscModal,
+        syngModal
     },
     methods: {
         search() {
-            console.log("start.");
-            var input, filter, cards, cardContainer, title, i, rows, j;
-            var no_results_message, counter;
-            counter = 0;
-            input = document.getElementById("plantSearch");
-            filter = input.value.toUpperCase();
-            cardContainer = document.getElementById("plant-container");
-            cards = cardContainer.getElementsByClassName("card");
-            rows = cardContainer.getElementsByClassName("row");
-            no_results_message = document.getElementById("no-results-found");
-            for (i = 0; i < cards.length; i++) {
-                title = cards[i].querySelector(".card-body h5.card-title");
-                if (title.innerText.toUpperCase().indexOf(filter) > -1){
-                    title.style.marginLeft = "30px";
-                    cardContainer.style.marginTop = "3rem";
-                    cards[i].style.display = "block ruby";
-                    cards[i].style.margin = "0 0 4rem 0";
-                    counter++;
-                    for (j = 0; j < rows.length; j++) {
-                        rows[j].style.flexDirection = "column";
-                        rows[j].style.margin = "0 50% 0 0";
-                    }
-                } else {
-                    cards[i].style.display = "none";  
-                    
-                    if ( counter == 0){
-                        no_results_message.style.display = "block";
-                    } else {
-                        no_results_message.style.display = "none";
-                    }
-                }
 
-                if (input.value == ""){
-                    cardContainer.style.marginTop = "3rem";
-                    cards[i].style.display = "flex";
-                    cards[i].style.margin = "0";
-                    title.style.marginLeft = "0";
-                
-                    for (j = 0; j < rows.length; j++) {
-                        rows[j].style.flexDirection = "row";
-                        rows[j].style.margin = "3rem 0";
-                    }
-                }
-                
-            }
         },
         getMyPlants() {
             const path = 'http://localhost:5000/api/plants';
@@ -236,6 +202,11 @@ export default {
     margin: 80px 15%;
     text-align: center;
     color: var(--theme-primary-dark);
+}
+
+#top-content-container{
+    border-bottom: 1px solid var(--theme-primary-dark);
+    padding-bottom: 80px;
 }
 
 .top-content {
@@ -355,6 +326,7 @@ export default {
 }
 .card-title{
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .card-text{
@@ -438,6 +410,23 @@ export default {
     }
   }
 
+.img-container .image{
+    width: 100%;
+    position: relative;
+}
+.img-container .overlay{
+    background: linear-gradient(180deg, rgba(13,13,13,1) 1%, rgba(255,255,255,0) 100%);     
+    position: absolute;
+    top: 0;
+    content: '';
+    z-index: 99;
+    height: 400px;
+    width: 100%;
+}
+.img-container{
+    position: relative;
+    margin-top: 120px;
+}
 
 
 

@@ -2,21 +2,21 @@
 
 <!-- Modal -->
 <div class="plant modal fade" id="gardenModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">My Garden</h3>
       </div>
       <div class="plant-modal-body">
-          <div class="content">
-            <p>My Beautiful Garden.</p>
-          </div>
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
-              <li class="nav-item" role="presentation">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="default" data-bs-toggle="tab" data-bs-target="#defaultGarden" type="button" role="tab" aria-controls="default" aria-selected="false"><i class="fas fa-leaf"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="banana-tab" data-bs-toggle="tab" data-bs-target="#banana" type="button" role="tab" aria-controls="banana" aria-selected="false">Banana</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="banana-pepper-tab" data-bs-toggle="tab" data-bs-target="#banana-pepper" type="button" role="tab" aria-controls="banana-pepper" aria-selected="false">Banana Peppers</button>
+                <button class="nav-link" id="banana-pepper-tab" data-bs-toggle="tab" data-bs-target="#banana-pepper" type="button" role="tab" aria-controls="banana-pepper" aria-selected="false">Banana Pepper</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="blackberry-tab" data-bs-toggle="tab" data-bs-target="#blackberry" type="button" role="tab" aria-controls="blackberry" aria-selected="true">Blackberry</button>
@@ -35,9 +35,12 @@
             </li>
         </ul>
         <div class="tab-content" id="TabContent">
-            <div class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
-                <div class="image-container" style="margin-top: -5px">
-                    <img height="250" src="@/assets/images/plants/garden-cropped.jpeg">
+            <div class="tab-pane fade show active" id="defaultGarden" role="tabpanel" aria-labelledby="default-tab">
+                <div class="image-container">
+                    <img style="width: 30%" src="@/assets/images/plants/garden-cropped.jpeg">
+                </div>
+                <div class="content">
+                    <p>My Beautiful Garden.</p>
                 </div>
             </div>
             <div class="tab-pane fade" id="banana-pepper" role="tabpanel" aria-labelledby="banana-pepper-tab">
@@ -73,9 +76,6 @@
             </div>
           </div>
         <ul class="nav nav-pills" id="PlantTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="care-tab" type="button" role="tab" aria-controls="care" aria-selected="false">PLANT CARE</button>
-            </li>
             <li v-if="produceAvailable" class="nav-item" role="presentation">
                 <button class="nav-link active" @click="goToRequest()" id="produce-tab" type="button" role="tab" aria-controls="produce" aria-selected="false">REQUEST PRODUCE</button>
             </li>
