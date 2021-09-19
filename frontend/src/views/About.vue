@@ -74,9 +74,9 @@
                                 <div class="gpa-and-awards flex align-center">
                                     <div class="left">
                                         <h6>GPA</h6>
-                                        <p class="GPA">3.178</p>
+                                        <p class="GPA">3.195</p>
                                         <p class="GPA-Detail">cumulative</p>
-                                        <p class="GPA">3.667</p>
+                                        <p class="GPA">3.669</p>
                                         <p class="GPA-Detail">major</p>
                                     </div>
                                     <div class="right">
@@ -100,7 +100,9 @@
                                             <p>Intro to Database Systems</p>
                                         </div>
                                     </div>
-                                    <p class="all-course-work">View All Coursework</p>
+                                    <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
+                                        View All Coursework
+                                    </button>
                                 </div>
                             </div>
                             <hr style="margin-bottom: 80px" />
@@ -166,17 +168,20 @@
         </div>
     </div>
     <FooterLarge style="margin-top: 80px"></FooterLarge>
+    <courseworkModal></courseworkModal>
 </template>
 
 <script lang="js">
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
+import courseworkModal from "@/components/Modals/About/Coursework-modal.vue";
 
 export default {
     name: 'about',
     components: {
         NavBar,
-        FooterLarge
+        FooterLarge,
+        courseworkModal
     },
     methods: {
         scrollToElement(elementRef) {
@@ -392,6 +397,12 @@ export default {
   #about-body .education .all-course-work {
     color: var(--theme-warning-dark);
     line-height: .5;
+    font-family: var(--text);
+  }
+  #about-body .education .all-course-work:hover {
+    color: var(--theme-warning-light);
+    line-height: .5;
+    font-family: var(--text);
   }
 
   #about-body .education hr {

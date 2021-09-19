@@ -23,7 +23,7 @@
 
             
                 <!-- Category Selectors -->
-                <div class="category row">
+                <div class="category row" style="display: none">
                     <ul class="nav nav-pills" id="IndoorTab" role="tablist">
                         <li class="nav-item" role="presentation">
                                 <router-link class="nav-link active" to="/">INDOOR</router-link>
@@ -220,7 +220,8 @@ export default {
     text-decoration: none;
 }
 .top-content a:hover {
-    text-decoration: underline;
+    color: var(--theme-primary-light) !important;
+    text-decoration: none !important;
 }
 
 .banner-image{
