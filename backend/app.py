@@ -16,7 +16,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 Plants = [
     {
         'name': 'Algaonema',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
+        'img_src': 'https://i.imgur.com/VYlR2xC.jpg', 
         'modal_id': '#algaonemaModal',
         'active': False,
     },
@@ -27,12 +27,6 @@ Plants = [
         'active': False,
     },
     {
-        'name': 'Calathea',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
-        'modal_id': '#calatheaModal',
-        'active': False,
-    },
-    {
         'name': 'Epipremnum',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
         'modal_id': '#epipremnumModal',
@@ -40,7 +34,7 @@ Plants = [
     },  
     {
         'name': 'Ficus',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
+        'img_src': 'https://i.imgur.com/UlpMVYC.jpg', 
         'modal_id': '#ficusModal',
         'active': False,
     },
@@ -48,35 +42,29 @@ Plants = [
         'name': 'Garden',
         'img_src': 'https://i.imgur.com/SQHHpAh.jpg', 
         'modal_id': '#gardenModal',
-        'active': True,
-    },
-    {
-        'name': 'Maranta',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
-        'modal_id': '#marantaModal',
         'active': False,
     },
     {
         'name': 'Miscellaneous',
         'img_src': 'https://i.imgur.com/QGAckPl.jpg', 
         'modal_id': '#miscModal',
-        'active': True,
+        'active': False,
     },  
     {
         'name': 'Palms',
         'img_src': 'https://i.imgur.com/g6K5yWX.jpg', 
         'modal_id': '#palmsModal',
-        'active': True,
+        'active': False,
     }, 
     {
         'name': 'Philodenderon',
         'img_src': 'https://i.imgur.com/oibHCCL.jpg', 
         'modal_id': '#philoModal',
-        'active': True,
+        'active': False,
     },
     {
         'name': 'Rhapidophora',
-        'img_src': 'https://i.imgur.com/SMzMYJW.png', 
+        'img_src': 'https://i.imgur.com/xgipV3i.jpg', 
         'modal_id': '#rhaphModal',
         'active': False,
     },
@@ -90,13 +78,19 @@ Plants = [
         'name': 'Scindapsus',
         'img_src': 'https://i.imgur.com/M9cuNAp.jpg', 
         'modal_id': '#scindapsusModal',
-        'active': True,
+        'active': False,
     },
     {
         'name': 'Succulents',
         'img_src': 'https://i.imgur.com/ZUJ6z6A.jpg', 
         'modal_id': '#succulentsModal',
-        'active': True,
+        'active': False,
+    },
+    {
+        'name': 'Syngonium',
+        'img_src': 'https://i.imgur.com/3EIGCWD.jpg', 
+        'modal_id': '#',
+        'active': False,
     },
     {
         'name': 'ZZ',

@@ -10,15 +10,15 @@
             <p class="top-content">During the Coronavirus Pandemic, I decided to jump on the indoor plant bandwagon with the rest of the world. I never really had much experience with plants before and I had no idea if I even had a green thumb. My friend Shannon gave me my first plant - a Golden Pothos (<em>Epipremnum aureum</em>) and I began watching videos by <a href="https://planterina.com/">Amanda from Planterina</a> on <a href="https://www.youtube.com/c/Planterina">Youtube</a> to extend my knowledge into indoor gardening. Over the years I've grown my collection into the vast little jungle it is today. You can explore my collection below, learn how to care for plants and even request cuttings grown by me.<br/><br/>Check it out!</p>
         </div>
 
-        <div class="banner-image parallax"></div>
+        <div class="banner-image"></div>
 
         <div class="plant-search-container">
 
-            <div v-if=" !isLoadingPlants">
+            <div id="search-box" v-if=" !isLoadingPlants && !loadingError">
                 <!-- Search Bar -->
                 <div class="form-group">
                     <i class="fas fa-search fa-lg"></i>
-                    <input class="form-control" id="plantSearch" @keyup="myFunction()" type="text" placeholder="Looking for Something Specific?">
+                    <input class="form-control" id="plantSearch" @keyup="search()" type="text" placeholder="Looking for Something Specific?">
                 </div>
 
             
@@ -39,32 +39,32 @@
             </div>
      
             <!-- Plant Cards -->
-            <transition name="fade">
-                <div id="plant-container" v-if=" !isLoadingPlants && !loadingError ">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
-                            <a v-if="plant.active" data-bs-toggle="modal" :data-bs-target="plant.modal_id">
-                                <div class="plant card">
-                                    <img :src="plant.img_src" class="card-img-top" alt="img">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ plant.name }}</h5>
-                                    </div>
+            <div id="plant-container" v-if=" !isLoadingPlants && !loadingError ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 my-4" v-for="plant in plants" :key="plant">
+                        <a v-if="plant.active" data-bs-toggle="modal" :data-bs-target="plant.modal_id">
+                            <div class="plant card">
+                                <img :src="plant.img_src" class="card-img-top" alt="img">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ plant.name }}</h5>
                                 </div>
-                            </a>
-                            <a v-if="!plant.active"  class="nav-link disabled">
-                                <div class="plant card">
-                                    <img :src="plant.img_src" class="card-img-top" alt="img">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ plant.name }}</h5>
-                                    </div>
+                            </div>
+                        </a>
+                        <a v-if="!plant.active"  class="nav-link disabled">
+                            <div class="plant card">
+                                <img :src="plant.img_src" class="card-img-top" alt="img">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ plant.name }}</h5>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </transition>
+            </div>
+          
 
-            <div id="container" v-if=" isLoadingPlants && !loadingError">
+        
+            <div id="loading-container" v-if=" isLoadingPlants && !loadingError">
                 <div id="render-spiner-container">
                     <div class="spinner-border" id="render-spinner" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -72,16 +72,17 @@
                     <p id="loadingtext">Gathering my Plants</p>
                 </div>
             </div>
+          
 
-            <div id="container" v-if=" !isLoadingPlants && loadingError">
-                    <p>Unable to Load Plants</p>
+            <div id="error-container" v-if=" !isLoadingPlants && loadingError">
+                    <p id="error-message">Unable to Load Plants</p>
             </div>
 
         </div>
 
         <!-- CTA -->
         <div class="row cta">
-            <h3>Did You Know?</h3>
+            <h3>Did You Know..</h3>
             <p>You can keep up with me and learn more about my plants?</p>
             <p>Learn more and read up on everything me!</p>
             <router-link to="/blog" class="cta-btn">Go To Blog</router-link>
@@ -161,7 +162,7 @@ export default {
         miscModal
     },
     methods: {
-        myFunction() {
+        search() {
             console.log("start.");
             var input, filter, cards, cardContainer, title, i, rows, j;
             var no_results_message, counter;
@@ -213,12 +214,12 @@ export default {
             axios.get(path)
                 .then((res) => {
                     this.plants = res.data;
-                    this.isLoadingPlants = false;
+                    setTimeout(() => this.isLoadingPlants = false, 3000);
                 })
                 .catch((error) => {
                     console.error(error);
-                    this.isLoadingPlants = false;
-                    this.loadingErorr = true;
+                    setTimeout(() => this.isLoadingPlants = false, 3000);
+                    setTimeout(() => this.loadingError = true, 3000);
                 })
         }
     },
@@ -255,12 +256,14 @@ export default {
     width: 100%;
     margin-top: 120px;
     margin-bottom: 120px;
-    box-shadow: 0px 0px 80px 1px var(--theme-primary-dark);
     border: 1px solid var(--theme-blackest);
 
     /* Parallax */
     background-image: url("https://i.imgur.com/FXKK85o.jpg");
     min-height: 330px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -274,6 +277,7 @@ export default {
 .form-group {
     display: flex;
     margin: 0 15%;
+    transition: fadase
 }
 .fa-search{
     position: relative;
@@ -289,6 +293,24 @@ export default {
     margin: 100px auto 0 !important;
 }
 
+#error-message{
+    padding: 40px;
+    border: 1px dashed var(--theme-primary-dark);
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#search-box,
+#plant-container,
+#loading-container,
+#error-container {
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 
 #plant-container a{
     color: var(--theme-primary-dark);
@@ -300,16 +322,16 @@ export default {
 }
 
 .plant.card:hover{
-        box-shadow: 0px 0px 20px 1px var(--theme-primary-light);
-        border: 1px solid var(--theme-blackest);
-        opacity: 1;
+    box-shadow: 0px 0px 20px 1px var(--theme-primary-light);
+    border: 1px solid var(--theme-blackest);
+    opacity: 1;
 }
 
 #plant-container .nav-link.disabled{
     padding: 0 !important;
 }
 .plant.card.disabled{
-        opacity: 0.4;
+    opacity: 0.4;
 }
 
 .plant.card .card-img-top{
