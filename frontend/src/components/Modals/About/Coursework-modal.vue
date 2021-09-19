@@ -6,16 +6,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">ALL COURSE WORK</h3>
-        <div class="flex">
-            <a href="#kentCoreContainer" style="margin-right: 20px;">Kent Core</a>
-            <a href="#majorCoursesContainer" style="margin-left: 20px;">Major Courses</a>
+        <div class="flex" style="margin-top: 5px">
+            <a v-if="!isLoadingCore && !loadingCoreError" href="#kentCoreContainer" style="margin-right: 20px;">Kent Core</a>
+            <a v-if="!isLoadingMajor && !loadingMajorError" href="#majorCoursesContainer" style="margin-left: 20px;">Major Courses</a>
+            <div id="loading-container" v-if="isLoadingMajor && !loadingMajorError && isLoadingCore && !loadingCoreError">
+                <div id="render-spiner-container" style="margin-top: 0;">
+                    <div class="spinner-border" id="render-spinner" style="color: #e6b800;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <a href="http://www.kent.edu/"><div class="lightning-bolt"></div></a>
       </div>
       <div class="modal-body">
             <div id="kentCoreContainer">
                 <h5>Kent Core</h5>
-                <table class="table table-striped">
+                <table class="table table-striped" v-if="!loadingCoreError && !isLoadingCore">
                     <thead>
                         <tr>
                             <th scope="col">Course</th>
@@ -35,10 +42,19 @@
                         </tr>
                     </tbody>
                 </table>
+                <p class="error-message" v-if="loadingCoreError && !isLoadingCore ">Unable to Load Courses</p>
+                <div id="loading-container" v-if="isLoadingCore && !loadingCoreError">
+                    <div id="render-spiner-container">
+                        <div class="spinner-border" id="render-spinner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p id="loadingtext">Gathering Courses</p>
+                    </div>
+                </div>
             </div>
             <div id="majorCoursesContainer">
                 <h5>Major Courses</h5>
-                <table class="table table-striped">
+                <table class="table table-striped" v-if="!loadingMajorError && !isLoadingMajor">
                     <thead>
                         <tr>
                             <th scope="col">Course</th>
@@ -58,6 +74,15 @@
                         </tr>
                     </tbody>
                 </table>
+                <p class="error-message" v-if="loadingMajorError && !isLoadingMajor">Unable to Load Courses.</p>
+                <div id="loading-container" v-if="isLoadingMajor && !loadingMajorError">
+                    <div id="render-spiner-container">
+                        <div class="spinner-border" id="render-spinner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p id="loadingtext">Gathering Courses</p>
+                    </div>
+                </div>
             </div>
             <div class="img-container">
                 <img width="400" src="@/assets/images/About/kent-state-logo.png">
@@ -95,12 +120,12 @@ export default {
             axios.get(path)
                 .then((res) => {
                     this.kentCoreCourses = res.data;
-                    this.isLoadingCore = false;
+                    setTimeout(() => this.isLoadingCore = false, 9000);
                 })
                 .catch((error) => {
                     console.error(error);
-                    this.isLoadingCore = false;
-                    this.loadingCoreError = true;
+                    setTimeout(() => this.isLoadingCore = false, 9000);
+                    setTimeout(() => this.loadingCoreError = true, 9000);
                 })
         },
         getMajorCourses() {
@@ -108,12 +133,12 @@ export default {
             axios.get(path)
                 .then((res) => {
                     this.majorCourses = res.data;
-                    this.isLoadingMajor = false;
+                    setTimeout(() => this.isLoadingMajor = false, 9000);
                 })
                 .catch((error) => {
                     console.error(error);
-                    this.isLoadingMajor = false;
-                    this.loadingMajorError = true;
+                    setTimeout(() => this.isLoadingMajor = false, 9000);
+                    setTimeout(() => this.loadingMajorError = true, 9000);
                 })
         },
         getCourses(){
@@ -121,7 +146,7 @@ export default {
             this.getMajorCourses();
         },
     },
-    created() {
+    mounted() {
         this.isLoadingCore = true;
         this.isLoadingMajor = true;
         this.getCourses();
@@ -143,6 +168,7 @@ h5 {
     color: var(--theme-light-gray);
     border-color: unset;
     margin-top: 0;
+    animation: fadeIn 5s;
 }
 .table td {
     padding: 20px .5rem;
@@ -164,14 +190,16 @@ h5 {
 }
 .modal-header{
     border-bottom: 1px solid #e6b800 !important;
+    padding-bottom: 0 !important;
 }
-.modal-header a{
+.modal-header .flex a{
     margin: 0;
     color: #e6b800;
     text-decoration: none;
     opacity: 0.5;
     line-height: 1.5;
     margin-bottom: 5px;
+    animation: fadeIn 5s;
 }
 .modal-header a:hover{
     opacity: 1;
@@ -222,5 +250,64 @@ button.btn-close {
 .flex{
     display: flex;
 }
+.error-message{
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 30px;
+    border-top: 1px dashed #e6b800;
+    animation: fadeIn 5s;
+    color: #003399;
+    opacity: 0.80;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:0.80;}
+}
+
+#render-spiner-container{
+    height: 100%;
+    width: 100%;
+    background: none;
+    position: relative;
+    margin-top: 40px;
+}
+#render-spinner{
+    opacity: 0.4;
+    color: #003399;
+}
+
+#loadingtext{
+    color: var(--theme-whitest);
+    margin-top: 20px;
+    font-size: 10px !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation-duration: 2s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: -11px;
+}
+#loadingtext:hover{
+    cursor: default;
+}
+
+@keyframes grow {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  
+    50%{
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100%{
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  }
 
 </style>
