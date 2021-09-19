@@ -219,11 +219,6 @@ button.btn-close {
   100% { transform: rotate(0deg); }
 }
 
-
-h1.wiggle:hover {
-  
-}
-
 .flex{
     display: flex;
 }
