@@ -1,6 +1,6 @@
 <template lang="html">
     <div id="body" class="fade-in">
-        <h1>This is the Request cuttings Page</h1>
+        <h1>I'm sorry, we are not able to accept cutting requests at this time.</h1>
         <span class="coming-soon">
             <div class="align-center">
             <router-link to="/plants">Plants Home</router-link>

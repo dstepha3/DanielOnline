@@ -83,6 +83,6 @@ Plants = [
         'name': 'ZZ',
         'img_src': 'https://i.imgur.com/Z1j8zPC.jpg', 
         'modal_id': '#zzModal',
-        'active': False,
+        'active': True,
     }    
 ]
