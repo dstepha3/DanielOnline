@@ -6,6 +6,7 @@ backend/*.exe
 backend/*.pyd
 backend/.env
 backend/flask
+backend/login.py
 
 # frontend files
 frontend/.DS_Store
