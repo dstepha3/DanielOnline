@@ -136,6 +136,9 @@ const router = createRouter ({
 // This callback runs before every route change, including on page load.
 // Updates page Metadata using info from @/router/index.js
 router.beforeEach((to, from, next) => {
+    
+    // Timeout Function to Scroll To Top of window when Router View changes
+    setTimeout(function () {window.scrollTo(0, 0);}, 2);
 
     const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
   
