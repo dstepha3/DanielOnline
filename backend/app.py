@@ -3,9 +3,6 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 from login import email_username, email_password
 
-from plants import Plants
-from courses import KentCoreCourses, MajorCourses
-
 # configuration
 DEBUG = True
 
@@ -28,33 +25,12 @@ mail = Mail(app)
 
 @app.route("/")
 def index():
-  msg = Message('Hello from the other side!', sender =   'dstephan316@yahoo.com', recipients = ['dstepha3@kent.edu'])
-  msg.body = "Hey Daniel, sending you this email from my Flask app, lmk if it works"
-  mail.send(msg)
-  return "Message sent!"
+    msg = Message('Hello from the other side!', sender =   'dstephan316@yahoo.com', recipients = ['dstepha3@kent.edu'])
+    msg.body = "Hey Daniel, sending you this email from my Flask app, lmk if it works"
+    mail.send(msg)
+    return "Message sent!"
 
-# sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
-
-
-#########     Plant Routes      #########
-@app.route('/api/plants', methods=['GET'])
-def my_plants():
-    return jsonify(Plants)
-
-
-#########      Course Routes      #########
-@app.route('/api/courses/kentcore', methods=['GET'])
-def kentCore():
-    return jsonify(KentCoreCourses)
-
-
-@app.route('/api/courses/majorcourses', methods=['GET'])
-def majorCourses():
-    return jsonify(MajorCourses)
-
+from api import *
 
 #########      Start Flask      #########
 if __name__ == '__main__':
