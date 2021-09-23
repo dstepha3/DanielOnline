@@ -20,7 +20,9 @@
                         <h1>About Me</h1>
                         <p class="personal-details"><span class="red">26 years</span> | <span class="red">Massillon, Ohio</span></p>
                         <div class="section">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales velit in ipsum ultrices fringilla. Morbi non sollicitudin enim. Curabitur rhoncus luctus urna, lacinia suscipit massa tempus ut. Vivamus non justo elit. Nulla quis imperdiet ligula, non commodo dolor. Nullam elementum ac enim congue aliquam. Donec ipsum mi, convallis non nibh eget, imperdiet ultricies lectus. Etiam placerat arcu sapien, eu placerat nibh posuere ut. Donec orci neque, tristique eu nunc sit amet, aliquet lacinia ante. Sed tempus enim sit amet lectus sagittis ornare. Vestibulum quis lectus imperdiet felis sodales bibendum. Morbi nec sem urna. Phasellus a lectus et lectus egestas sagittis. Cras egestas facilisis nisi ac porttitor. Etiam iaculis bibendum lacus quis euismod.</p> 
+                            <p>My name is Daniel Stephan, and I am a senior at Kent State University seeking my Bachelor's of Computer Science in Information Security. I am currently a SEO Frontend Web Developer Intern at Outerbox Solutions. I was previously employed at East of Chicago as a General Manager. I've also worked several years as an STNA in long-term care nursing facilities.</p>
+
+                            <!-- <p>I am a very detail oriented with a strong sense of leadership. I prefer to work independently, however I am a big team player. Moving forward, I would like to begin my career within the computer industry to continue my education with a more hands on approach. I don't think you would be disappointed to have me on your team.</p>  -->
                         </div> 
                         <a ref="skills"></a> <!-- ref placed her so renders properly -->
                     </div>
@@ -141,24 +143,56 @@
                         </div>
                         <div class="jobs-container">
                             <div class="job">
-                                <h5>OuterBox Solutions</h5>
-                                <p>WORK</p>
+                                <h5 style="margin-bottom: 5px;">OuterBox Solutions</h5>
+                                <p>SEO Frontend Web Developer Intern &bullet; <span class="dark-red">Copley, Ohio</span></p>
+                                <p class="dates">June 2021 - <em>present</em></p>
                             </div>
                             <div class="job">
-                                <h5>MEOC</h5>
-                                <p>WORK</p>
+                                <h5>East of Chicago Pizza</h5>
+                                <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                                <p class="dates">August 2016 - June 2021</p>
+                                <ul>
+                                  <li>Ensure employees perform a variety of tasks</li>
+                                  <li>Prepare food and package for distribution</li>
+                                  <li>Stock supplies and order inventory</li>
+                                  <li>Charging customers for purchases</li>
+                                  <li>Money handling, credit cards and POS use</li>
+                                  <li>Greet customers and problem solve complaints.</li>
+                                  <li>Delivery Driver experience</li>
+                                </ul>
                             </div>
                             <div class="job">
-                                <h5>Amherst Meadows</h5>
-                                <p>WORK</p>
+                                <h5>Amherst Meadows Care Center</h5>
+                                <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                                <p class="dates">November 2017 - November 2018</p>
+                                <ul>
+                                  <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                                  <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                                  <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                                  <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                                </ul>
                             </div>
                             <div class="job">
-                                <h5>Brewster Parke</h5>
-                                <p>WORK</p>
+                                <h5>Brewster Parke Senior Living Community</h5>
+                                <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
+                                <p class="dates">April 2015 - July 2016</p>                                
+                                <ul>
+                                  <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                                  <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                                  <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                                  <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                                </ul>
                             </div>
                             <div class="job">
                                 <h5>Hospitality House</h5>
-                                <p>WORK</p>
+                                <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                                <p class="dates">July 2012 - February 2015</p>                                
+                                <ul>
+                                  <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                                  <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                                  <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                                  <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -419,6 +453,55 @@ export default {
 
   #about-body .kent,
   #about-body .fairless {
+    color: var(--theme-warning-dark);
+  }
+
+  .experience h5 {
+    line-height: 0.7;
+    margin-bottom: 5px;
+  }
+
+  .experience .job {
+    margin: 60px 0;
+  }
+
+  .job p {
+    margin-bottom: 0;
+  }
+
+  div.job:nth-child(1){
+    margin-top: 0;
+  }
+
+  .job ul {
+    margin-top: 20px;
+    font-size: 16px !important;
+    padding-left: 0;
+    color: var(--theme-dark-gray);
+    list-style-type: none;
+    list-style-position: inside;
+    
+  }
+
+  .job ul li {
+    margin-bottom: 15px;
+    border-left: 1px solid var(--theme-warning-dark);
+    padding-left: 15px;
+  }
+
+  .job ul li::marker {
+    font-size: 10px;
+  }
+
+  .job .dates {
+    color: var(--theme-black) !important;
+  }
+
+  .job ul > li:last-child{
+    padding-bottom: 0;
+  }
+
+  .dark-red {
     color: var(--theme-warning-dark);
   }
 
