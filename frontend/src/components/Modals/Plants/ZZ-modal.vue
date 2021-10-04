@@ -124,69 +124,6 @@ export default {
 </script>
 
 <style scoped>
-.tab-content .content img{
-  border-top: none;
-  border-bottom: none;
-  padding:0;
-  margin: 60px auto;
-  display:block;
-}
-.info-row{
-  margin: 60px 0;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  border-top: 1px solid var(--theme-light-gray);
-  border-bottom: 1px solid var(--theme-light-gray);
-}
-section{
-  padding-bottom: 40px;
-  margin-bottom: 60px;
-  border-bottom: 1px solid var(--theme-light-gray);
-}
-.info-row .row > .col:nth-child(2),
-.info-row .row > .col:nth-child(3){
-  border-left: 1px solid var(--theme-light-gray);
-  border-right: 1px solid var(--theme-light-gray);
-}
-.info-row i{
-  font-size: 48px;
-}
-.info-row p{
-  font-size: 15px !important;
-}
-
-.info-row .location{
-  color: var(--theme-primary-dark);
-}
-.info-row .light{
-  color: #e6b800;
-}
-.info-row .water{
-  color: #003399;
-}
-.info-row .temperature{
-  color: var(--theme-secondary);
-}
-.info-row .col h4{
-  margin: 30px 0 15px;
-  color: var(--theme-whitest);
-  line-height: 1;
-}
-.info-row .col p {
-  text-align: center;
-}
-.info-icon{
-  position: absolute;
-  top: -45px;
-  font-size: 55px;
-}
-
-.info-icon i{
-  background: var(--theme-primary-dark);
-  color: var(--theme-blackest);
-  border-radius: 50%;
-}
-
 .cta{
   position: relative;
 }

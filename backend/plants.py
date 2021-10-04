@@ -17,7 +17,7 @@ Plants = [
         'name': 'Epipremnum',
         'img_src': 'https://i.imgur.com/GkMG42V.jpg', 
         'modal_id': '#epipremnumModal',
-        'active': False,
+        'active': True,
     },  
     {
         'name': 'Ficus',

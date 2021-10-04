@@ -15,6 +15,9 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="hayi-tab" data-bs-toggle="tab" data-bs-target="#hayi" type="button" role="tab" aria-controls="hayi" aria-selected="false">Hayi</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dragon-tail-tab" data-bs-toggle="tab" data-bs-target="#dragon-tail" type="button" role="tab" aria-controls="dragon-tail" aria-selected="false">Dragon Tail</button>
+            </li>
         </ul>
         <div class="tab-content" id="TabContent">
             <div class="tab-pane fade show active" id="defaultRhaph" role="tabpanel" aria-labelledby="default-tab">
@@ -27,6 +30,9 @@
             </div>
             <div class="tab-pane fade" id="hayi" role="tabpanel" aria-labelledby="hayi-tab">
                 Hayi
+            </div>
+            <div class="tab-pane fade" id="dragon-tail" role="tabpanel" aria-labelledby="dragon-tail-tab">
+                Dragon Tail
             </div>
         </div>
 

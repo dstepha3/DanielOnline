@@ -6,6 +6,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 style="display:block" class="modal-title" id="staticBackdropLabel">Epipremnum</h3>
+        <button type="button" style="display: inline" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="plant-modal-body">
           <ul class="nav nav-pills mb-3" id="PlantTabs" role="tablist">
@@ -40,7 +41,43 @@
                     <img style="width: 35%" src="@/assets/images/plants/pothos1-cropped.jpeg">
                 </div>
                 <div class="content">
-                    <p>The epipremnum is one of the greatest plants alive. They thrive not being cared for at all - in fact, the plant will more than quadrouple in size! Don't feed it, water it.. DON'T EVEN LOOK AT IT! You won't regret it, and the plant will definiately thank you! The plant is green, likes sun, but can live in the dark - Even surviving from basic overhead lighting!</p>
+                    <section>
+                        <p>The epipremnum is one of the greatest plants alive. They thrive not being cared for at all - in fact, the plant will more than quadrouple in size! Don't feed it, water it.. DON'T EVEN LOOK AT IT! You won't regret it, and the plant will definiately thank you! The plant is green, likes sun, but can live in the dark - Even surviving from basic overhead lighting!</p>
+                        <p>The info below is a lie. It needs updated.</p>
+                    </section>
+                    <img class="map" style="width: 75%" title="Epipremnum originate from SE Asia &amp; the Western Pacific" src="https://i.imgur.com/jQIt0kq.png">
+                    <div class="info-row">
+                        <div class="row">
+                        <div class="col align-center">
+                            <i class="fas fa-map-marker-alt location"></i>
+                            <h4>Location</h4>
+                            <h6>SE AFRICA</h6>
+                            <p>from Southern Kenya<br/> to Northeast South Africa</p>
+                        </div>
+                        <div class="col align-center">
+                            <i class="fas fa-sun light"></i>
+                            <h4>Light</h4>
+                            <h6>LOW LIGHT TOLERANT</h6>
+                            <p>ZZ Plant's can tolerate low light,
+                            <br/>but they thrive in bright indirect light</p>
+                        </div>
+                        <div class="col  align-center">
+                            <i class="fas fa-burn water"></i>
+                            <h4>Water</h4>
+                            <h6>DRAUGHT TOLERANT</h6>
+                            <p>Water maybe once a month</p>
+                            <p>They prefer to dry out completely before you give them a good soaking.</p>
+                            <p>Overwatering = Root Rot</p>
+                        </div>
+                        <div class="col align-center">
+                            <i class="fas fa-temperature-low temperature"></i>
+                            <h4>Temperature</h4>
+                            <h6>65° to 79°F</h6>
+                            <p>They can survive in <br/>temperatures as low as 59°F</p>
+                            <p>Hot temperatures lead to an<br/> increase in leaf production</p>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="golden" role="tabpanel" aria-labelledby="golden-tab">
@@ -69,7 +106,6 @@
       </div>
       <div class="modal-footer">
           <div>
-            <button type="button" style="display: inline" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             <div style="display: inline" data-tooltip="View Sources"
        data-tooltip-location="right">
             <i class="fas fa-search"></i>
@@ -96,7 +132,7 @@ export default {
     name: "epipremnum-modal",
     data: function () {
         return {
-            cuttingsAvailable: false
+            cuttingsAvailable: true,
         }
     },
     methods: {
@@ -108,3 +144,16 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.info-row{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-row h6{
+    color: var(--theme-primary-light);
+}
+
+</style>
