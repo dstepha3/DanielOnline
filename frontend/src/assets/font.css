@@ -50,3 +50,12 @@ p, ul, a{
 .red-light {
     color: var(--theme-primary-light);
 }
+
+a.link{
+    color: var(--theme-primary-light);
+    text-decoration: none;
+}
+a.link:hover{
+    color: var(--theme-primary-light);
+    text-decoration: underline;
+}

@@ -14,7 +14,10 @@
             <div class="mb-5">
                 <textarea class="form-control" name="users-message" placeholder="message" rows="5"></textarea>
             </div>
-            <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: #000000; background: var(--theme-primary-dark)"/>
+            <div style="display: flex; justify-content: space-between;">
+              <input type="reset" class="btn" style="color: #000000; background: var(--theme-black)"/>
+              <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: #000000; background: var(--theme-primary-dark)"/>
+            </div>
             </form>
         </div>
     </div>

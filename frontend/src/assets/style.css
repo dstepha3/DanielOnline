@@ -341,39 +341,6 @@ button.btn-close{
   color: var(--theme-primary-dark);
   line-height: 1.5 !important;
 }
-.plant .modal-title{
-  text-transform: uppercase;
-  font-size: 90px !important;
-  color: var(--theme-white);
-  line-height: 0.9 !important;
-  margin-top: 10px;
-}
-.plant .modal-footer {
-  justify-content: space-between !important;
-  padding: 20px 40px;
-}
-#cuttings-tab{
-  background-color: var(--theme-blackest) !important;
-}
-#cuttings-tab:hover{
-  background-color: var(--theme-primary-light) !important;
-}
-.plant .modal-footer .nav-link{
-  font-size: 16px;
-  font-weight: bold;
-  opacity: 0.75;
-}
-.plant .modal-footer .nav-item .nav-link.disabled{
-  color: var(--theme-dark-gray) !important;
-  border: 1px solid var(--theme-black) !important;
-}
-.plant .modal-footer .nav-link:hover{
-  opacity: 0.9;
-  background-color: var(--theme-primary-light) !important;
-}
-.modal-footer #PlantTabs {
-  margin-top: 0;
-}
 
 .modal-footer .fas {
   vertical-align: bottom;
@@ -393,62 +360,6 @@ button.btn-close{
   background: var(--theme-primary-light);
   opacity: 0.9;
   cursor: pointer;
-}
-
-.plant-modal-body{
-  color: var(--theme-white);
-  background: var(--theme-blackest);
-  padding: 20px 40px 0;
-  height: 100%;
-}
-.plant-modal-body #PlantTabs{
-  justify-content: center;
-  border-bottom: 1px solid var(--theme-primary-dark);
-  opacity: 0.80;
-  padding-bottom: 15px;
-}
-
-#TabContent {
-  min-height: 350px;
-}
-
-.plant-modal-body .tab-content .image-container{
- text-align: center;
-}
-
-.plant-modal-body .tab-content img{
-  border: 1px solid var(--theme-dark-gray);
-  padding: 10px;
-}
-
-.plant-modal-body .content {
-  margin: 30px 0;
-  text-align: justify;
-}
-
-.plant-modal-body .content p {
-  font-size: 16px;
-}
-
-.plant-modal-body .content > p:last-child{
-  margin-bottom: 0;
-}
-
-
-#PlantTabs .nav-tabs{
-  border-bottom: 1px solid var(--theme-primary-dark);
-}
-#PlantTabs .nav-link{
-  color: var(--theme-primary-light);
-  font-size: 14px;
-}
-#PlantTabs .nav-link:hover{
-  font-weight: 900;
-}
-#PlantTabs .nav-link.active{
-  color: var(--theme-whitest);
-  background: var(--theme-primary-dark);
-  border: 1px solid var(--theme-primary-dark);
 }
 
 .tab-content .content img{

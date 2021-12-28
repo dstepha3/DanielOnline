@@ -8,13 +8,7 @@
     <nav>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <router-link class="nav-link disabled" to="/code">Code</router-link>
-            </li>
-            <li class="nav-item">
-                <router-link class="nav-link" to="/plants">Plants</router-link>
-            </li>
-            <li class="nav-item">
-                <router-link class="nav-link" to="/music">Music</router-link>
+                <router-link class="nav-link disabled" to="/">Home</router-link>
             </li>
             <li class="nav-item">
                 <router-link class="nav-link" to="/about">About</router-link>

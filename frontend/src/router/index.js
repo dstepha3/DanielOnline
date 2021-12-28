@@ -4,16 +4,10 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Contact from "@/views/Contact.vue";
 import Code from "@/views/Code.vue";
-import myPlants from "@/views/myPlants.vue";
-import Plants from "@/views/Plants.vue";
-import requestCuttings from "@/views/RequestCuttings.vue";
-import Music from "@/views/Music.vue";
 import ContactThankYou from "@/views/ContactThankYou.vue";
-import unreleased from "@/views/Unreleased.vue";
 import NotFound from "@/views/errors/NotFound-404.vue";
 
 
-import ping from '@/views/ping.vue';
 
 const routes = [
     {
@@ -49,59 +43,11 @@ const routes = [
         }
     },
     {
-        path: "/plants",
-        name: "Plants",
-        component: Plants,
-        meta: {
-            title: 'Plants - Daniel Online!'
-        },
-    },
-    {
-        path: "/plants/my-plants",
-        name: "myPlants",
-        component: myPlants,
-        meta: {
-            title: 'My Plants - Daniel Online!'
-        }
-    },
-    {
-        path: "/plants/request",
-        name: "requestCuttings",
-        component: requestCuttings,
-        meta: {
-            title: 'Request Cuttings - Daniel Online!'
-        }
-    },
-    {
-        path: "/music",
-        name: "Music",
-        component: Music,
-        meta: {
-            title: 'Music - Daniel Online!'
-        }
-    },
-    {
         path: "/contact/thank-you",
         name: "ContactThankYou",
         component: ContactThankYou,
         meta: {
             title: 'Thanks - Daniel Online!'
-        }
-    },
-    {
-        path: "/music/unreleased",
-        name: "Unreleased",
-        component: unreleased,
-        meta: {
-            title: 'Unreleased Music - Daniel Online!'
-        }
-    },
-    {
-        path: "/ping",
-        name: "Ping",
-        component: ping,
-        meta: {
-            title: 'Ping!'
         }
     },
     { 

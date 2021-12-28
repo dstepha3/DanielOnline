@@ -3,9 +3,9 @@
         <div class="flex">
             <div class="col">
                 <h6>Site</h6>
+                <router-link class="nav-link disabled" to="/blog">Blog</router-link>
                 <router-link class="nav-link disabled" to="/code">Code</router-link>
-                <router-link class="nav-link" to="/music">Music</router-link>
-                <router-link class="nav-link" to="/plants">Plants</router-link>
+                <router-link class="nav-link" to="/contact">Contact</router-link>
                 <router-link class="nav-link" to="">&nbsp;</router-link>
             </div>
             <div class="col">
@@ -44,8 +44,6 @@
             <div class="col">
                 <h6>Resources</h6>
                 <router-link class="nav-link" to="/about">About</router-link>
-                <router-link class="nav-link disabled" to="/blog">Blog</router-link>
-                <router-link class="nav-link" to="/contact">Contact</router-link>
                 <router-link class="nav-link disabled" to="/faqs">FAQs</router-link>
                 <router-link class="nav-link disabled" to="/help">Help</router-link>
             </div>
@@ -102,7 +100,6 @@ footer .col {
     flex-basis: 33%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 footer .col:nth-child(odd) { 
