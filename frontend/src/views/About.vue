@@ -24,6 +24,7 @@
           <nav>
             <div class="nav nav-tabs about" id="nav-tab" role="tablist">
               <button class="nav-link active" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target="#nav-skills" type="button" role="tab" aria-controls="nav-skills" aria-selected="true">Skills</button>
+              <button class="nav-link" id="nav-interests-tab" data-bs-toggle="tab" data-bs-target="#nav-interests" type="button" role="tab" aria-controls="nav-skills" aria-selected="true">Interests</button>
               <button class="nav-link" id="nav-education-tab" data-bs-toggle="tab" data-bs-target="#nav-education" type="button" role="tab" aria-controls="nav-education" aria-selected="false">Education</button>
               <button class="nav-link" id="nav-experience-tab" data-bs-toggle="tab" data-bs-target="#nav-experience" type="button" role="tab" aria-controls="nav-experience" aria-selected="false">Experience</button>
             </div>
@@ -37,7 +38,7 @@
                     <i style="margin-bottom: 20px" class="fa fa-certificate"></i>
                     <h2>Skills</h2>
                 </div>
-                <div class="flex">
+                <div class="flex" style="margin-top: 20px;">
                     <div class="contained">
                         <i class="fa fa-code"></i>
                         <h6>Frontend</h6>
@@ -66,6 +67,17 @@
                   </div>
               </div>
             </div>
+
+            <div class="tab-pane fade" id="nav-interests" role="tabpanel" aria-labelledby="nav-interests-tab">
+              <div class="skills">
+                <div class="heading">
+                    <i style="margin-bottom: 20px" class="fa fa-grin-hearts"></i>
+                    <h2>Interests</h2>
+                </div>
+              </div>
+            </div>
+
+
 
             <div class="tab-pane fade" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab">
               <div class="heading education">
@@ -119,9 +131,14 @@
                       <p>Intro to Database Systems</p>
                   </div>
               </div>
-              <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
-                  View All Coursework
-              </button>
+              <div class="flex" style="justify-content: space-between">
+                <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
+                    View Diploma
+                </button>
+                <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
+                    View All Coursework
+                </button>
+              </div>
             </div>
         </div>
       </div>
@@ -151,12 +168,12 @@
                   <p class="location">Class of 2013 &bull; <span class="fairless">Fairless High School</span> &bull; Navarre, Ohio</p>
               </div>
           </div>
-          
           <div class="align-center" style="flex-basis: 40%; margin-left: 30px">
               <h6 style="margin-top: -15px">GPA</h6>
               <p class="GPA">3.600</p>
           </div> 
         </div>
+        <img class="hover" style="width: 60%; margin: 100px 0 0; " src="@/assets/images/About/hs_diplomma.jpg">
       </div>
     </div>
   </div>
@@ -394,7 +411,7 @@ export default {
   }
   .carousel-control-next, .carousel-control-prev{
     align-items: flex-start;
-    top: -120px;
+    top: 50px;
   }
   .carousel-control-next {
     justify-content: flex-end;
@@ -486,6 +503,10 @@ export default {
     flex-basis: 33%;
     max-height: 97%;
     text-align: center;
+    opacity: 0.7;
+  }
+  #about-body .contained:hover{
+    opacity: 1;
   }
 
   #about-body h5 {
@@ -663,6 +684,14 @@ export default {
   .dark-red {
     color: var(--theme-warning-dark);
   }
+  .hover{
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .hover:hover{
+    opacity: 0.95;
+  }
 
   @media screen and (max-width: 768px){
     #about-body .flex {
@@ -748,9 +777,5 @@ export default {
         font-size: 14px !important;
         margin-bottom: 30px;
     }
-
-
-
-
 }
 </style>
