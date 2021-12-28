@@ -16,7 +16,7 @@
               </p>
               <div class="justify">
                 <p>My name is Daniel Stephan. I graduated from Kent State University in 2021 with my Bachelor's of Computer Science concentrated in Information Security. I am currently an SEO Frontend Web Developer at Outerbox Solutions in Copley, Ohio. I was previously employed at East of Chicago Pizza as a General Manager. I've also worked several years as an STNA in long-term care nursing facilities.</p>
-                <p>You can find more indepth information below or check out my <router-link class="link" to="/">FAQ page</router-link> to learn more.</p>
+                <p>You can find more indepth information below or check out my <router-link class="link" to="faqs">FAQ page</router-link> to learn more. Alternatively, you can download my resume <a class="link" href="/">here</a>.</p>
               </div>
             </div>
           </div>

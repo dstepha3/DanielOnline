@@ -15,8 +15,8 @@
                 <textarea class="form-control" name="users-message" placeholder="message" rows="5"></textarea>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <input type="reset" class="btn" style="color: #000000; background: var(--theme-black)"/>
-              <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: #000000; background: var(--theme-primary-dark)"/>
+              <input type="reset" class="btn" style="color: var(--theme-white); background: var(--theme-black)"/>
+              <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark)"/>
             </div>
             </form>
         </div>
@@ -68,7 +68,7 @@ export default {
     min-height: 100%;
     background-color: #0d0d0d;
     color: var(--theme-primary-dark);
-    margin: 80px 30%;
+    margin: 80px 25%;
   }
 
   #contact-body h1 {

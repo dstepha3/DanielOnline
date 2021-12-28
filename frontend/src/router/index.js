@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Contact from "@/views/Contact.vue";
 import Code from "@/views/Code.vue";
+import FAQs from "@/views/FAQs.vue";
 import ContactThankYou from "@/views/ContactThankYou.vue";
 import NotFound from "@/views/errors/NotFound-404.vue";
 
@@ -40,6 +41,14 @@ const routes = [
         component: Code,
         meta: {
             title: 'Code - Daniel Online!'
+        }
+    },
+    {
+        path: "/faqs",
+        name: "Faq",
+        component: FAQs,
+        meta: {
+            title: 'FAQs - Daniel Online!'
         }
     },
     {

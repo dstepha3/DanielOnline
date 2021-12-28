@@ -39,12 +39,12 @@
                 </div>
                 
                 <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="50" style="margin: 30px 0 0; opacity: .5"></router-link>
-                <p class="copyright">Copyright &copy; 2021 D.Stephan. All Rights Reserved</p>
+                <p class="copyright">Copyright &copy; 2021 DanielOnline. All Rights Reserved</p>
             </div>
             <div class="col">
                 <h6>Resources</h6>
                 <router-link class="nav-link" to="/about">About</router-link>
-                <router-link class="nav-link disabled" to="/faqs">FAQs</router-link>
+                <router-link class="nav-link" to="/faqs">FAQs</router-link>
                 <router-link class="nav-link disabled" to="/help">Help</router-link>
             </div>
         </div>
