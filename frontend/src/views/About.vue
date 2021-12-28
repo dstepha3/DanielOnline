@@ -180,60 +180,111 @@
                       <i style="margin-bottom: 20px" class="fa fa-certificate"></i>
                       <h2>Experience</h2>
                   </div>
-                  <div class="jobs-container" style="margin-top: 30px;">
-                    <div class="job">
-                        <h5 style="margin-bottom: 5px;">OuterBox Solutions</h5>
-                        <p>SEO Frontend Web Developer Intern &bullet; <span class="dark-red">Copley, Ohio</span></p>
-                        <p class="dates">June 2021 - <em>present</em></p>
-                    </div>
-                    <div class="job">
-                        <h5>East of Chicago Pizza</h5>
-                        <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-                        <p class="dates">August 2016 - June 2021</p>
-                        <ul>
-                          <li>Ensure employees perform a variety of tasks</li>
-                          <li>Prepare food and package for distribution</li>
-                          <li>Stock supplies and order inventory</li>
-                          <li>Charging customers for purchases</li>
-                          <li>Money handling, credit cards and POS use</li>
-                          <li>Greet customers and problem solve complaints.</li>
-                          <li>Delivery Driver experience</li>
-                        </ul>
-                    </div>
-                    <div class="job">
-                        <h5>Amherst Meadows Care Center</h5>
-                        <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-                        <p class="dates">November 2017 - November 2018</p>
-                        <ul>
-                          <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                          <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                          <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                          <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-                        </ul>
-                    </div>
-                    <div class="job">
-                        <h5>Brewster Parke Senior Living Community</h5>
-                        <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
-                        <p class="dates">April 2015 - July 2016</p>                                
-                        <ul>
-                          <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                          <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                          <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                          <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-                        </ul>
-                    </div>
-                    <div class="job">
-                        <h5>Hospitality House</h5>
-                        <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-                        <p class="dates">July 2012 - February 2015</p>                                
-                        <ul>
-                          <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                          <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                          <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                          <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-                        </ul>
-                    </div>
-                </div>
+
+<div id="carouselExperience" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0" >
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="0" class="active" aria-current="true" aria-label=""></button>
+    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="1" aria-label=""></button>
+    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="2" aria-label=""></button>
+    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="3" aria-label=""></button>
+    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="4" aria-label=""></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+          <div class="jobs-container">
+            <div class="job align-left">
+                <h5 style="margin-bottom: 5px;">OuterBox Solutions</h5>
+                <p>SEO Frontend Web Developer &bullet; <span class="dark-red">Copley, Ohio</span></p>
+                <p class="dates">June 2021 - <em>present</em></p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="carousel-item" >
+      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+        <div class="jobs-container">
+          <div class="job align-left">
+              <h5>East of Chicago Pizza</h5>
+              <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+              <p class="dates">August 2016 - June 2021</p>
+              <ul>
+                <li>Ensure employees perform a variety of tasks</li>
+                <li>Prepare food and package for distribution</li>
+                <li>Stock supplies and order inventory</li>
+                <li>Charging customers for purchases</li>
+                <li>Money handling, credit cards and POS use</li>
+                <li>Greet customers and problem solve complaints.</li>
+                <li>Delivery Driver experience</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+        <div class="jobs-container">
+          <div class="job align-left">
+              <h5>Amherst Meadows Care Center</h5>
+              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+              <p class="dates">November 2017 - November 2018</p>
+              <ul>
+                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+        <div class="jobs-container">
+          <div class="job align-left">
+              <h5>Brewster Parke Senior Living Community</h5>
+              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
+              <p class="dates">April 2015 - July 2016</p>                                
+              <ul>
+                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+        <div class="jobs-container">
+          <div class="job align-left">
+              <h5>Hospitality House</h5>
+              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+              <p class="dates">July 2012 - February 2015</p>                                
+              <ul>
+                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExperience" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExperience" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> 
+
               </div>
             </div>
           </div>
@@ -327,8 +378,13 @@ export default {
     text-align: justify;
   }
 
-  .carousel-item{
+  #carouselEducation .carousel-item{
     min-height: 800px;
+    background:none;
+    transition: none;                
+  }
+  #carouselExperience .carousel-item{
+    min-height: 525px;
     background:none;
     transition: none;                
   }
@@ -561,7 +617,7 @@ export default {
   }
 
 .experience {
-  margin: 20px 15%;
+  margin: 20px 0;
 }
 
   .experience .job {
