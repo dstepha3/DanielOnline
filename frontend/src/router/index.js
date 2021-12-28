@@ -1,16 +1,16 @@
 import { createWebHistory, createRouter} from "vue-router";
 
 import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
-import Contact from "@/views/Contact.vue";
-import Code from "@/views/Code.vue";
-import FAQs from "@/views/FAQs.vue";
-import ContactThankYou from "@/views/ContactThankYou.vue";
+import About from "@/views/pages/About.vue";
+import Contact from "@/views/pages/Contact.vue";
+import FAQs from "@/views/pages/FAQs.vue";
+import ContactThankYou from "@/views/pages/ContactThankYou.vue";
 import NotFound from "@/views/errors/NotFound-404.vue";
 
+import blogRoutes from '@/router/blog.js';
 
 
-const routes = [
+const baseRoutes = [
     {
         path: "/",
         name: "Home",
@@ -33,14 +33,6 @@ const routes = [
         component: Contact,
         meta: {
             title: 'Contact - Daniel Online!'
-        }
-    },
-    {
-        path: "/code",
-        name: "Code",
-        component: Code,
-        meta: {
-            title: 'Code - Daniel Online!'
         }
     },
     {
@@ -69,7 +61,7 @@ const routes = [
     }
 ];
 
-
+const routes = baseRoutes.concat(blogRoutes);
 const router = createRouter ({
     history: createWebHistory(),
     routes,
@@ -127,5 +119,6 @@ router.beforeEach((to, from, next) => {
 
 // End of Metadata Update Block
 /*******************************************************************/
+
 
 export default router;
