@@ -211,7 +211,7 @@
       <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
           <div class="jobs-container">
             <div class="job align-left">
-                <h5 style="margin-bottom: 5px;">OuterBox Solutions</h5>
+                <h3 style="margin-bottom: 5px;">OuterBox Solutions</h3>
                 <p>SEO Frontend Web Developer &bullet; <span class="dark-red">Copley, Ohio</span></p>
                 <p class="dates">June 2021 - <em>present</em></p>
             </div>
@@ -222,7 +222,7 @@
       <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
         <div class="jobs-container">
           <div class="job align-left">
-              <h5>East of Chicago Pizza</h5>
+              <h3>East of Chicago Pizza</h3>
               <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
               <p class="dates">August 2016 - June 2021</p>
               <ul>
@@ -242,7 +242,7 @@
       <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
         <div class="jobs-container">
           <div class="job align-left">
-              <h5>Amherst Meadows Care Center</h5>
+              <h3>Amherst Meadows Care Center</h3>
               <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
               <p class="dates">November 2017 - November 2018</p>
               <ul>
@@ -259,7 +259,7 @@
       <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
         <div class="jobs-container">
           <div class="job align-left">
-              <h5>Brewster Parke Senior Living Community</h5>
+              <h3>Brewster Parke Senior Living Community</h3>
               <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
               <p class="dates">April 2015 - July 2016</p>                                
               <ul>
@@ -276,7 +276,7 @@
       <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
         <div class="jobs-container">
           <div class="job align-left">
-              <h5>Hospitality House</h5>
+              <h3>Hospitality House</h3>
               <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
               <p class="dates">July 2012 - February 2015</p>                                
               <ul>
@@ -390,6 +390,7 @@ export default {
 
   #about-body .personal-details {
     margin: 0 0 20px;
+    color: var(--theme-dark-gray);
   }
   #about-body .justify {
     text-align: justify;
@@ -467,8 +468,11 @@ export default {
 
 
   #about-body  .top-info h3{
-    color: var(--theme-lightest-gray);
+    color: var(--theme-whiter);
     margin-bottom: 0;
+  }
+  #about-body  .top-info p{
+    color: var(--theme-white);
   }
 
   #about-body h2 {
@@ -509,7 +513,7 @@ export default {
     opacity: 1;
   }
 
-  #about-body h5 {
+  #about-body h3 {
     color: var(--theme-primary-dark);
   }
 
@@ -632,7 +636,7 @@ export default {
     color: var(--theme-warning-dark);
   }
 
-  .experience h5 {
+  .experience h3 {
     line-height: 0.7;
     margin-bottom: 5px;
   }
