@@ -3,7 +3,7 @@
         <div class="flex">
             <div class="col">
                 <h6>Site</h6>
-                <router-link class="nav-link disabled" to="/blog">Blog</router-link>
+                <router-link class="nav-link" to="/blog">Blog</router-link>
                 <router-link class="nav-link disabled" to="/code">Code</router-link>
                 <router-link class="nav-link" to="/contact">Contact</router-link>
                 <router-link class="nav-link" to="">&nbsp;</router-link>
