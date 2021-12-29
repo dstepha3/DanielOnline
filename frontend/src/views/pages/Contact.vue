@@ -87,6 +87,14 @@ export default {
     background-color: var(--theme-warning-dark);
   }
 
+  .btn{
+    opacity: 0.60;
+    transition: all 0.3s;
+  }
+  .btn:hover{
+    opacity: 1;
+  }
+
   @media screen and (max-width: 786px){
       #contact-body {
           margin: 80px 10%;
