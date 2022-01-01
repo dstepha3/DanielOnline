@@ -7,6 +7,8 @@ import FAQs from "@/views/pages/FAQs.vue";
 import ContactThankYou from "@/views/pages/ContactThankYou.vue";
 import NotFound from "@/views/errors/NotFound-404.vue";
 
+import ping from '@/views/ping.vue';
+
 import blogRoutes from '@/router/blog.js';
 
 
@@ -58,7 +60,15 @@ const baseRoutes = [
         meta: {
             title: '404 | PAGE NOT FOUND - Daniel Online!'
         }
-    }
+    },
+    {
+        path: "/ping",
+        name: "Ping",
+        component: ping,
+        meta: {
+            title: 'Ping!'
+        }
+    },
 ];
 
 const routes = baseRoutes.concat(blogRoutes);

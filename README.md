@@ -18,7 +18,7 @@ npm run serve
 ```
 cd backend
 source flask/bin/activate
-python app.py
+python3 -m flask run
 ```
 > To stop App 'CTRL-C'
 > To end ENV 'deactivate'

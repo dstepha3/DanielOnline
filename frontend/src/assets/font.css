@@ -53,9 +53,13 @@ p, ul, a{
 
 a.link{
     color: var(--theme-primary-light);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
     text-decoration: none;
+    transition: all 0.3s;
+    margin: 0 3px;
 }
 a.link:hover{
     color: var(--theme-primary-light);
-    text-decoration: underline;
+    border-bottom: 1px solid var(--theme-primary-dark);
 }
