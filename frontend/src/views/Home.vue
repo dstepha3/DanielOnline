@@ -52,5 +52,8 @@ export default {
       .coming-soon{
           font-size: 16px;
       }
+      img{
+          opacity: 0.6;
+      }
   }
 </style>
