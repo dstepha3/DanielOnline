@@ -23,18 +23,26 @@
             </div>
         </a>
 
-        <div class="filter-container">
+        <div class="filter-container" v-if="show">
             <h4>Display By Tag</h4>
             <div class="tag-container" style="margin-top: 10px;">
                 <p class="tag" id="all" v-on:click="tagFilterKey = 'all'" :class="{ active: tagFilterKey == 'all' }" >Show All</p>
-                <p class="tag" id="gettingStarted" v-on:click="tagFilterKey = 'gettingStarted'" :class="{ active: tagFilterKey == 'getting started' }" >getting Started</p>
+                <p class="tag" id="gettingStarted" v-on:click="tagFilterKey = 'gettingStarted'" :class="{ active: tagFilterKey == 'gettingStarted' }" >getting Started</p>
                 <p class="tag" id="cheese" v-on:click="tagFilterKey = 'cheese'" :class="{ active: tagFilterKey == 'cheese' }" >cheese</p>
-                <p class="tag" id="newShit" v-on:click="tagFilterKey = 'newShit'" :class="{ active: tagFilterKey == 'new shit' }" >new shit</p>
+                <p class="tag" id="newShit" v-on:click="tagFilterKey = 'newShit'" :class="{ active: tagFilterKey == 'newShit' }" >new shit</p>
             </div>
         </div>
 
-        <div class="flex">
-            <a class="article" v-for="post in tagFilter" :key="post">
+        <div class="flex" v-if="loading">
+            <div id="render-spiner-container">
+                <div class="spinner-border" id="render-spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex" v-if="!loading" >
+            <a class="article fade" v-for="post in tagFilter" :key="post">
                 <img src="https://dummyimage.com/1200x800/3b0909/fff">
                 <div class="article-inner">
                     <h3> {{ post.title }} </h3>
@@ -51,7 +59,7 @@
             </a>
         </div>
 
-        <div class="pagination-container">
+        <div class="pagination-container" v-if="usePagination">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item disabled">
@@ -90,7 +98,10 @@ export default {
     data() {
         return {
             hover: false,
+            show: true,
+            usePagination: false,
             tagFilterKey: 'all',
+            loading: false,
             featuredPost: [
                 {
                     'title': 'Title of Featured Article',
@@ -133,7 +144,7 @@ export default {
                     'title': 'Title of Article',
                     'slug': 'page-slug', 
                     'featured_img': ' "/" ',
-                    'tags': [ 'new shit', 'cheese' ],
+                    'tags': [ 'new shit' ],
                     'excerpt': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 },
                 {
@@ -146,9 +157,6 @@ export default {
             ],
         };
     },
-    mounted(){
-        console.log(this.allPosts);
-    },
     computed: {
         tagFilter() {
             return this[this.tagFilterKey]
@@ -157,33 +165,22 @@ export default {
             return this.allPosts;
         },
         gettingStarted() {
-            this.resetActiveTags();
-            var element = document.getElementById('gettingStarted');
-            element.classList.add("active");
             return this.allPosts.filter((allPosts) => allPosts.tags.includes('getting started'));
-
         },
         cheese() {
-            this.resetActiveTags();
             return this.allPosts.filter((allPosts) => allPosts.tags.includes('cheese'))
         },
         newShit() {
-            this.resetActiveTags();
-            var element = document.getElementById('newShit');
-            element.classList.add("active");
             return this.allPosts.filter((allPosts) => allPosts.tags.includes('new shit'))
         
         },
     },
-    methods: {
-        resetActiveTags(){
-            console.log("inside resetActiveTags");
-            var element = document.getElementsByClassName('active');
-            console.log(element);
-            element[0].classList.remove("active");
-            console.log(element);
+    watch: { 
+        tagFilter(){
+            this.loading = true;
+            setTimeout(() => { this.loading = false; }, Math.random() * (3000 - 1500) + 1500 );
         },
-    },
+    }
 }
 
 </script>
@@ -417,6 +414,29 @@ export default {
       color: var(--theme-primary-light);
       background-color: hsl(0, 0%, 0%);
   }
+  #render-spiner-container{
+      height: unset;
+      margin-bottom: 80px;
+      background-color: transparent;
+  }
+
+  .fade {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.75;
+	}
+}
+
 
   @media screen and (max-width: 786px){
       #bloglanding-body {
