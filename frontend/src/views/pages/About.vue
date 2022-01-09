@@ -1,4 +1,23 @@
 <template lang="html">
+
+    <transition name="slide">
+        <Toast v-if="showSuccessToast" :message="message" :success="true" />
+    </transition>
+    <transition name="slide">
+        <Toast v-if="showFailToast" :message="message" :fail="true" />
+    </transition>
+
+    <div class="locked" v-if="!pageProtectedPassed">
+        <div class="passwordLockBox">
+            <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="80" style="opacity: 0.5"></router-link>
+            <p>Enter Password:</p>
+            <form @submit.prevent="validate()">
+                <input type="password" class="form-control" v-model="password" v-on:keyup.enter="submit">
+                <input type="submit" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark); width: 150px;"/>
+            </form>
+        </div>
+    </div>
+<div v-if="pageProtectedPassed">
     <NavBar></NavBar>
     <div id="about-body" class="fade-in">
         <div class="container">
@@ -85,222 +104,222 @@
                 <h2>Education</h2>
               </div>
 
-<div id="carouselEducation" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0" >
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Bachelors"></button>
-    <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="1" aria-label="Associates"></button>
-    <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="2" aria-label="High School Diploma"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" >
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="bachelors education">
-          <div class="align-left">
-              <h3>Bachelor's of Computer Science</h3>
-              <div class="degree-info">
-                  <p class="concentration">Concentrated in Information Security</p>
-                  <p class="location">Class of 2021 &bull; <span class="kent">Kent State University</span> &bull; Kent, Ohio</p>
+            <div id="carouselEducation" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0" >
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Bachelors"></button>
+                <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="1" aria-label="Associates"></button>
+                <button type="button" data-bs-target="#carouselEducation" data-bs-slide-to="2" aria-label="High School Diploma"></button>
               </div>
-          </div>
-          <div class="gpa-and-awards flex align-center">
-              <div class="left">
-                  <h6>GPA</h6>
-                  <p class="GPA">3.210</p>
-                  <p class="GPA-Detail">cumulative</p>
-                  <p class="GPA">3.654</p>
-                  <p class="GPA-Detail">major</p>
-              </div>
-              <div class="right">
-                  <div>
-                      <h6>Awards &amp; Honors</h6>
+              <div class="carousel-inner">
+                <div class="carousel-item active" >
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="bachelors education">
+                      <div class="align-left">
+                          <h3>Bachelor's of Computer Science</h3>
+                          <div class="degree-info">
+                              <p class="concentration">Concentrated in Information Security</p>
+                              <p class="location">Class of 2021 &bull; <span class="kent">Kent State University</span> &bull; Kent, Ohio</p>
+                          </div>
+                      </div>
+                      <div class="gpa-and-awards flex align-center">
+                          <div class="left">
+                              <h6>GPA</h6>
+                              <p class="GPA">3.210</p>
+                              <p class="GPA-Detail">cumulative</p>
+                              <p class="GPA">3.654</p>
+                              <p class="GPA-Detail">major</p>
+                          </div>
+                          <div class="right">
+                              <div>
+                                  <h6>Awards &amp; Honors</h6>
+                              </div>
+                              <p class="Awards">Dean's List</p>
+                              <p class="Awards-Detail">Fall 2019 <span style="color: var(--theme-black)">&bull;</span> Spring 2020</p>
+                              <p class="Awards-Detail">Fall 2020</p>
+                          </div>
+                      </div>
+                      <div class="align-center">
+                          <h6>Relevant Course Work</h6>
+                          <div class="coursework flex">
+                              <div class="left">
+                                  <p>Software Engineering</p>
+                                  <p>Digital Forensics</p>
+                              </div>
+                              <div class ="right">
+                                  <p>Web Programming</p>
+                                  <p>Intro to Database Systems</p>
+                              </div>
+                          </div>
+                          <div class="flex" style="justify-content: space-between">
+                            <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
+                                View Diploma
+                            </button>
+                            <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
+                                View All Coursework
+                            </button>
+                          </div>
+                        </div>
+                    </div>
                   </div>
-                  <p class="Awards">Dean's List</p>
-                  <p class="Awards-Detail">Fall 2019 <span style="color: var(--theme-black)">&bull;</span> Spring 2020</p>
-                  <p class="Awards-Detail">Fall 2020</p>
-              </div>
-          </div>
-          <div class="align-center">
-              <h6>Relevant Course Work</h6>
-              <div class="coursework flex">
-                  <div class="left">
-                      <p>Software Engineering</p>
-                      <p>Digital Forensics</p>
+                </div>
+                <div class="carousel-item" >
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="associates education flex">
+                      <div class="align-left" style="flex-basis: 60%; margin-right: 60px">
+                          <h3>Associates's of Science</h3>
+                          <div class="degree-info">
+                              <p class="location">Class of 2019 &bull; <span class="fairless">Kent State University</span> &bull; North Canton, Ohio</p>
+                          </div>
+                      </div>
+                      <div class="align-center" style="flex-basis: 40%; margin-left: 30px">
+                          <h6 style="margin-top: -15px">GPA</h6>
+                          <p class="GPA">2.757</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class ="right">
-                      <p>Web Programming</p>
-                      <p>Intro to Database Systems</p>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="diploma education flex">
+                      <div class="align-left" style="flex-basis: 60%; margin-right: 60px">
+                          <h3>High School Diploma</h3>
+                          <div class="degree-info">
+                              <p class="location">Class of 2013 &bull; <span class="fairless">Fairless High School</span> &bull; Navarre, Ohio</p>
+                          </div>
+                      </div>
+                      <div class="align-center" style="flex-basis: 40%; margin-left: 30px">
+                          <h6 style="margin-top: -15px">GPA</h6>
+                          <p class="GPA">3.600</p>
+                      </div> 
+                    </div>
+                    <img class="hover" style="width: 60%; margin: 100px 0 0; " src="@/assets/images/About/hs_diplomma.jpg">
                   </div>
+                </div>
               </div>
-              <div class="flex" style="justify-content: space-between">
-                <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
-                    View Diploma
-                </button>
-                <button type="button" class="btn all-course-work" data-bs-toggle="modal" data-bs-target="#courseworkModal">
-                    View All Coursework
-                </button>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item" >
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="associates education flex">
-          <div class="align-left" style="flex-basis: 60%; margin-right: 60px">
-              <h3>Associates's of Science</h3>
-              <div class="degree-info">
-                  <p class="location">Class of 2019 &bull; <span class="fairless">Kent State University</span> &bull; North Canton, Ohio</p>
-              </div>
-          </div>
-          <div class="align-center" style="flex-basis: 40%; margin-left: 30px">
-              <h6 style="margin-top: -15px">GPA</h6>
-              <p class="GPA">2.757</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="diploma education flex">
-          <div class="align-left" style="flex-basis: 60%; margin-right: 60px">
-              <h3>High School Diploma</h3>
-              <div class="degree-info">
-                  <p class="location">Class of 2013 &bull; <span class="fairless">Fairless High School</span> &bull; Navarre, Ohio</p>
-              </div>
-          </div>
-          <div class="align-center" style="flex-basis: 40%; margin-left: 30px">
-              <h6 style="margin-top: -15px">GPA</h6>
-              <p class="GPA">3.600</p>
-          </div> 
-        </div>
-        <img class="hover" style="width: 60%; margin: 100px 0 0; " src="@/assets/images/About/hs_diplomma.jpg">
-      </div>
-    </div>
-  </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselEducation" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselEducation" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
 
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselEducation" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>        
-            
-            </div>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselEducation" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>        
+                        
+                        </div>
 
-            <div class="tab-pane fade" id="nav-experience" role="tabpanel" aria-labelledby="nav-experience-tab" style="margin-bottom: 40px;">
-              <div class="experience">
-                  <div class="heading">
-                      <i style="margin-bottom: 20px" class="fa fa-certificate"></i>
-                      <h2>Experience</h2>
+                        <div class="tab-pane fade" id="nav-experience" role="tabpanel" aria-labelledby="nav-experience-tab" style="margin-bottom: 40px;">
+                          <div class="experience">
+                              <div class="heading">
+                                  <i style="margin-bottom: 20px" class="fa fa-certificate"></i>
+                                  <h2>Experience</h2>
+                              </div>
+
+            <div id="carouselExperience" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0" >
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="0" class="active" aria-current="true" aria-label=""></button>
+                <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="1" aria-label=""></button>
+                <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="2" aria-label=""></button>
+                <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="3" aria-label=""></button>
+                <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="4" aria-label=""></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" >
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                      <div class="jobs-container">
+                        <div class="job align-left">
+                            <h3 style="margin-bottom: 5px;">OuterBox Solutions</h3>
+                            <p>SEO Frontend Web Developer &bullet; <span class="dark-red">Copley, Ohio</span></p>
+                            <p class="dates">June 2021 - <em>present</em></p>
+                        </div>
+                      </div>
                   </div>
+                </div>
+                <div class="carousel-item" >
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="jobs-container">
+                      <div class="job align-left">
+                          <h3>East of Chicago Pizza</h3>
+                          <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                          <p class="dates">August 2016 - June 2021</p>
+                          <ul>
+                            <li>Ensure employees perform a variety of tasks</li>
+                            <li>Prepare food and package for distribution</li>
+                            <li>Stock supplies and order inventory</li>
+                            <li>Charging customers for purchases</li>
+                            <li>Money handling, credit cards and POS use</li>
+                            <li>Greet customers and problem solve complaints.</li>
+                            <li>Delivery Driver experience</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="jobs-container">
+                      <div class="job align-left">
+                          <h3>Amherst Meadows Care Center</h3>
+                          <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                          <p class="dates">November 2017 - November 2018</p>
+                          <ul>
+                            <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                            <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                            <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                            <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="jobs-container">
+                      <div class="job align-left">
+                          <h3>Brewster Parke Senior Living Community</h3>
+                          <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
+                          <p class="dates">April 2015 - July 2016</p>                                
+                          <ul>
+                            <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                            <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                            <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                            <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
+                    <div class="jobs-container">
+                      <div class="job align-left">
+                          <h3>Hospitality House</h3>
+                          <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
+                          <p class="dates">July 2012 - February 2015</p>                                
+                          <ul>
+                            <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
+                            <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
+                            <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
+                            <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<div id="carouselExperience" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0" >
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="0" class="active" aria-current="true" aria-label=""></button>
-    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="1" aria-label=""></button>
-    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="2" aria-label=""></button>
-    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="3" aria-label=""></button>
-    <button type="button" data-bs-target="#carouselExperience" data-bs-slide-to="4" aria-label=""></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" >
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-          <div class="jobs-container">
-            <div class="job align-left">
-                <h3 style="margin-bottom: 5px;">OuterBox Solutions</h3>
-                <p>SEO Frontend Web Developer &bullet; <span class="dark-red">Copley, Ohio</span></p>
-                <p class="dates">June 2021 - <em>present</em></p>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="carousel-item" >
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="jobs-container">
-          <div class="job align-left">
-              <h3>East of Chicago Pizza</h3>
-              <p>General Manager &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-              <p class="dates">August 2016 - June 2021</p>
-              <ul>
-                <li>Ensure employees perform a variety of tasks</li>
-                <li>Prepare food and package for distribution</li>
-                <li>Stock supplies and order inventory</li>
-                <li>Charging customers for purchases</li>
-                <li>Money handling, credit cards and POS use</li>
-                <li>Greet customers and problem solve complaints.</li>
-                <li>Delivery Driver experience</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="jobs-container">
-          <div class="job align-left">
-              <h3>Amherst Meadows Care Center</h3>
-              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-              <p class="dates">November 2017 - November 2018</p>
-              <ul>
-                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="jobs-container">
-          <div class="job align-left">
-              <h3>Brewster Parke Senior Living Community</h3>
-              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Brewster, Ohio</span></p>
-              <p class="dates">April 2015 - July 2016</p>                                
-              <ul>
-                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block" style="margin-top: 20px;">
-        <div class="jobs-container">
-          <div class="job align-left">
-              <h3>Hospitality House</h3>
-              <p>State Tested Nursing Assistant &bullet; <span class="dark-red">Massillon, Ohio</span></p>
-              <p class="dates">July 2012 - February 2015</p>                                
-              <ul>
-                <li>Assists with direct patient care under the supervision of the RN or other medical professionals.</li>
-                <li>Provide patients with help walking, exercising, and moving in and out of bed.</li>
-                <li>Position, feed, bathe, dress and assist patients with grooming and other tasks.</li>
-                <li>Observe patients' conditions, measure and record food and liquid intake and output and vital signs, and report changes to professional staff.</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExperience" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExperience" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExperience" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> 
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExperience" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div> 
 
               </div>
             </div>
@@ -309,6 +328,7 @@
     </div>
     <FooterLarge style="margin-top: 120px"></FooterLarge>
     <courseworkModal></courseworkModal>
+</div>
 </template>
 
 <script lang="js">
@@ -316,12 +336,25 @@ import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import courseworkModal from "@/components/Modals/About/Coursework-modal.vue";
 
+import Toast from "@/components/Toast"
+
+
 export default {
     name: 'about',
     components: {
         NavBar,
         FooterLarge,
-        courseworkModal
+        courseworkModal,
+        Toast
+    },
+    data(){
+        return {
+            pageProtectedPassed: false,
+            password: '',
+            showSuccessToast: false,
+            showFailToast: false,
+            message: '',
+        };
     },
     methods: {
         scrollToElement(elementRef) {
@@ -329,7 +362,29 @@ export default {
         },
         downloadResume: () => {
             window.open('https://drive.google.com/file/d/1hvYlA2TQjh-5ExP_3pLJYxC9USZZfMGT/view?usp=sharing');
-        }
+        },
+                validate(){
+            if (this.password == 'daniel-online'){
+                this.message = 'Login Successful';
+                setTimeout(() => { this.triggerToast('success'); }, 500 );
+                setTimeout(() => { this.pageProtectedPassed = true; }, 1000 );
+            }
+            else{
+                this.message = 'Login Failed';
+                this.triggerToast('fail');
+            }
+        },
+        triggerToast(mode) {
+            if (mode == 'success'){
+                this.showSuccessToast = true;       
+            }     
+            else {
+                this.showFailToast = true;
+            }
+
+            setTimeout(() => this.showSuccessToast = false, 10000);
+            setTimeout(() => this.showFailToast = false, 5000);
+        },
     }
 }
 
@@ -782,4 +837,62 @@ export default {
         margin-bottom: 30px;
     }
 }
+
+
+
+/**********     LOGIN SPECIFIC, TO REMOVE   ***************/
+    .locked{
+        position: absolute;
+        z-index: 80;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .passwordLockBox{
+        background: rgba(48, 45, 45, 0.2);
+        border: 1px solid rgba(175, 0, 0, 0.4);
+        padding: 30px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .passwordLockBox p{
+        color: var(--theme-light-gray);
+    }
+    input.form-control:focus {
+        box-shadow: none;
+    }
+    form{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10px;
+    }
+    form .btn{
+        opacity: 0.6;
+        padding: 5px 10px;
+        margin: 1px 0;
+        border-radius: 0;
+    }
+
+    .slide-enter-active {
+        animation: slide-in .5s;
+    }
+    .slide-leave-active {
+        animation: slide-in .5s reverse;
+    }
+    @keyframes slide-in {
+        0% {
+            transform: translateX(300px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+/******************************************/
+
 </style>

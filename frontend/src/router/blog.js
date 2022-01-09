@@ -1,5 +1,6 @@
 
 import blogLanding from "@/views/blog/blog.vue";
+import articleTemplate from "@/views/blog/articleTemplate.vue";
 
 const blogRoutes = [
     {
@@ -7,6 +8,11 @@ const blogRoutes = [
       name: 'blog-listing',
       component: blogLanding,
     },
+    {
+      path: '/blog/article-template',
+      name: 'article-template',
+      component: articleTemplate,
+    }
   ];
   
   export default blogRoutes;
