@@ -1,0 +1,67 @@
+<template>
+    <div class="toast-wrapper">
+        <div v-if="success" class="success toastie">
+            {{ message }}
+        </div>
+        <div v-if="fail" class="fail toastie">
+            {{ message }}
+        </div>
+        <div v-if="primary" class="primary toastie">
+            {{ message }}
+        </div>
+        <div v-if="warning" class="warning toastie">
+            {{ message }}
+        </div>
+    </div>
+</template>
+
+<script lang="js">
+
+export default {
+    name: 'Toast',
+    props: {
+        message: String,
+        mode: String,
+        success: Boolean,
+        fail: Boolean,
+        primary: Boolean
+    }
+}
+</script>
+
+
+<style scoped>
+    .toast-wrapper{
+        width: 100%;
+        z-index: 90;
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        padding-right: 20px;
+        width: 300px;
+        right: 0;
+
+    }
+    .toastie{
+        padding: 10px 50px 10px 15px;
+        color: rgba(255, 255, 255, 0.7);
+        border-radius: 0;
+        border-left: 2px solid rgba(255, 255, 255, 0.35);
+        max-width: 400px;
+        text-align: left;
+    }
+    .success.toastie{
+        background: rgba(12, 255, 156, 0.15);
+    }
+    .fail.toastie{
+        background: rgba(175, 0, 0, 0.15);
+    }
+    .primary.toastie{
+        background: rgba(4, 155, 224, 0.15);
+    }
+    .warning.toastie{
+        background: rgba(143, 134, 4, 0.15);
+    }
+
+</style>
