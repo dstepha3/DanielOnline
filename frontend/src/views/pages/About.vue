@@ -365,12 +365,12 @@ export default {
         },
                 validate(){
             if (this.password == 'daniel-online'){
-                this.message = 'Login Successful';
+                this.message = 'Access Approved';
                 setTimeout(() => { this.triggerToast('success'); }, 500 );
                 setTimeout(() => { this.pageProtectedPassed = true; }, 1000 );
             }
             else{
-                this.message = 'Login Failed';
+                this.message = 'Access Failed';
                 this.triggerToast('fail');
             }
         },

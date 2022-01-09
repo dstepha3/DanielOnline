@@ -34,7 +34,7 @@ export default {
     .toast-wrapper{
         width: 100%;
         z-index: 90;
-        position: absolute;
+        position: fixed;
         display: flex;
         justify-content: flex-end;
         margin-top: 20px;
@@ -52,16 +52,16 @@ export default {
         text-align: left;
     }
     .success.toastie{
-        background: rgba(12, 255, 156, 0.15);
+        background: rgba(12, 255, 156, 0.2);
     }
     .fail.toastie{
-        background: rgba(175, 0, 0, 0.15);
+        background: rgba(175, 0, 0, 0.2);
     }
     .primary.toastie{
-        background: rgba(4, 155, 224, 0.15);
+        background: rgba(4, 155, 224, 0.2);
     }
     .warning.toastie{
-        background: rgba(143, 134, 4, 0.15);
+        background: rgba(143, 134, 4, 0.2);
     }
 
 </style>
