@@ -1,16 +1,16 @@
 <template>
     <div class="toast-wrapper">
         <div v-if="success" class="success toastie">
-            {{ message }}
+            <i class="fas fa-thumbs-up" style="margin-right: 10px;"></i>{{ message }}
         </div>
         <div v-if="fail" class="fail toastie">
-            {{ message }}
+            <i class="fas fa-exclamation-circle" style="margin-right: 10px;"></i>{{ message }}
         </div>
         <div v-if="primary" class="primary toastie">
-            {{ message }}
+            <i class="fas fa-info-circle" style="margin-right: 10px;"></i>{{ message }}
         </div>
         <div v-if="warning" class="warning toastie">
-            {{ message }}
+            <i class="fas fa-exclamation-circle" style="margin-right: 10px;"></i>{{ message }}
         </div>
     </div>
 </template>
@@ -46,7 +46,7 @@ export default {
     .toastie{
         padding: 10px 50px 10px 15px;
         color: rgba(255, 255, 255, 0.7);
-        border-radius: 0;
+        border-radius: 5px;
         border-left: 2px solid rgba(255, 255, 255, 0.35);
         max-width: 400px;
         text-align: left;
