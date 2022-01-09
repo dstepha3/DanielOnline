@@ -1,6 +1,8 @@
 import { createWebHistory, createRouter} from "vue-router";
 
 import Home from "@/views/Home.vue";
+import AdminDashboard from "@/views/Admin.vue";
+
 import About from "@/views/pages/About.vue";
 import Contact from "@/views/pages/Contact.vue";
 import FAQs from "@/views/pages/FAQs.vue";
@@ -27,6 +29,14 @@ const baseRoutes = [
         component: About,
         meta: {
             title: 'About - Daniel Online!'
+        }
+    },
+    {
+        path: "/admin",
+        name: "AdminDashboard",
+        component: AdminDashboard,
+        meta: {
+            title: 'Admin Dashboard - Daniel Online!'
         }
     },
     {

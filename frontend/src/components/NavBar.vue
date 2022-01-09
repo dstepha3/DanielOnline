@@ -1,5 +1,13 @@
 <template lang="html">
 <div id="navbar">
+    <div id="login-dash-container">
+            <router-link to="/admin" v-if="!adminLoggedIn">
+                <i class="fas fa-user-circle"></i>
+            </router-link>
+            <div class="LoggedIn" v-if="adminLoggedIn">
+                <p>Welcome Daniel.</p>
+            </div>
+    </div>
 
     <div class="top-banner">
         <router-link to="/"><img src="@/assets/images/star-logo.png" width="105"></router-link>
@@ -38,7 +46,12 @@
 <script>
 
 export default {
-    name: "nav-bar"
+    name: "nav-bar",
+    data(){
+        return {
+            adminLoggedIn: false,
+        }
+    }
 }
 
 </script>
@@ -58,6 +71,9 @@ export default {
 .nav a,
 .nav-link {
     margin: 0 10px;
+}
+#navbar{
+    position: relative;
 }
 #navbar a.router-link-exact-active{
     color: var(--theme-primary-light);
@@ -129,4 +145,36 @@ justify-content: center;
 .dropdown-menu a.router-link-exact-active:hover {
     cursor: default;
 }
+
+#login-dash-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    top: 15px;
+    right: 30px;
+    justify-content: flex-end;
+    z-index: 85;
+    text-align: right;
+}
+#login-dash-container .fas{
+    font-size: 20px;
+    color: white;
+    opacity: 0.1;
+    margin: 0;
+    transition: all 0.3s;
+}
+#login-dash-container .fas:hover{
+    opacity: 0.6;
+}
+#login-dash-container .LoggedIn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#login-dash-container .LoggedIn p{ 
+    font-size: 16px !important;
+    margin-bottom: 0;
+    color: var(--theme-dark-gray);
+}
+
 </style>
