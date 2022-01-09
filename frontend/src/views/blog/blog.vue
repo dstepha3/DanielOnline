@@ -5,7 +5,7 @@
         <p class="center">Finding yourself on this page must mean you're looking for answers and lucky, I've got you.<br/>I've summarized a couple questions I've been frequently asked and I'm here to address them. </p>
         <p class="center">Not able to find what you're looking for? <router-link class="link" to="contact">Contact me</router-link> and I'll try to get back to you as quickly as I can.</p>
 
-        <a class="featured-post" v-for="post in featuredPost" :key="post">
+        <router-link to="/blog/article-template" class="featured-post" v-for="post in featuredPost" :key="post">
             <div class="featured-image-container">
                 <img src="https://dummyimage.com/1200x800/3b0909/fff">
             </div>
@@ -21,7 +21,7 @@
                     <p>Read More <span class="carat">></span></p>
                 </div>
             </div>
-        </a>
+        </router-link>
 
         <div class="filter-container" v-if="show">
             <h4>Display By Tag</h4>
@@ -41,22 +41,24 @@
             </div>
         </div>
 
-        <div class="flex" v-if="!loading" >
-            <a class="article fade" v-for="post in tagFilter" :key="post">
-                <img src="https://dummyimage.com/1200x800/3b0909/fff">
-                <div class="article-inner">
-                    <h3> {{ post.title }} </h3>
-                    <div class="tag-container">
-                        <p class="tag" v-for="tags in post.tags" :key="tags" > 
-                            {{ tags }}
-                        </p>
+        <div v-if="!loading" >
+            <div class="flex" >
+                <router-link to="/blog/article-template" class="article fade" v-for="post in tagFilter" :key="post">
+                    <img src="https://dummyimage.com/1200x800/3b0909/fff">
+                    <div class="article-inner">
+                        <h3> {{ post.title }} </h3>
+                        <div class="tag-container">
+                            <p class="tag" v-for="tags in post.tags" :key="tags" > 
+                                {{ tags }}
+                            </p>
+                        </div>
+                        <p> {{ post.excerpt }} </p>
+                        <div class="readMore">
+                            <p>Read More <span class="carat">></span></p>
+                        </div>
                     </div>
-                    <p> {{ post.excerpt }} </p>
-                    <div class="readMore">
-                        <p>Read More <span class="carat">></span></p>
-                    </div>
-                </div>
-            </a>
+                </router-link>
+            </div>
         </div>
 
         <div class="pagination-container" v-if="usePagination">
