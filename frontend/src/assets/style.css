@@ -436,3 +436,33 @@ section{
   border-radius: 50%;
 }
 
+
+
+.slide-enter-active {
+  animation: slide-in .5s;
+}
+.slide-leave-active {
+  animation: slide-in .5s reverse;
+}
+@keyframes slide-in {
+  0% {
+      transform: translateX(300px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+.fade-enter-active {
+  animation: fade-on 2s;
+}
+.fade-leave-active {
+  animation: fade-on 1s reverse;
+}
+@keyframes fade-on {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}

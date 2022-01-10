@@ -1,12 +1,13 @@
 <template lang="html">
     <transition name="slide">
-        <Toast v-if="showSuccessToast" :message="message" :success="true" />
+        <Toast v-if="showSuccessToast" :message="$store.state.pageAuthSuccessMessage" :success="true" />
     </transition>
     <transition name="slide">
-        <Toast v-if="showFailToast" :message="message" :fail="true" />
+        <Toast v-if="showFailToast" :message="$store.state.pageAuthFailMessage" :fail="true" />
     </transition>
 
-    <div class="locked" v-if="!pageProtectedPassed">
+<transition name="fade">
+    <div class="locked" v-if="!$store.state.adminAuthPassed">
         <div class="passwordLockBox">
             <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="80" style="opacity: 0.5"></router-link>
             <form @submit.prevent="validate()">
@@ -16,12 +17,13 @@
             </form>
         </div>
     </div>
+</transition>
     
-    <div v-if="pageProtectedPassed">
-        <div id="body" style="text-align: center; padding: 0 30px" class="fade-in">
-            <h1>Admin Dashboard</h1>
-        </div>
+<div v-if="$store.state.adminAuthPassed">
+    <div id="body" style="text-align: center; padding: 0 30px" class="fade-in">
+        <h1>Admin Dashboard</h1>
     </div>
+</div>
 
 </template>
 
@@ -36,28 +38,27 @@ export default {
     },
     data(){
         return {
-            pageProtectedPassed: false,
-            username: '',
-            password: '',
             showSuccessToast: false,
             showFailToast: false,
-            message: '',
+            username: null,
+            password: null,
         };
     },
     methods: {
         validate(){
-            if ((this.password == 'daniel-online') && (this.username == 'admin')){
-                this.message = 'Login Successful';
-                setTimeout(() => { this.triggerToast('success'); }, 500 );
-                setTimeout(() => { this.pageProtectedPassed = true; }, 1000 );
-            }
-            else{
-                this.message = 'Login Failed';
-                this.triggerToast('fail');
+            if (!this.$store.state.adminAuthPassed){
+                if ((this.password == this.$store.state.adminPassword) && (this.username == this.$store.state.adminUsername)) {
+                    setTimeout(() => { this.triggerToast('success'); }, 500 );
+                    setTimeout(() => { this.$store.commit('toggleAdminPermission'); }, 1000 );
+                }
+                else{
+                    this.triggerToast('fail');
+                }
             }
         },
         triggerToast(mode) {
             if (mode == 'success'){
+                this.showFailToast = false;
                 this.showSuccessToast = true;       
             }     
             else {
@@ -111,18 +112,4 @@ export default {
         border-radius: 0;
     }
 
-    .slide-enter-active {
-        animation: slide-in .5s;
-    }
-    .slide-leave-active {
-        animation: slide-in .5s reverse;
-    }
-    @keyframes slide-in {
-        0% {
-            transform: translateX(300px);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
 </style>

@@ -39,29 +39,34 @@ export default {
         justify-content: flex-end;
         margin-top: 20px;
         padding-right: 20px;
-        width: 300px;
+        width: 400px;
         right: 0;
 
     }
     .toastie{
-        padding: 10px 50px 10px 15px;
+        padding: 10px 50px 10px 25px;
         color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
         border-left: 2px solid rgba(255, 255, 255, 0.35);
+        width: 300px;
         max-width: 400px;
+        font-weight: 700;
         text-align: left;
     }
     .success.toastie{
-        background: rgba(12, 255, 156, 0.2);
+        background: rgba(12, 255, 156, 0.7);
+        color: black;
     }
     .fail.toastie{
-        background: rgba(175, 0, 0, 0.2);
+        background: rgba(175, 0, 0, 0.7);
     }
     .primary.toastie{
-        background: rgba(4, 155, 224, 0.2);
+        background: rgba(4, 155, 224, 0.7);
+        color: black;
     }
     .warning.toastie{
-        background: rgba(143, 134, 4, 0.2);
+        background: rgba(143, 134, 4, 0.7);
+        color: black;
     }
 
 </style>

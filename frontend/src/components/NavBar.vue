@@ -1,11 +1,17 @@
 <template lang="html">
 <div id="navbar">
-    <div id="login-dash-container">
-            <router-link to="/admin" v-if="!adminLoggedIn">
+    <div class="login-dash-container">
+            <router-link to="/admin" v-if="!$store.state.adminAuthPassed">
                 <i class="fas fa-user-circle"></i>
             </router-link>
-            <div class="LoggedIn" v-if="adminLoggedIn">
+    </div>
+    <div class="login-dash-container Logged-In">
+            <div class="LoggedIn" v-if="$store.state.adminAuthPassed">
                 <p>Welcome Daniel.</p>
+            </div>
+            <div v-if="$store.state.adminAuthPassed">
+                <router-link to="/admin">Admin Dashboard</router-link>
+                <a class="logout" v-on:click="admin_logout()">Logout</a>
             </div>
     </div>
 
@@ -47,10 +53,10 @@
 
 export default {
     name: "nav-bar",
-    data(){
-        return {
-            adminLoggedIn: false,
-        }
+    methods: {
+        admin_logout(){
+            this.$store.commit('logout');
+        },
     }
 }
 
@@ -146,7 +152,7 @@ justify-content: center;
     cursor: default;
 }
 
-#login-dash-container{
+.login-dash-container{
     position: absolute;
     width: 100%;
     display: flex;
@@ -156,25 +162,49 @@ justify-content: center;
     z-index: 85;
     text-align: right;
 }
-#login-dash-container .fas{
+.login-dash-container.Logged-In{
+    width: 100vw;
+    display: flex;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 85;
+    text-align: center;
+    padding: 0 40px;
+}
+.login-dash-container .fas{
     font-size: 20px;
     color: white;
     opacity: 0.1;
     margin: 0;
     transition: all 0.3s;
 }
-#login-dash-container .fas:hover{
+.login-dash-container .fas:hover{
     opacity: 0.6;
 }
-#login-dash-container .LoggedIn{
+.login-dash-container .LoggedIn{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-#login-dash-container .LoggedIn p{ 
+.login-dash-container .LoggedIn p{ 
     font-size: 16px !important;
     margin-bottom: 0;
     color: var(--theme-dark-gray);
+}
+.login-dash-container.Logged-In a{
+    color: var(--theme-primary-dark);
+    font-size: 16px !important;
+    text-decoration: none;
+    margin: 0;
+    transition: all 0.3s;
+}
+.login-dash-container.Logged-In a:hover{
+    color: var(--theme-primary-light);
+}
+.login-dash-container.Logged-In a.logout{
+    margin-left: 40px;
+    cursor: pointer;
 }
 
 </style>

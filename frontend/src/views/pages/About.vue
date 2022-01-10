@@ -1,23 +1,26 @@
 <template lang="html">
 
-    <transition name="slide">
-        <Toast v-if="showSuccessToast" :message="message" :success="true" />
-    </transition>
-    <transition name="slide">
-        <Toast v-if="showFailToast" :message="message" :fail="true" />
-    </transition>
+<transition name="slide">
+    <Toast v-if="showSuccessToast" :message="$store.state.pageAuthSuccessMessage" :success="true" />
+</transition>
+<transition name="slide">
+    <Toast v-if="showFailToast" :message="$store.state.pageAuthFailMessage" :fail="true" />
+</transition>
 
-    <div class="locked" v-if="!pageProtectedPassed">
-        <div class="passwordLockBox">
-            <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="80" style="opacity: 0.5"></router-link>
-            <p>Enter Password:</p>
-            <form @submit.prevent="validate()">
-                <input type="password" class="form-control" v-model="password" v-on:keyup.enter="submit">
-                <input type="submit" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark); width: 150px;"/>
-            </form>
-        </div>
-    </div>
-<div v-if="pageProtectedPassed">
+<transition name="fade">
+  <div class="locked" v-if="!$store.state.adminAuthPassed">
+      <div class="passwordLockBox">
+          <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="80" style="opacity: 0.5"></router-link>
+          <p>Enter Password:</p>
+          <form @submit.prevent="validate()">
+              <input type="password" class="form-control" v-model="password" v-on:keyup.enter="submit">
+              <input type="submit" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark); width: 150px;"/>
+          </form>
+      </div>
+  </div>
+</transition>
+
+<div v-if="$store.state.adminAuthPassed">
     <NavBar></NavBar>
     <div id="about-body" class="fade-in">
         <div class="container">
@@ -349,11 +352,9 @@ export default {
     },
     data(){
         return {
-            pageProtectedPassed: false,
             password: '',
             showSuccessToast: false,
             showFailToast: false,
-            message: '',
         };
     },
     methods: {
@@ -363,26 +364,27 @@ export default {
         downloadResume: () => {
             window.open('https://drive.google.com/file/d/1hvYlA2TQjh-5ExP_3pLJYxC9USZZfMGT/view?usp=sharing');
         },
-                validate(){
-            if (this.password == 'daniel-online'){
-                this.message = 'Access Approved';
-                setTimeout(() => { this.triggerToast('success'); }, 500 );
-                setTimeout(() => { this.pageProtectedPassed = true; }, 1000 );
-            }
-            else{
-                this.message = 'Access Failed';
-                this.triggerToast('fail');
+        validate(){
+            if (!this.$store.state.adminAuthPassed){
+                if (this.password == this.$store.state.adminPassword){
+                    setTimeout(() => { this.triggerToast('success'); }, 500 );
+                    setTimeout(() => { this.$store.commit('toggleAdminPermission'); }, 1000 );
+                }
+                else{
+                    this.triggerToast('fail');
+                }
             }
         },
         triggerToast(mode) {
             if (mode == 'success'){
+                this.showFailToast = false;
                 this.showSuccessToast = true;       
             }     
             else {
                 this.showFailToast = true;
             }
 
-            setTimeout(() => this.showSuccessToast = false, 10000);
+            setTimeout(() => this.showSuccessToast = false, 5000);
             setTimeout(() => this.showFailToast = false, 5000);
         },
     }
@@ -891,6 +893,20 @@ export default {
         }
         100% {
             transform: translateX(0);
+        }
+    }
+    .fade-enter-active {
+        animation: fade-on 2s;
+    }
+    .fade-leave-active {
+        animation: fade-on 1s reverse;
+    }
+    @keyframes fade-on {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 /******************************************/

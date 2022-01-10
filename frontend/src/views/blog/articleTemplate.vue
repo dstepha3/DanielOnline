@@ -1,12 +1,13 @@
 <template lang="html">
-    <transition name="slide">
-        <Toast v-if="showSuccessToast" :message="message" :success="true" />
-    </transition>
-    <transition name="slide">
-        <Toast v-if="showFailToast" :message="message" :fail="true" />
-    </transition>
+<transition name="slide">
+    <Toast v-if="showSuccessToast" :message="$store.state.pageAuthSuccessMessage" :success="true" />
+</transition>
+<transition name="slide">
+    <Toast v-if="showFailToast" :message="$store.state.pageAuthFailMessage" :fail="true" />
+</transition>
 
-    <div class="locked" v-if="!pageProtectedPassed">
+<transition name="fade">
+    <div class="locked" v-if="!$store.state.adminAuthPassed">
         <div class="passwordLockBox">
             <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="80" style="opacity: 0.5"></router-link>
             <p>Enter Password:</p>
@@ -16,154 +17,155 @@
             </form>
         </div>
     </div>
-    
-    <div v-if="pageProtectedPassed">
-        <NavBar></NavBar>
-        <div id="article-body" class="fade-in">
-            <h1>Article Template H1 Title</h1>
-            <div class="meta">
-                <span>By Daniel Stephan</span> &nbsp;&bullet;&nbsp;
-                <span>January 12, 2022</span>
-            </div>
-            <div class="banner-image">
-                <img src="https://wallpaperaccess.com/full/2828905.jpg">
-            </div>
-            <div class="top-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
-                <p>Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-            </div>
-            <div class="jump-section">
-                <div class="floating-title">
-                    <h4>Jump to Section</h4>
-                </div>
-                <div class="jump-row flex">
-                    <a class="toc">
-                        Title of Section
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                    <a class="toc">
-                        Title of Section
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                    <a class="toc">
-                        Title of Section
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="jump-row flex">
-                    <a class="toc">
-                        Title of Section
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                    <a class="toc">
-                        Title of Section, May Span One or More Lines
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                    <a class="toc">
-                        Title of Section
-                        <div class="readMore">
-                            <p><i class="fas fa-angle-double-down"></i></p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+</transition>
 
-            <section>
-                <h2>Header Title H2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. <router-link to="/">Donec lacinia pulvinar</router-link> sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                <h3>Header Title H3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
-                <div class="split-list flex">
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    </ul>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="banner-image">
-                <img src="https://getwallpapers.com/wallpaper/full/0/4/1/349449.jpg">
+<div v-if="$store.state.adminAuthPassed">
+    <NavBar></NavBar>
+    <div id="article-body" class="fade-in">
+        <h1>Article Template H1 Title</h1>
+        <div class="meta">
+            <span>By Daniel Stephan</span> &nbsp;&bullet;&nbsp;
+            <span>January 12, 2022</span>
+        </div>
+        <div class="banner-image">
+            <img src="https://wallpaperaccess.com/full/2828905.jpg">
+        </div>
+        <div class="top-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
+            <p>Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        </div>
+        <div class="jump-section">
+            <div class="floating-title">
+                <h4>Jump to Section</h4>
             </div>
-            <section class="align-center">
-                <h2>Centered Title Header H2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor.</p>
-            </section>
-
-            <section>
-                <div class="numberedList">
-                    <div class="listItem flex">
-                        <h4>1</h4>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
-                        </div>
+            <div class="jump-row flex">
+                <a class="toc">
+                    Title of Section
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
                     </div>
-                    <div class="listItem flex">
-                        <h4>2</h4>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
-                        </div>
+                </a>
+                <a class="toc">
+                    Title of Section
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
                     </div>
-                    <div class="listItem flex">
-                        <h4>3</h4>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
-                        </div>
+                </a>
+                <a class="toc">
+                    Title of Section
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
                     </div>
-                </div>
-            </section>
+                </a>
+            </div>
+            <div class="jump-row flex">
+                <a class="toc">
+                    Title of Section
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
+                    </div>
+                </a>
+                <a class="toc">
+                    Title of Section, May Span One or More Lines
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
+                    </div>
+                </a>
+                <a class="toc">
+                    Title of Section
+                    <div class="readMore">
+                        <p><i class="fas fa-angle-double-down"></i></p>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-            <hr />
+        <section>
+            <h2>Header Title H2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. <router-link to="/">Donec lacinia pulvinar</router-link> sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <h3>Header Title H3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
+            <div class="split-list flex">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+            </div>
+        </section>
 
-            <section>
-                <div class="split-section flex">
-                    <div class="image-container">
-                        <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/SRsQjwFQMjby34s1c/videoblocks-futuristic-red-digital-earth-seamless-loop-global-data-network-around-planet-in-modern-age-worldwide-internet-and-blockchain-technology-connectivity-science-and-business-concept-3d-animation_hhxnqnkjb_thumbnail-1080_01.png">
-                    </div>
+        <div class="banner-image">
+            <img src="https://getwallpapers.com/wallpaper/full/0/4/1/349449.jpg">
+        </div>
+        <section class="align-center">
+            <h2>Centered Title Header H2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor.</p>
+        </section>
+
+        <section>
+            <div class="numberedList">
+                <div class="listItem flex">
+                    <h4>1</h4>
                     <div class="content">
-                        <h2>Header Title H2</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
                     </div>
                 </div>
-            </section>
-
-            <section style="margin-top: 80px;">
-                <h2>Header Title H2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. <router-link to="/">Donec lacinia pulvinar</router-link> sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                <h3>Header Title H3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
-            </section>
-
-            <section>
-                <div class="cta">
-                    <h2>Conclusion Header Title H2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. </p>
-                    <div class="button-container">
-                        <router-link to="#" class="dark button">Contact</router-link>
-                        <router-link to="#" class="red button">Get Help</router-link>
+                <div class="listItem flex">
+                    <h4>2</h4>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
                     </div>
                 </div>
-            </section>
+                <div class="listItem flex">
+                    <h4>3</h4>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <section>
+            <div class="split-section flex">
+                <div class="image-container">
+                    <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/SRsQjwFQMjby34s1c/videoblocks-futuristic-red-digital-earth-seamless-loop-global-data-network-around-planet-in-modern-age-worldwide-internet-and-blockchain-technology-connectivity-science-and-business-concept-3d-animation_hhxnqnkjb_thumbnail-1080_01.png">
+                </div>
+                <div class="content">
+                    <h2>Header Title H2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 80px;">
+            <h2>Header Title H2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. <router-link to="/">Donec lacinia pulvinar</router-link> sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. Suspendisse vulputate laoreet risus, semper auctor est porttitor non. Mauris vel fringilla justo. Donec feugiat, sapien sed euismod consequat, est sem vehicula diam, a rutrum urna ipsum quis quam. Nunc sodales sollicitudin ligula, in volutpat magna malesuada at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <h3>Header Title H3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis.</p>
+        </section>
+
+        <section>
+            <div class="cta">
+                <h2>Conclusion Header Title H2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed augue quis risus aliquam semper vel quis lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc venenatis felis vitae tellus condimentum, quis tristique nunc laoreet. Fusce faucibus consequat felis at varius. Donec lacinia pulvinar sodales. In bibendum dictum lectus, a ultrices nibh interdum non. Aenean cursus ullamcorper ex vitae mattis. Pellentesque cursus eleifend ipsum, et dictum neque tristique ut. Sed sed nunc porttitor justo consequat porta eget a dolor. </p>
+                <div class="button-container">
+                    <router-link to="#" class="dark button">Contact</router-link>
+                    <router-link to="#" class="red button">Get Help</router-link>
+                </div>
+            </div>
+        </section>
 
 
-        </div>
-        <FooterLarge></FooterLarge>
     </div>
+    <FooterLarge></FooterLarge>
+</div>
 
 </template>
 
@@ -172,6 +174,7 @@
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import Toast from "@/components/Toast"
+
 
 export default {
     name: 'articleTemplate',
@@ -182,34 +185,33 @@ export default {
     },
     data(){
         return {
-            pageProtectedPassed: false,
             password: '',
             showSuccessToast: false,
             showFailToast: false,
-            message: '',
         };
     },
     methods: {
         validate(){
-            if (this.password == 'daniel-online'){
-                this.message = 'Access Approved';
-                setTimeout(() => { this.triggerToast('success'); }, 500 );
-                setTimeout(() => { this.pageProtectedPassed = true; }, 1000 );
-            }
-            else{
-                this.message = 'Access Failed';
-                this.triggerToast('fail');
+            if (!this.$store.state.adminAuthPassed){
+                if (this.password == this.$store.state.adminPassword){
+                    setTimeout(() => { this.triggerToast('success'); }, 500 );
+                    setTimeout(() => { this.$store.commit('toggleAdminPermission'); }, 1000 );
+                }
+                else{
+                    this.triggerToast('fail');
+                }
             }
         },
         triggerToast(mode) {
             if (mode == 'success'){
+                this.showFailToast = true;
                 this.showSuccessToast = true;       
             }     
             else {
                 this.showFailToast = true;
             }
 
-            setTimeout(() => this.showSuccessToast = false, 10000);
+            setTimeout(() => this.showSuccessToast = false, 5000);
             setTimeout(() => this.showFailToast = false, 5000);
         },
     }
@@ -511,6 +513,9 @@ a.button:hover{
         justify-content: center;
         align-items: center;
     }
+    .passwordLockBox a:hover{
+        border-bottom: none;
+    }
     .passwordLockBox p{
         color: var(--theme-light-gray);
     }
@@ -542,6 +547,20 @@ a.button:hover{
         }
         100% {
             transform: translateX(0);
+        }
+    }
+    .fade-enter-active {
+        animation: fade-on 2s;
+    }
+    .fade-leave-active {
+        animation: fade-on 1s reverse;
+    }
+    @keyframes fade-on {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 </style>
