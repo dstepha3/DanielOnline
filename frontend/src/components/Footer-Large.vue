@@ -227,7 +227,7 @@ footer .social-media .logo:hover{
     }
     footer .copyright {
         margin-bottom: 20px;
-        padding: 0 20%;
+        padding: 0 16%;
         text-align: center;
     }
 }
