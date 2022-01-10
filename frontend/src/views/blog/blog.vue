@@ -289,7 +289,7 @@ export default {
   .article img{
       display: block;
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
       object-position: center;
       border-bottom: 2px solid var(--theme-primary-dark); 
