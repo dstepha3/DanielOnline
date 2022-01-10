@@ -217,7 +217,7 @@ footer .social-media .logo:hover{
         order: 3;
     }
     footer {
-    padding: 50px 0 20px;
+    padding: 100px 0 20px;
 }
 }
 
