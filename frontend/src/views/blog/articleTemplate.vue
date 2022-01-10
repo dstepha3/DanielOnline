@@ -211,7 +211,7 @@ export default {
                 this.showFailToast = true;
             }
 
-            setTimeout(() => this.showSuccessToast = false, 5000);
+            setTimeout(() => this.showSuccessToast = false, 8000);
             setTimeout(() => this.showFailToast = false, 5000);
         },
     }
