@@ -912,8 +912,8 @@ export default {
 
     @media only screen and (max-width: 768px){
       .passwordLockBox{
-          margin: 0 5%;
-          padding:  60px 30px;
+          margin: 0;
+          padding: 60px 45px;
       }
       .passwordLockBox form{
         flex-direction: column;
