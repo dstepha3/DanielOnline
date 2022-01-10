@@ -112,4 +112,20 @@ export default {
         border-radius: 0;
     }
 
+    @media only screen and (max-width: 768px){
+      .passwordLockBox{
+          margin: 0 10%;
+          padding:  60px 30px;
+      }
+      .passwordLockBox form{
+        flex-direction: column;
+      }
+      .passwordLockBox form > input:first-child{
+          margin-top: 20px;
+      }
+      .passwordLockBox form .btn{
+        width: 100% !important;
+      }
+    }
+
 </style>
