@@ -20,7 +20,10 @@
     </div>
 
     <nav>
-        <ul class="nav justify-content-center">
+        <ul class="nav mobile">
+            <a id="nav-toggle" v-on:click="toggleMenu()"><i class="fas fa-bars"></i></a>
+        </ul>
+        <ul class="nav full-nav justify-content-center">
             <li class="nav-item">
                 <router-link class="nav-link" to="/">Home</router-link>
             </li>
@@ -56,6 +59,12 @@ export default {
     methods: {
         admin_logout(){
             this.$store.commit('logout');
+        },
+        toggleMenu(){
+            console.log('its going');
+            var x = document.getElementsByClassName("full-nav");
+            x[0].classList.toggle('active');
+            console.log(x);
         },
     }
 }
@@ -190,7 +199,7 @@ justify-content: center;
 .login-dash-container .LoggedIn p{ 
     font-size: 16px !important;
     margin-bottom: 0;
-    color: var(--theme-dark-gray);
+    color: var(--theme-primary-dark);
 }
 .login-dash-container.Logged-In a{
     color: var(--theme-primary-dark);
@@ -205,6 +214,59 @@ justify-content: center;
 .login-dash-container.Logged-In a.logout{
     margin-left: 40px;
     cursor: pointer;
+}
+.nav.mobile{
+    padding-left: 20px;
+    display: none;
+}
+
+@media only screen and (max-width:768px){
+    .nav{
+        flex-direction: column;
+    }
+    #navbar a.router-link-exact-active{
+        border-bottom: none;
+    }
+    .nav.mobile{
+        display: block;
+        border-bottom: 0;
+    }
+    .full-nav{
+        padding: 0;
+        height: 0;
+        animation: slide-menu-close 0.6s ease-in-out;
+        overflow: hidden;
+        display: block;
+    }
+    .full-nav.active{
+        height: 100%;
+        height: 200px;
+        animation: slide-menu-open 0.6s ease-in-out;
+    }
+    
+    @keyframes slide-menu-open {
+        0%{
+            height: 0px;
+        }
+        100%{
+            height: 200px;
+        }
+    }
+    @keyframes slide-menu-close {
+        0%{
+            height: 200px;
+        }
+        100%{
+            height: 0px;
+        }
+    }
+    .login-dash-container.Logged-In a,
+    .login-dash-container.Logged-In p{
+        font-size: 12px !important;
+    }
+    .login-dash-container.Logged-In{
+        display: none;
+    }
 }
 
 </style>
