@@ -442,7 +442,13 @@ export default {
 
   @media screen and (max-width: 786px){
       #bloglanding-body {
-          margin: 80px 10%;
+          margin: 80px 5%;
+      }
+      #bloglanding-body p{
+          font-size: 14px !important;
+      }
+      #bloglanding-body a{
+          font-size: 14px !important;
       }
       a.article{
           flex-basis: 100%;
@@ -454,6 +460,35 @@ export default {
     .flex > .article:nth-child(even){
         margin-left: 0;
         margin-bottom: 40px;
+    }
+    a.featured-post{
+        display: block;
+        border: 1px solid var(--theme-primary-dark);
+    }
+    a.featured-post img {
+        border: none;
+        height: 200px;
+    }
+    .featured-content{
+      padding: 40px 20px;
+   }
+   #bloglanding-body .featured-content .tag-container{
+        margin-top: 10px;
+    }
+    #bloglanding-body a p.tag{
+        font-size: 12px !important;
+        margin-right: 5px;
+    }
+    .filter-container .tag-container{
+        text-align: center;
+    }
+    .filter-container {
+        border-bottom: 1px solid var(--theme-primary-dark);
+        padding-bottom: 20px;
+        margin-bottom: 80px;
+    }
+    .filter-container .tag-container .tag{
+        margin-bottom: 15px;
     }
   }
 </style>
