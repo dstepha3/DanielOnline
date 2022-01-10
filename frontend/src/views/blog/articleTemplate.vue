@@ -484,6 +484,59 @@ a.button:hover{
     margin: 100px 0;
 }
 
+@media only screen and (max-width: 768px){
+    #article-body{
+        margin: 80px 5%;
+    }
+    .flex{
+        display: block;
+    }
+    .top-content{
+        padding: 40px;
+    }
+    p, ul{
+        font-size: 15px !important;
+    }
+    a{
+        font-size: 15px !important;
+    }
+    .jump-section {
+        padding:  60px 40px;
+    }
+    .jump-section .floating-title{
+        margin-left: -40px;
+    }
+    .jump-row > .toc:nth-child(2){
+        margin: 30px 0;
+    }
+    .split-list > ul:first-child{
+        margin-bottom: 15px;
+    }
+    .listItem h4{
+        width: 55px;
+        margin-bottom: 30px;
+    }
+    .listItem.flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .listItem .content{
+        margin-left: 0;
+    }
+    .split-section .content{
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .cta {
+        padding: 30px;
+    }
+    .button-container > a:last-child{
+        margin-top: 15px;
+    }
+
+}
+
 
 
 
