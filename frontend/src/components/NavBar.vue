@@ -14,7 +14,7 @@
             <div class="LoggedIn" v-if="$store.state.adminAuthPassed">
                 <p>Welcome Daniel.</p>
             </div>
-            <div v-if="$store.state.adminAuthPassed">
+            <div class="mobile-box" v-if="$store.state.adminAuthPassed">
                 <router-link to="/admin">Admin Dashboard</router-link>
                 <a class="logout" v-on:click="admin_logout()">Logout</a>
             </div>
@@ -283,7 +283,14 @@ justify-content: center;
         font-size: 12px !important;
     }
     .login-dash-container.Logged-In{
-        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        transform: translate(25px, 0px);
+        text-align: right;
+    }
+    .mobile-box{
+        display: flex;
+        flex-direction: column;
     }
 }
 
