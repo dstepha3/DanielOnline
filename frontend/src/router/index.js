@@ -13,6 +13,9 @@ import ping from '@/views/ping.vue';
 
 import blogRoutes from '@/router/blog.js';
 
+import Home2 from "@/views/Home2.vue";
+
+
 
 const baseRoutes = [
     {
@@ -62,6 +65,11 @@ const baseRoutes = [
         meta: {
             title: 'Thanks - Daniel Online!'
         }
+    },
+    {
+        path: "/dev/home2",
+        name: "Home2",
+        component: Home2,
     },
     { 
         path: '/:pathMatch(.*)*', 

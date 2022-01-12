@@ -10,6 +10,8 @@ export default createStore({
     pageLogoutMessage: 'Goodbye.',
     toastMessage: null,
     toastMode: null,
+
+    weatherFail: false,
   },
   mutations: {
     togglePagePermission(state){
@@ -26,6 +28,9 @@ export default createStore({
         state.adminAuthPassed = false;
         state.toastMode = 'primary';
         state.toastMessage = 'Goodbye.';
+    },
+    gotWeather(state){
+      state.weatherFail = !state.weatherFail;
     },
   }
 });
