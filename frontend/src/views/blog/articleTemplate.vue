@@ -19,8 +19,10 @@
     </div>
 </transition>
 
+<NavBar></NavBar>
+
 <div v-if="$store.state.adminAuthPassed">
-    <NavBar></NavBar>
+    
     <div id="article-body" class="fade-in">
         <h1>Article Template H1 Title</h1>
         <div class="meta">
@@ -204,7 +206,7 @@ export default {
         },
         triggerToast(mode) {
             if (mode == 'success'){
-                this.showFailToast = true;
+                this.showFailToast = false;
                 this.showSuccessToast = true;       
             }     
             else {
@@ -451,35 +453,6 @@ hr{
 .cta > p:last-child{
     margin-bottom: 0;
 }
-.button{
-    min-width: 200px;
-    padding: 7px 0;
-    margin: 0 20px;
-    display: inline-block;
-    transition: all 0.5s;
-}
-a.button:hover{
-    border-bottom: none;
-}
-.button.red{
-    background-color: rgba(175, 0, 0, 0.4);
-    border: 1px solid rgba(175, 0, 0, 0.4);
-    color: var(--theme-white);
-}
-.button.red:hover{
-    background-color: rgba(175, 0, 0, 0.7);
-    border: 1px solid rgba(175, 0, 0, 0.1);
-    color: var(--theme-whitest);
-}
-.button.dark{
-    background-color: transparent;
-    border: 1px solid rgba(175, 0, 0, 0.4);
-}
-.button.dark:hover{
-    background-color: rgba(175, 0, 0, 0.4);
-    border: 1px solid rgba(175, 0, 0, 0.4);
-   color: var(--theme-whitest);
-}
 #article-body > :last-child{
     margin: 100px 0;
 }
@@ -552,7 +525,7 @@ a.button:hover{
         z-index: 80;
         width: 100%;
         height: 100vh;
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         display: flex;
         justify-content: center;
         align-items: center;

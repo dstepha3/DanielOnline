@@ -20,8 +20,9 @@
   </div>
 </transition>
 
+<NavBar></NavBar>
+
 <div v-if="$store.state.adminAuthPassed">
-    <NavBar></NavBar>
     <div id="about-body" class="fade-in">
         <div class="container">
 
@@ -848,7 +849,7 @@ export default {
         z-index: 80;
         width: 100%;
         height: 100vh;
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         display: flex;
         justify-content: center;
         align-items: center;

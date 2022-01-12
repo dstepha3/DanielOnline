@@ -1,4 +1,9 @@
 <template lang="html">
+
+<transition name="slide">
+    <Toast v-if="showToast" :message="$store.state.pageLogoutMessage" :primary="true" style="z-index: 500" />
+</transition>
+
 <div id="navbar">
     <div class="login-dash-container">
             <router-link to="/admin" v-if="!$store.state.adminAuthPassed">
@@ -54,17 +59,30 @@
 
 <script>
 
+import Toast from "@/components/Toast"
+
 export default {
     name: "nav-bar",
+    components:{
+        Toast
+    },
+    data(){
+        return{
+            showToast: false,
+        }
+    },
     methods: {
         admin_logout(){
+            setTimeout(() => this.triggerToast(), 500);
             this.$store.commit('logout');
         },
         toggleMenu(){
-            console.log('its going');
             var x = document.getElementsByClassName("full-nav");
             x[0].classList.toggle('active');
-            console.log(x);
+        },
+        triggerToast() {
+                this.showToast = true;       
+                setTimeout(() => this.showToast = false, 5000);
         },
     }
 }
