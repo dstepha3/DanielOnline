@@ -9,6 +9,7 @@
                 <router-link class="nav-link" to="">&nbsp;</router-link>
             </div>
             <div class="col">
+                <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="50" ></router-link>
                 <h6 class="title">FOLLOW ME ON SOCIAL MEDIA</h6>
                 <div class="social-media flex">
                     <a 
@@ -38,8 +39,6 @@
                         <i class="fab fa-youtube"></i></a>          <!--    youtube     -->
                 </div>
                 
-                <router-link to="/"><img class="logo" src="@/assets/images/star-logo.png" width="50" style="margin: 30px 0 0; opacity: .5"></router-link>
-                <p class="copyright">Copyright &copy; 2021 DanielOnline. All Rights Reserved</p>
             </div>
             <div class="col">
                 <h6>Resources</h6>
@@ -47,6 +46,11 @@
                 <router-link class="nav-link" to="/faqs">FAQs</router-link>
                 <router-link class="nav-link" to="/contact">Help</router-link>
             </div>
+        </div>
+
+        <div class="copyright-box">
+            <p class="copyright">Copyright &copy; 2022 DanielOnline.</p>
+            <p class="copyright">All Rights Reserved</p>
         </div>
     </footer>
 </template>
@@ -81,7 +85,13 @@ footer {
     background-color: #000000;
     min-height: 250px;
     border-top: 3px solid var(--theme-primary-dark);
-    padding: 50px 0 0;
+    padding: 80px 0 0;
+    overflow: hidden;
+}
+
+footer .logo{
+    margin: 0 0 30px; 
+    opacity: .5;
 }
 
 footer a.router-link-exact-active{
@@ -184,9 +194,13 @@ footer .social-media i {
     font-size: 45px;
 }
 
-footer .copyright {
-    margin-top: 30px;
-    margin-bottom: 10px;
+footer .copyright-box {
+    margin: 0 3% 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+footer .copyright-box p{
     font-size: 16px !important;
     color: var(--theme-primary-dark);
     opacity: .75;
