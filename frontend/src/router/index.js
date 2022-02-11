@@ -12,6 +12,7 @@ import NotFound from "@/views/errors/NotFound-404.vue";
 import ping from '@/views/ping.vue';
 
 import blogRoutes from '@/router/blog.js';
+import gameRoutes from '@/router/game.js';
 
 const baseRoutes = [
     {
@@ -80,7 +81,8 @@ const baseRoutes = [
     },
 ];
 
-const routes = baseRoutes.concat(blogRoutes);
+const routes = baseRoutes.concat(blogRoutes).concat(gameRoutes);
+
 const router = createRouter ({
     history: createWebHistory(),
     routes,

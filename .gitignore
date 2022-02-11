@@ -14,6 +14,7 @@ frontend/.DS_Store
 frontend/node_modules
 frontend/dist
 frontend/src/views/Template.vue
+frontend/src/views/BlankPage.vue
 
 # local env files
 frontend/.env.local
