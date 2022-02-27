@@ -332,6 +332,7 @@
     </div>
     <FooterLarge style="margin-top: 120px"></FooterLarge>
     <courseworkModal></courseworkModal>
+    <ScrollTopArrow />
 </div>
 </template>
 
@@ -339,6 +340,7 @@
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import courseworkModal from "@/components/Modals/About/Coursework-modal.vue";
+import ScrollTopArrow from "@/components/Scroll-To-Top-Arrow/ScrollTopArrow.vue";
 
 import Toast from "@/components/Toast"
 
@@ -349,7 +351,8 @@ export default {
         NavBar,
         FooterLarge,
         courseworkModal,
-        Toast
+        Toast,
+        ScrollTopArrow
     },
     data(){
         return {
