@@ -37,12 +37,16 @@ export default {
 </script>
 
 <style scoped>
+a, a:hover{
+    text-decoration: none;
+}
 .bottom-right {
   position: fixed;
-  bottom: 20px;
+  bottom: -15px;
   right: 20px;
   cursor: pointer;
   z-index: 500;
+  border: none !important;
 }
 .bottom-right:hover {
   color: rgba(128, 0, 0, 1);

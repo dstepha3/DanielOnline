@@ -83,19 +83,21 @@
 
     </div>
     <FooterLarge></FooterLarge>
+    <ScrollTopArrow />
 </template>
 
 <script lang="js">
 
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
-
+import ScrollTopArrow from "@/components/Scroll-To-Top-Arrow/ScrollTopArrow.vue";
 
 export default {
     name: 'blog',
     components: {
         NavBar,
-        FooterLarge
+        FooterLarge,
+        ScrollTopArrow
     },
     data() {
         return {

@@ -149,7 +149,8 @@
 
 
     </div>
-    <FooterLarge></FooterLarge>
+    <FooterLarge />
+    <ScrollTopArrow />
 </div>
 
 </template>
@@ -159,13 +160,14 @@
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import LockedComponents from "@/components/Locked-Page.vue"
-
+import ScrollTopArrow from "@/components/Scroll-To-Top-Arrow/ScrollTopArrow.vue";
 
 export default {
     name: 'articleTemplate',
     components: {
         NavBar,
         FooterLarge,
+        ScrollTopArrow,
         LockedComponents
     },
 }

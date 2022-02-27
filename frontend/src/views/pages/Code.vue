@@ -4,7 +4,6 @@
 
 <NavBar></NavBar>
 
-
 <div v-if="$store.state.adminAuthPassed">
     <div id="code-body" class="fade-in">
         <h1 class="mb-3">Code</h1>
@@ -36,6 +35,7 @@
     </div>
         
     <FooterLarge style="margin-top: 60px"></FooterLarge>
+    <ScrollTopArrow />
 </div>
 </template>
 
@@ -44,13 +44,15 @@
 import NavBar from "@/components/NavBar.vue";
 import FooterLarge from "@/components/Footer-Large.vue";
 import LockedComponents from "@/components/Locked-Page.vue";
+import ScrollTopArrow from "@/components/Scroll-To-Top-Arrow/ScrollTopArrow.vue";
 
 export default {
     name: 'Code',
     components: {
         NavBar,
         FooterLarge,
-        LockedComponents
+        LockedComponents,
+        ScrollTopArrow
     }
 }
 
@@ -104,8 +106,14 @@ export default {
   }
 
   @media screen and (max-width: 768px){
+      #code-body {
+          padding: 80px 5%;
+      }
       h1{
           line-height: 0.9 !important;
+      }
+      .projects-container{
+          flex-direction: column;
       }
   }
 </style>
