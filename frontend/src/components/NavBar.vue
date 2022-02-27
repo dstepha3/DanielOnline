@@ -33,6 +33,9 @@
                 <router-link class="nav-link" to="/">Home</router-link>
             </li>
             <li class="nav-item">
+                <router-link class="nav-link" to="/code">Code</router-link>
+            </li>
+            <li class="nav-item">
                 <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li class="nav-item">
@@ -62,6 +65,9 @@
             <ul class="nav full-nav justify-content-center">
                 <li class="nav-item">
                     <router-link class="nav-link" to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/code">Code</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link class="nav-link" to="/about">About</router-link>
@@ -301,7 +307,6 @@ justify-content: center;
     top: 0;
     width: 100%;
     z-index: 99999999;
-    height: 100%;
 }
 
 @media only screen and (max-width:768px){
