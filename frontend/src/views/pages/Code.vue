@@ -8,11 +8,34 @@
 <div v-if="$store.state.adminAuthPassed">
     <div id="code-body" class="fade-in">
         <h1 class="mb-3">Code</h1>
-        <p class="center">Finding yourself on this page must mean you're looking for answers and lucky, I've got you.<br/>I've summarized a couple questions I've been frequently asked and I'm here to address them. </p>
-        <p class="center">Not able to find what you're looking for? <router-link class="link" to="contact">Contact me</router-link> and I'll try to get back to you as quickly as I can.</p>
+        <p class="center">Here you can find project's I've previously worked on.
+        </p>
+        <p class="center">Find something you're interested in or would like propose a project?<br/><router-link class="link" to="contact">Contact me</router-link> and I will get back to you as quickly as I can.</p>
+    
+    <div class="project-container">
+        <a class="project" href="https://webdev-stark.cs.kent.edu/~dstepha3/Assignment4/assign4-home.html" target="_blank">
+            <img src="https://webdev-stark.cs.kent.edu/~dstepha3/Assignment4/images/banner/presents-153926.png" style="object-position: center -30px;">
+            <span class="project-title">RYUG!</span>
+        </a>
+        <a class="project" href="https://danielonline-ecom.pages.dev/" target="_blank">
+            <img src="@/assets/images/eComm-img.png" style="object-position: center -17px;">
+            <span class="project-title">eCommerce Example</span>
+        </a>
+        <a class="project" href="https://troyersdutchmarket.pages.dev/" target="_blank">
+            <img src="@/assets/images/troyers-logo.png">
+            <span class="project-title">Troyer's Dutch Market</span>
+        </a>
+        <a class="project" href="https://www.outerboxdesign.com/company/about-us" target="_blank">
+            <img src="https://www.outerboxdesign.com/frontend/img/outerbox.jpg" style="object-position: center -48px;">
+            <span class="project-title">OuterBox Solutions</span>
+        </a>
+
+
+    </div>
+    
     </div>
         
-    <FooterLarge style="margin-top: 120px"></FooterLarge>
+    <FooterLarge style="margin-top: 60px"></FooterLarge>
 </div>
 </template>
 
@@ -36,7 +59,7 @@ export default {
 <style scoped>
   #code-body {
     text-align: center;
-    padding: 80px 15%;
+    padding: 80px 15% 0;
     background-color: #0d0d0d;
     color: var(--theme-primary-dark);
     position: relative;
@@ -44,20 +67,45 @@ export default {
   p{
     color: var(--theme-lightest-gray);
   }
+  .project-container{
+      border-top: 1px solid var(--theme-primary-dark);
+      margin-top: 60px;
+      padding-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  .project{
+      cursor: pointer;
+      text-decoration: none;
+      flex-basis: 46%;
+      margin-bottom: 60px;
+  }
+  .project img{
+      height: 169px;
+      object-fit: cover;
+      width: 100%;
+      margin-bottom: 15px;
+      opacity: 0.6;
+      transition: 0.3s all;
+  }
+  .project-title{
+    font-family: var(--title);
+    margin: 0 0 10px;
+    font-size: 38px !important;
+    color: var(--theme-primary-dark);
+    transition: all 0.3s;
+  }
+  .project:hover .project-title{
+      color: var(--theme-primary-light);
+  }
+  .project:hover img{
+      opacity: 1;
+  }
 
   @media screen and (max-width: 768px){
-      #body{
-          text-align: center;
-          padding-top: 120px;
-      }
       h1{
           line-height: 0.9 !important;
-      }
-      .coming-soon{
-          font-size: 16px;
-      }
-      img{
-          opacity: 0.6;
       }
   }
 </style>
