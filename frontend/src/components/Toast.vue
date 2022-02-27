@@ -56,7 +56,7 @@ export default {
         font-size: 14px;
     }
     .success.toastie{
-        background: rgba(12, 255, 156, 0.7);
+        background: rgba(12, 255, 156, 0.9);
         color: black;
     }
     .fas{
@@ -66,17 +66,17 @@ export default {
         color: black;
     }
     .fail.toastie{
-        background: rgba(175, 0, 0, 0.7);
+        background: rgba(175, 0, 0, 0.9);
     }
     .primary.toastie{
-        background: rgba(4, 155, 224, 0.7);
+        background: rgba(4, 155, 224, 0.9);
         color: black;
     }
     .primary.toastie .fas{
         color: black;
     }
     .warning.toastie{
-        background: rgba(143, 134, 4, 0.7);
+        background: rgba(143, 134, 4, 0.9);
         color: black;
     }
 
