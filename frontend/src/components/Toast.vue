@@ -24,7 +24,8 @@ export default {
         mode: String,
         success: Boolean,
         fail: Boolean,
-        primary: Boolean
+        primary: Boolean,
+        warning: Boolean
     }
 }
 </script>
@@ -44,7 +45,7 @@ export default {
 
     }
     .toastie{
-        padding: 10px 50px 10px 25px;
+        padding: 5px 50px 5px 25px;
         color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
         border-left: 2px solid rgba(255, 255, 255, 0.35);
@@ -52,9 +53,16 @@ export default {
         max-width: 400px;
         font-weight: 700;
         text-align: left;
+        font-size: 14px;
     }
     .success.toastie{
         background: rgba(12, 255, 156, 0.7);
+        color: black;
+    }
+    .fas{
+        font-size: 14px;
+    }
+    .success.toastie .fas{
         color: black;
     }
     .fail.toastie{
@@ -62,6 +70,9 @@ export default {
     }
     .primary.toastie{
         background: rgba(4, 155, 224, 0.7);
+        color: black;
+    }
+    .primary.toastie .fas{
         color: black;
     }
     .warning.toastie{
