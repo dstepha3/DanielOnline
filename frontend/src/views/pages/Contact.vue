@@ -15,8 +15,8 @@
                 <textarea class="form-control" name="Message" id="message" placeholder="message" rows="7"></textarea>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <input type="reset" class="btn" style="color: var(--theme-white); background: var(--theme-black); width: 150px;"/>
-              <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark); width: 150px;"/>
+              <input type="reset" class="btn" style="color: var(--theme-white); background: var(--theme-black); width: 150px; border: 1px solid var(--theme-black); border-radius: 5px !important;"/>
+              <input type="submit" onclick="document.body.style.cursor='wait'; return true;" value="Send" class="btn" style="color: var(--theme-white); background: var(--theme-primary-dark); width: 150px; border-radius: 5px !important;"/>
             </div>
             </form>
         </div>

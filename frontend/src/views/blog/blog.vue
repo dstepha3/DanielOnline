@@ -195,7 +195,7 @@ export default {
     min-height: 100%;
     background-color: #0d0d0d;
     color: var(--theme-primary-dark);
-    margin: 80px 10% 20px;
+    margin: 80px 15% 20px;
   }
 
   #bloglanding-body h1 {
