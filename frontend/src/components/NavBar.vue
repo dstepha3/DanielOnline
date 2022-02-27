@@ -54,6 +54,38 @@
         </ul>
     </nav>
 
+    <div v-if="sticky_nav_on">
+        <nav id="navigation-bar" v-if="visible">
+            <ul class="nav mobile">
+                <a id="nav-toggle" v-on:click="toggleMenu()"><i class="fas fa-bars"></i></a>
+            </ul>
+            <ul class="nav full-nav justify-content-center">
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/about">About</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/blog">Blog</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/contact">Contact</router-link>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <ul class="dropdown-menu center" aria-labelledby="navbarDropdownMenuLink">
+                        <li><router-link class="nav-link" to="/">Action</router-link></li>
+                        <li><router-link class="nav-link" to="/">Another Action</router-link></li>
+                        <li><router-link class="nav-link" to="/">Something else here</router-link></li>
+                    </ul>
+                </li> -->
+            </ul>
+        </nav>
+    </div>
+
 </div>
 </template>
 
@@ -69,6 +101,8 @@ export default {
     data(){
         return{
             showToast: false,
+            visible: false,
+            sticky_nav_on: true,
         }
     },
     methods: {
@@ -84,17 +118,42 @@ export default {
                 this.showToast = true;       
                 setTimeout(() => this.showToast = false, 5000);
         },
-    }
+        scrollTop: function () {
+            this.intervalId = setInterval(() => {
+                if (window.pageYOffset === 0) {
+                clearInterval(this.intervalId);
+                }
+                window.scroll(0, window.pageYOffset - 1000);
+            }, 20);
+        },
+        scrollListener: function () {
+            let navbar = document.getElementById("navigation-bar");
+            if( window.scrollY > 168 ){
+                this.visible = true;
+                if (navbar.classList.contains("sticky")){
+                    // do nothing
+                }
+                else {
+                    navbar.classList.add("sticky");
+                }
+            }
+            if ( window.scrollY < 168 ) {
+                this.visible = false;
+                navbar.classList.remove("sticky");
+            }
+        },
+    },
+    mounted: function () {
+        window.addEventListener("scroll", this.scrollListener);
+    },
+    beforeUnmount: function () {
+        window.removeEventListener("scroll", this.scrollListener);
+    },
 }
 
 </script>
 
 <style scoped>
-
-/* #navbar{
-    position: sticky;
-    top: 0;
-} */
 
 .nav {
     background-color: #000000;
@@ -236,6 +295,13 @@ justify-content: center;
 .nav.mobile{
     padding-left: 20px;
     display: none;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999999;
+    height: 100%;
 }
 
 @media only screen and (max-width:768px){
