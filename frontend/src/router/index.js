@@ -13,6 +13,7 @@ import ping from '@/views/ping.vue';
 
 import blogRoutes from '@/router/blog.js';
 import gameRoutes from '@/router/game.js';
+import codeRoutes from '@/router/code.js';
 
 const baseRoutes = [
     {
@@ -81,7 +82,7 @@ const baseRoutes = [
     },
 ];
 
-const routes = baseRoutes.concat(blogRoutes).concat(gameRoutes);
+const routes = baseRoutes.concat(blogRoutes).concat(gameRoutes).concat(codeRoutes);
 
 const router = createRouter ({
     history: createWebHistory(),
